@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>岛田悠米</title>
+  <icon>https://yuumiy.github.io/icon.png</icon>
+  <subtitle>心中有梦 不负韶华</subtitle>
+  <link href="https://yuumiy.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://yuumiy.github.io/"/>
+  <updated>2021-09-11T02:09:04.492Z</updated>
+  <id>https://yuumiy.github.io/</id>
+  
+  <author>
+    <name>Yuumiy</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows和IDEA的常用快捷键</title>
+    <link href="https://yuumiy.github.io/posts/bde9.html"/>
+    <id>https://yuumiy.github.io/posts/bde9.html</id>
+    <published>2021-09-11T02:09:04.492Z</published>
+    <updated>2021-09-11T02:09:04.492Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;博主作为一个Java后端攻城狮，开发过程中不免要使用许多的快捷键。合理使用快捷键能极大提高工作效率，那么这么多的快捷键又该记住哪些呢，把所有快捷键都记下显然是不太现实的。因此我根据平时的使用习惯，总结了自己在Windows和IDEA中常用的快捷键。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="工具" scheme="https://yuumiy.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="IDEA" scheme="https://yuumiy.github.io/tags/IDEA/"/>
+    
+    <category term="Windows" scheme="https://yuumiy.github.io/tags/Windows/"/>
+    
+    <category term="快捷键" scheme="https://yuumiy.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭建自己的个人博客网站(Github+Hexo+Next)</title>
+    <link href="https://yuumiy.github.io/posts/2789.html"/>
+    <id>https://yuumiy.github.io/posts/2789.html</id>
+    <published>2021-09-11T02:09:04.492Z</published>
+    <updated>2021-09-11T02:09:04.493Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;从大二开始就一直很想有一个属于自己的博客网站，可一拖再拖，直到最近才下了决心去搭建一个网站。在网上了解到基于Hexo的博客搭建比较简单并且美观，在查阅了许多教程，走过无数坑后，写下了这篇文章。本文主要讲解个人博客网站的搭建，内容比较详细，适合小白食用。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;网页预览：&lt;a href=&quot;https://yuumiy.github.io/&quot;&gt;https://yuumiy.github.io&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="工具" scheme="https://yuumiy.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="博客" scheme="https://yuumiy.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+    <category term="Github" scheme="https://yuumiy.github.io/tags/Github/"/>
+    
+    <category term="Hexo" scheme="https://yuumiy.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络学习笔记</title>
+    <link href="https://yuumiy.github.io/posts/c7f5.html"/>
+    <id>https://yuumiy.github.io/posts/c7f5.html</id>
+    <published>2021-09-05T12:51:22.629Z</published>
+    <updated>2021-09-05T12:51:22.629Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;开始路途漫漫的计算机网络学习吧，视频来自&lt;a href=&quot;https://www.bilibili.com/video/BV1c4411d7jb&quot;&gt;计算机网络微课堂&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img data-src=&quot;https://cdn.nlark.com/yuque/0/2021/jpeg/12855610/1630208621955-a4a8ad3a-087d-4521-ab8a-0ca28358b4fd.jpeg?x-oss-process=image/resize,w_750,limit_0&quot;&gt;&lt;br&gt;​</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="计算机网络" scheme="https://yuumiy.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://yuumiy.github.io/posts/3eeb.html"/>
+    <id>https://yuumiy.github.io/posts/3eeb.html</id>
+    <published>2021-09-05T12:51:22.628Z</published>
+    <updated>2021-09-05T12:51:22.628Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World!&quot;&gt;&lt;/a&gt;Hello World!&lt;/h1&gt;&lt;p&gt;由Hexo Next搭建的博客网站，这是第一篇博客！&lt;/p&gt;
+&lt;p&gt;文章将有以下分类：工具、技术、笔记、思考、生活、阅读&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技术" scheme="https://yuumiy.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="博客" scheme="https://yuumiy.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+</feed>
