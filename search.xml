@@ -135,6 +135,10 @@
 </tr>
 </thead>
 <tbody><tr>
+<td>选中项目 + →</td>
+<td>展开项目</td>
+</tr>
+<tr>
 <td>ctrl + z</td>
 <td>撤销</td>
 </tr>

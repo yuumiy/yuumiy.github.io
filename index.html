@@ -344,7 +344,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-09 19:23:10" itemprop="dateModified" datetime="2021-09-09T19:23:10+08:00">2021-09-09</time>
+                <time title="修改时间：2021-09-13 09:57:35" itemprop="dateModified" datetime="2021-09-13T09:57:35+08:00">2021-09-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -383,7 +383,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>870</span>
+              <span>880</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -913,17 +913,17 @@
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('/js/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item => {
       return GUEST.includes(item);
     });
     new Valine({
       el         : '#valine-comments',
       verify     : false,
-      notify     : false,
+      notify     : true,
       appId      : 'PuhblTYT44STCX6Edvpd76zF-gzGzoHsz',
       appKey     : '43DKcrM2QNBca1Ww68fepMOV',
-      placeholder: "作者看到就会及时反馈，欢迎评论哦(๑•̀ㅂ•́)و✧",
+      placeholder: "填写邮箱作者能够及时反馈，欢迎评论哦(๑•̀ㅂ•́)و✧",
       avatar     : 'monsterid',
       meta       : guest,
       pageSize   : '10' || 10,

@@ -472,17 +472,17 @@
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   NexT.utils.getScript('/js/Valine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick';
+    var guest = 'nick,mail';
     guest = guest.split(',').filter(item => {
       return GUEST.includes(item);
     });
     new Valine({
       el         : '#valine-comments',
       verify     : false,
-      notify     : false,
+      notify     : true,
       appId      : 'PuhblTYT44STCX6Edvpd76zF-gzGzoHsz',
       appKey     : '43DKcrM2QNBca1Ww68fepMOV',
-      placeholder: "作者看到就会及时反馈，欢迎评论哦(๑•̀ㅂ•́)و✧",
+      placeholder: "填写邮箱作者能够及时反馈，欢迎评论哦(๑•̀ㅂ•́)و✧",
       avatar     : 'monsterid',
       meta       : guest,
       pageSize   : '10' || 10,
