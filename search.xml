@@ -215,6 +215,10 @@
 <td>查看类结构</td>
 </tr>
 <tr>
+<td>shift + F6</td>
+<td>重命名文件</td>
+</tr>
+<tr>
 <td>shift + F9</td>
 <td>Debug启动项目</td>
 </tr>
