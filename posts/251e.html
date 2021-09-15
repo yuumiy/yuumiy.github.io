@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="NmvL2aBrGRwi3CzraBejtkwEbHmmH-7u73OJj3FMOoc">
+  <meta name="msvalidate.01" content="5DB1ECD7406CD70A251CF96C939178B9">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuumiy.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="关于SpringBoot的学习笔记，视频来自雷丰阳SpringBoot2021​">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringBoot学习笔记">
+<meta property="og:url" content="https://yuumiy.github.io/posts/251e.html">
+<meta property="og:site_name" content="岛田悠米">
+<meta property="og:description" content="关于SpringBoot的学习笔记，视频来自雷丰阳SpringBoot2021​">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631722254166-192baa58-942d-41b5-92e3-cc7acf733dd5.png?x-oss-process=image%2Fresize%2Cw_944%2Climit_0">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1630053630809-2d294113-d2e1-40cf-884b-a2b16b9260f2.png#clientId=u8f909344-f80e-4&from=paste&id=u6b36a10c&margin=%5Bobject%20Object%5D&name=&originHeight=435&originWidth=1232&originalType=binary&ratio=1&size=72081&status=done&style=none&taskId=ue9520550-6872-489a-b200-5943e2f77d4">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631722198135-24ff3779-1baa-4579-ad00-b4ccecf08354.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631722217507-9393c5ce-c52f-4a69-a1cb-1d827dafccfe.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1630064355478-850a8ddc-fb35-4e7e-a105-204476fc0805.png#clientId=u8f909344-f80e-4&from=paste&height=51&id=u66b02441&margin=%5Bobject%20Object%5D&name=&originHeight=102&originWidth=573&originalType=binary&ratio=1&size=55574&status=done&style=none&taskId=uf0111ee4-cb85-49b3-ba03-485639cd997&width=286.5">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1630132928220-0f42cc99-ab93-48f2-a013-7dfb7d6951c4.png#clientId=uc2d51021-934b-4&from=paste&height=159&id=u525869c2&margin=%5Bobject%20Object%5D&name=&originHeight=318&originWidth=1079&originalType=binary&ratio=1&size=189217&status=done&style=none&taskId=u7a1a2575-3299-40b7-b167-ccadc0aa133&width=539.5">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631162277931-5807f1fe-3526-4d8a-b8a0-f6a31cfded35.png#clientId=ub5bbc323-b3fc-4&from=paste&height=446&id=ue9d44191&margin=%5Bobject%20Object%5D&name=&originHeight=446&originWidth=763&originalType=binary&ratio=1&size=47923&status=done&style=none&taskId=u45f79ebb-3158-4804-9e40-64ce100efb7&width=763">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631264667583-91f324de-f04e-420e-b0b4-39a85959146e.png#clientId=ue844cd9e-3703-4&from=paste&height=287&id=uac93d380&margin=%5Bobject%20Object%5D&name=&originHeight=287&originWidth=828&originalType=binary&ratio=1&size=158755&status=done&style=none&taskId=u8760807b-21c9-45aa-b622-e413838c849&width=828">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631265908773-3cb29740-fc3a-4fc4-b737-eed4d36ade88.png#clientId=ue844cd9e-3703-4&from=paste&height=274&id=ufb225947&margin=%5Bobject%20Object%5D&name=&originHeight=274&originWidth=432&originalType=binary&ratio=1&size=12612&status=done&style=none&taskId=uf802e7c9-5678-476f-b915-05303cd4193&width=432">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631503799043-5a49aaf3-29ac-49e2-8cd3-d52090fc2630.png#clientId=uc718f90e-1fb8-4&from=paste&height=316&id=ud1608871&margin=%5Bobject%20Object%5D&name=&originHeight=316&originWidth=1137&originalType=binary&ratio=1&size=291163&status=done&style=none&taskId=u8d28f38e-d4d1-4c62-83d6-096d7396a28&width=1137">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631669770552-88c6e8c3-ffc2-4ef1-869e-c9f3b27d3e34.png#clientId=udec2cb0c-a3fa-4&from=paste&height=91&id=u8335d798&margin=%5Bobject%20Object%5D&name=&originHeight=91&originWidth=778&originalType=binary&ratio=1&size=121894&status=done&style=none&taskId=u2d8340c1-6352-4b96-bba1-22131b6c82b&width=778">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631669639670-27b30153-6108-44ff-88e4-705ffce27db2.png#clientId=udec2cb0c-a3fa-4&from=paste&height=290&id=u3147febf&margin=%5Bobject%20Object%5D&name=&originHeight=290&originWidth=1345&originalType=binary&ratio=1&size=272546&status=done&style=none&taskId=ua1e4fbb4-b598-494e-b092-f952529268a&width=1345">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631670617684-71515619-2885-4226-acca-297093ae490d.png#clientId=udec2cb0c-a3fa-4&from=paste&height=529&id=uad28c216&margin=%5Bobject%20Object%5D&name=&originHeight=529&originWidth=1167&originalType=binary&ratio=1&size=257366&status=done&style=none&taskId=u030bcad3-af47-4dc4-9a23-3dd7b17b0a9&width=1167">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631685881305-ea779be7-bfba-4d63-bb09-a2dda5780519.png#clientId=udec2cb0c-a3fa-4&from=paste&height=402&id=udfbefec0&margin=%5Bobject%20Object%5D&name=&originHeight=402&originWidth=706&originalType=binary&ratio=1&size=40933&status=done&style=none&taskId=ud35374ff-ab7f-420c-a6d6-fa4a35da2eb&width=706">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631686881524-49dbfa3a-481d-4e8c-a674-76442dbbda13.png#clientId=udec2cb0c-a3fa-4&from=paste&height=44&id=u597e4fbe&margin=%5Bobject%20Object%5D&name=&originHeight=44&originWidth=928&originalType=binary&ratio=1&size=64808&status=done&style=none&taskId=u868ed1bd-d40d-4762-9aa4-802c711b827&width=928">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631687365008-3f821da9-ae1a-4bcc-9d18-b8a2741cdc4f.png#clientId=udec2cb0c-a3fa-4&from=paste&height=205&id=uc02ee31e&margin=%5Bobject%20Object%5D&name=&originHeight=205&originWidth=770&originalType=binary&ratio=1&size=14431&status=done&style=none&taskId=u4cbc34bb-c3bc-4603-84e0-b863eb15568&width=770">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631691102372-6a7dbc49-3d11-4a20-b2a8-c2f23e60a638.png#clientId=udec2cb0c-a3fa-4&from=paste&height=331&id=u07649a35&margin=%5Bobject%20Object%5D&name=&originHeight=331&originWidth=1059&originalType=binary&ratio=1&size=230828&status=done&style=none&taskId=ubaf7fad5-1403-42ee-8789-ff915cedeb5&width=1059">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631691580980-9f05619d-cc27-4321-9b09-e3c6daebab1c.png#clientId=udec2cb0c-a3fa-4&from=paste&height=361&id=u793f1485&margin=%5Bobject%20Object%5D&name=&originHeight=361&originWidth=1032&originalType=binary&ratio=1&size=358430&status=done&style=none&taskId=uf4099a81-7596-4c60-a4ce-2dfc7e5e6a4&width=1032">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631696711988-4a74fe71-7e66-49b7-8c74-45fd449ad08f.png#clientId=udec2cb0c-a3fa-4&from=paste&height=243&id=ucaea7a0a&margin=%5Bobject%20Object%5D&name=&originHeight=243&originWidth=835&originalType=binary&ratio=1&size=172997&status=done&style=none&taskId=ue53d6fe1-1c7e-4a99-bb67-6a7956dd654&width=835">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631696858682-0b336734-0072-40cf-b0cf-90deed01d10c.png#clientId=udec2cb0c-a3fa-4&from=paste&height=620&id=ub3a30d4c&margin=%5Bobject%20Object%5D&name=&originHeight=620&originWidth=460&originalType=binary&ratio=1&size=251786&status=done&style=none&taskId=ua6af1bb7-6373-4d80-8da6-5c04b519af1&width=460">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631697133197-a037115e-9738-4162-8585-7c63a8b71859.png#clientId=udec2cb0c-a3fa-4&from=paste&height=68&id=u421fd858&margin=%5Bobject%20Object%5D&name=&originHeight=68&originWidth=757&originalType=binary&ratio=1&size=61403&status=done&style=none&taskId=u646ae702-5dea-4b36-80a4-2d52958cb00&width=757">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631697190080-6b3fbac1-090b-4a4c-b505-63e1d80fa741.png#clientId=udec2cb0c-a3fa-4&from=paste&height=174&id=ub6d32822&margin=%5Bobject%20Object%5D&name=&originHeight=174&originWidth=1211&originalType=binary&ratio=1&size=108140&status=done&style=none&taskId=u6872e4dc-ed52-41fc-90bf-5a401fc04f7&width=1211">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631710788203-58f4a7e7-32b6-4059-8af5-1752f205cbfc.png#clientId=ubcae3f69-ac75-4&from=paste&id=u43acbe15&margin=%5Bobject%20Object%5D&name=&originHeight=245&originWidth=908&originalType=binary&ratio=1&size=84771&status=done&style=none&taskId=ube5b7741-3a62-47a2-a979-253605613f1">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631715257345-0a10ee8a-15ae-45f8-b80c-02c288814b34.png#clientId=ubcae3f69-ac75-4&from=paste&id=u3959f422&margin=%5Bobject%20Object%5D&name=&originHeight=199&originWidth=1047&originalType=binary&ratio=1&size=60953&status=done&style=none&taskId=ubba0656b-70b3-4ff9-ab29-aaacd8355cb">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631715345279-36880286-2501-46b5-822b-4954248134d2.png#clientId=ubcae3f69-ac75-4&from=paste&id=ue162f8f3&margin=%5Bobject%20Object%5D&name=&originHeight=204&originWidth=398&originalType=binary&ratio=1&size=34006&status=done&style=none&taskId=uc234bfe2-656c-4e10-98d9-3afe4d03de7">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631716028871-cbc169cb-f865-4f22-99be-acd33b3969f7.png#clientId=ubcae3f69-ac75-4&from=paste&id=u71dff98b&margin=%5Bobject%20Object%5D&name=&originHeight=446&originWidth=1060&originalType=binary&ratio=1&size=189236&status=done&style=none&taskId=ue8e5a17e-158a-4d3d-9060-c7d6ba8cbbd">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631718011444-e1dab13b-0d5b-4b56-8c18-dacf671f5e57.png#clientId=ubcae3f69-ac75-4&from=paste&id=u3954f3b5&margin=%5Bobject%20Object%5D&name=&originHeight=137&originWidth=762&originalType=binary&ratio=1&size=91721&status=done&style=none&taskId=u0737ed26-320c-4881-a68c-155f1d69c2c">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631718497581-94c74683-4b65-4bdc-99f3-66d94c872e91.png#clientId=ubcae3f69-ac75-4&from=paste&id=ubda37100&margin=%5Bobject%20Object%5D&name=&originHeight=163&originWidth=218&originalType=binary&ratio=1&size=15123&status=done&style=none&taskId=u43ee0b45-926b-4b66-8924-60ab4c0a165">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631719367531-9ef7fd53-47ab-46cf-a718-034e3c293842.png#clientId=ubcae3f69-ac75-4&from=paste&height=73&id=u86b1f00e&margin=%5Bobject%20Object%5D&name=&originHeight=145&originWidth=663&originalType=binary&ratio=1&size=57104&status=done&style=none&taskId=ud78e0e88-4291-4f29-a6c8-da731bf1ae5&width=331.5">
+<meta property="article:published_time" content="2021-09-15T15:53:20.000Z">
+<meta property="article:modified_time" content="2021-09-15T16:13:36.000Z">
+<meta property="article:author" content="Yuumiy">
+<meta property="article:tag" content="SpringBoot">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631722254166-192baa58-942d-41b5-92e3-cc7acf733dd5.png?x-oss-process=image%2Fresize%2Cw_944%2Climit_0">
+
+<link rel="canonical" href="https://yuumiy.github.io/posts/251e.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>SpringBoot学习笔记 | 岛田悠米</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="岛田悠米" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">岛田悠米</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">心中有梦 不负韶华</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yuumiy.github.io/posts/251e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Yuumiy">
+      <meta itemprop="description" content="coding就是生产力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="岛田悠米">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          SpringBoot学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-15 23:53:20" itemprop="dateCreated datePublished" datetime="2021-09-15T23:53:20+08:00">2021-09-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-16 00:13:36" itemprop="dateModified" datetime="2021-09-16T00:13:36+08:00">2021-09-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/251e.html" class="post-meta-item leancloud_visitors" data-flag-title="SpringBoot学习笔记" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论次数：</span>
+    
+    <a title="valine" href="/posts/251e.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/251e.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer" />
+
+<p>关于SpringBoot的学习笔记，视频来自<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV19K4y1L7MT">雷丰阳SpringBoot2021</a><br>​<span id="more"></span></p>
+<h1 id="基础入门"><a href="#基础入门" class="headerlink" title="基础入门"></a>基础入门</h1><h2 id="1-SpringBoot概述"><a href="#1-SpringBoot概述" class="headerlink" title="1.SpringBoot概述"></a>1.SpringBoot概述</h2><p>SpringBoot的底层是SpringFramework<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631722254166-192baa58-942d-41b5-92e3-cc7acf733dd5.png?x-oss-process=image%2Fresize%2Cw_944%2Climit_0" /></p>
+<p>什么是适配器模式？<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1630053630809-2d294113-d2e1-40cf-884b-a2b16b9260f2.png#clientId=u8f909344-f80e-4&from=paste&id=u6b36a10c&margin=%5Bobject%20Object%5D&name=&originHeight=435&originWidth=1232&originalType=binary&ratio=1&size=72081&status=done&style=none&taskId=ue9520550-6872-489a-b200-5943e2f77d4"></p>
+<h3 id="SpringBoot优点"><a href="#SpringBoot优点" class="headerlink" title="SpringBoot优点"></a>SpringBoot优点</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631722198135-24ff3779-1baa-4579-ad00-b4ccecf08354.png"></p>
+<p>微服务将一大应用拆分成小模块，每个小模块都可以独立部署到服务器上<br>微服务拆分后会出现分布式问题，这时候就使用<strong>SpringBoot + SpringCloud</strong>的解决方案<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631722217507-9393c5ce-c52f-4a69-a1cb-1d827dafccfe.png" /></p>
+<h3 id="依赖管理"><a href="#依赖管理" class="headerlink" title="依赖管理"></a>依赖管理</h3><p>场景启动器的基础是<strong>spring-boot-starter</strong>，它包含许多其他依赖，这些依赖定义了版本，因此你要引入这些依赖可以不用定义版本信息。如果是非其他依赖，需要定义版本信息<br>​</p>
+<p>springboot的application启动类就是一个IOC，配置好了许多组件，如支持Spring MVC的多个组件等</p>
+<p>包扫描：application所在的包自动扫描容器<br>想要改变扫描路径，@SpringBootApplication(scanBasePackages=”com.atguigu”)<br>​</p>
+<h3 id="组件添加【底层注解】"><a href="#组件添加【底层注解】" class="headerlink" title="组件添加【底层注解】"></a>组件添加【底层注解】</h3><p>@proxyBeanMethods：代理bean的方法<br>Full(proxyBeanMethods = true)、【保证每个@Bean方法被调用多少次返回的组件都是单实例的】<br>Lite(proxyBeanMethods = false)【每个@Bean方法被调用多少次返回的组件都是新创建的】<br>​</p>
+<p>@Import({User.class, DBHelper.class})<br>给容器中自动创建出这两个类型的组件、默认组件的名字就是全类名<br>条件装配：满足@Conditional指定的条件，则进行组件注入<br>​</p>
+<p>@ImportResource支持导入Spring的配置文件<br>​</p>
+<p>JavaBean和配置文件中的属性绑定<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1630064355478-850a8ddc-fb35-4e7e-a105-204476fc0805.png#clientId=u8f909344-f80e-4&from=paste&height=51&id=u66b02441&margin=%5Bobject%20Object%5D&name=&originHeight=102&originWidth=573&originalType=binary&ratio=1&size=55574&status=done&style=none&taskId=uf0111ee4-cb85-49b3-ba03-485639cd997&width=286.5"><br>@Component注解表示该类是一个组件类<br>​</p>
+<h3 id="自动配置"><a href="#自动配置" class="headerlink" title="自动配置"></a>自动配置</h3><p>SpringBoot启动默认加载所有的自动配置项，按照条件装配最终会被按需加载<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1630132928220-0f42cc99-ab93-48f2-a013-7dfb7d6951c4.png#clientId=uc2d51021-934b-4&from=paste&height=159&id=u525869c2&margin=%5Bobject%20Object%5D&name=&originHeight=318&originWidth=1079&originalType=binary&ratio=1&size=189217&status=done&style=none&taskId=u7a1a2575-3299-40b7-b167-ccadc0aa133&width=539.5"></p>
+<h2 id="2-开发小技巧"><a href="#2-开发小技巧" class="headerlink" title="2.开发小技巧"></a>2.开发小技巧</h2><h3 id="1-Lombok"><a href="#1-Lombok" class="headerlink" title="1 Lombok"></a>1 Lombok</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;org.projectlombok&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;lombok&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">@NoArgsConstructor   //无参构造器</span><br><span class="line">@AllArgsConstructor  //所有成员变量的有参构造器，如需定制，可以自己手动编写代码</span><br><span class="line">@Data    //get、set方法</span><br><span class="line">@ToString   //toString方法</span><br><span class="line">@EqualsAndHashCode   //重写equals和hashcode</span><br><span class="line">public class User &#123;</span><br><span class="line"></span><br><span class="line">    private String name;</span><br><span class="line">    private Integer age;</span><br><span class="line"></span><br><span class="line">    private Pet pet;</span><br><span class="line"></span><br><span class="line">    public User(String name,Integer age)&#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>lombok还提供@Slf4j注解，用于日志打印。如果需要使用lombok，需要引入依赖</strong></p>
+<h3 id="2-dev-tools"><a href="#2-dev-tools" class="headerlink" title="2 dev-tools"></a>2 dev-tools</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">optional</span>&gt;</span>true<span class="tag">&lt;/<span class="name">optional</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>项目或者页面修改以后：Ctrl+F9；  跟shift+F9效果差不多，它的功能也是重启项目</p>
+<h1 id="核心功能"><a href="#核心功能" class="headerlink" title="核心功能"></a>核心功能</h1><h2 id="1-配置文件"><a href="#1-配置文件" class="headerlink" title="1.配置文件"></a>1.配置文件</h2><p>yaml配置文件，k v格式，k v之间必须要有空格<br>properties的优先级比yml高<br>\n    双引号会换行，单引号不会换行<br>maven的clean+package导出jar包，jar包是项目可执行的文件，java -jar启动</p>
+<h2 id="2-Web开发"><a href="#2-Web开发" class="headerlink" title="2.Web开发"></a>2.Web开发</h2><p>SpringBoot几乎提供了所有的自动配置</p>
+<h3 id="2-1-静态资源目录"><a href="#2-1-静态资源目录" class="headerlink" title="2.1 静态资源目录"></a>2.1 静态资源目录</h3><p>只要静态资源放在类路径下： called /static (or /public or /resources or /META-INF/resources<br>访问 ： 当前项目根路径/ + 静态资源名<br>​</p>
+<p>原理： 静态映射/**。<br>请求进来，先去找Controller看能不能处理。不能处理的所有请求又都交给静态资源处理器。静态资源也找不到则响应404页面<br>​</p>
+<p>改变默认的静态资源路径</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  mvc:</span><br><span class="line">    static-path-pattern: /res/**</span><br><span class="line">    </span><br><span class="line">	resources:</span><br><span class="line">    static-locations: [classpath:/haha/]</span><br></pre></td></tr></table></figure>
+
+
+<p>静态资源前缀的设置，会导致静态资源中index和favicon的失效</p>
+<h3 id="2-2-请求映射"><a href="#2-2-请求映射" class="headerlink" title="2.2 请求映射"></a>2.2 请求映射</h3><p>所有的请求映射都在HandlerMapping中。</p>
+<ul>
+<li>SpringBoot自动配置欢迎页的 WelcomePageHandlerMapping 。访问 /能访问到index.html；</li>
+<li>SpringBoot自动配置了默认 的 RequestMappingHandlerMapping</li>
+<li>请求进来，挨个尝试所有的HandlerMapping看是否有请求信息。<ul>
+<li>如果有就找到这个请求对应的handler</li>
+<li>如果没有就是下一个 HandlerMapping</li>
+</ul>
+</li>
+<li>我们需要一些自定义的映射处理，我们也可以自己给容器中放<strong>HandlerMapping</strong>。自定义 <strong>HandlerMapping</strong></li>
+</ul>
+<h3 id="2-3-请求处理"><a href="#2-3-请求处理" class="headerlink" title="2.3 请求处理"></a>2.3 请求处理</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631162277931-5807f1fe-3526-4d8a-b8a0-f6a31cfded35.png#clientId=ub5bbc323-b3fc-4&from=paste&height=446&id=ue9d44191&margin=%5Bobject%20Object%5D&name=&originHeight=446&originWidth=763&originalType=binary&ratio=1&size=47923&status=done&style=none&taskId=u45f79ebb-3158-4804-9e40-64ce100efb7&width=763"></p>
+<p>矩阵变量必须有url路径变量才能被解析<br>​</p>
+<p><strong>参数解析器的理解</strong></p>
+<h3 id="2-4-POJO的封装过程"><a href="#2-4-POJO的封装过程" class="headerlink" title="2.4 POJO的封装过程"></a>2.4 POJO的封装过程</h3><p><strong>数据绑定</strong><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631264667583-91f324de-f04e-420e-b0b4-39a85959146e.png#clientId=ue844cd9e-3703-4&from=paste&height=287&id=uac93d380&margin=%5Bobject%20Object%5D&name=&originHeight=287&originWidth=828&originalType=binary&ratio=1&size=158755&status=done&style=none&taskId=u8760807b-21c9-45aa-b622-e413838c849&width=828"></p>
+<h3 id="2-5-数据响应与内容协商"><a href="#2-5-数据响应与内容协商" class="headerlink" title="2.5 数据响应与内容协商"></a>2.5 数据响应与内容协商</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631265908773-3cb29740-fc3a-4fc4-b737-eed4d36ade88.png#clientId=ue844cd9e-3703-4&from=paste&height=274&id=ufb225947&margin=%5Bobject%20Object%5D&name=&originHeight=274&originWidth=432&originalType=binary&ratio=1&size=12612&status=done&style=none&taskId=uf802e7c9-5678-476f-b915-05303cd4193&width=432"></p>
+<h2 id="3-Thymeleaf"><a href="#3-Thymeleaf" class="headerlink" title="3.Thymeleaf"></a>3.Thymeleaf</h2><p>前端模板引擎，用于springboot的前后端不分离项目<br>​</p>
+<p>后端向前端html传递数据，可以把数据放在HttpSession和Model对象中<br>session存在服务器，cookie存在客户端<br>​</p>
+<p>用户是否登录使用拦截器的解决方案<br>​</p>
+<p>创建list的user对象的方法：<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631503799043-5a49aaf3-29ac-49e2-8cd3-d52090fc2630.png#clientId=uc718f90e-1fb8-4&from=paste&height=316&id=ud1608871&margin=%5Bobject%20Object%5D&name=&originHeight=316&originWidth=1137&originalType=binary&ratio=1&size=291163&status=done&style=none&taskId=u8d28f38e-d4d1-4c62-83d6-096d7396a28&width=1137"></p>
+<h2 id="4-拦截器"><a href="#4-拦截器" class="headerlink" title="4.拦截器"></a>4.拦截器</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631669770552-88c6e8c3-ffc2-4ef1-869e-c9f3b27d3e34.png#clientId=udec2cb0c-a3fa-4&from=paste&height=91&id=u8335d798&margin=%5Bobject%20Object%5D&name=&originHeight=91&originWidth=778&originalType=binary&ratio=1&size=121894&status=done&style=none&taskId=u2d8340c1-6352-4b96-bba1-22131b6c82b&width=778"></p>
+<p>写完拦截器后，还要写一个配置类<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631669639670-27b30153-6108-44ff-88e4-705ffce27db2.png#clientId=udec2cb0c-a3fa-4&from=paste&height=290&id=u3147febf&margin=%5Bobject%20Object%5D&name=&originHeight=290&originWidth=1345&originalType=binary&ratio=1&size=272546&status=done&style=none&taskId=ua1e4fbb4-b598-494e-b092-f952529268a&width=1345"></p>
+<p>log日志打印用大括号{}，后面可以传参数到大括号中<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631670617684-71515619-2885-4226-acca-297093ae490d.png#clientId=udec2cb0c-a3fa-4&from=paste&height=529&id=uad28c216&margin=%5Bobject%20Object%5D&name=&originHeight=529&originWidth=1167&originalType=binary&ratio=1&size=257366&status=done&style=none&taskId=u030bcad3-af47-4dc4-9a23-3dd7b17b0a9&width=1167"><br>​</p>
+<h2 id="5-文件上传"><a href="#5-文件上传" class="headerlink" title="5.文件上传"></a>5.文件上传</h2><p>使用@RequestPart注解<br>文件上传API <strong>Multipart</strong>接口可以在配置文件中设置单个文件上传大小、整体文件上传大小<br>一般设置单个文件上传大小为10M<br>​</p>
+<h2 id="6-异常处理"><a href="#6-异常处理" class="headerlink" title="6.异常处理"></a>6.异常处理</h2><p>前端需要设置404、5xx错误跳转页面。后端编写全局异常处理跳转代码</p>
+<p>异常处理自动配置ErrorMvcAutoConfiguration<br>​</p>
+<h2 id="7-Web原生组件注入-Servlet、Filter、Listener"><a href="#7-Web原生组件注入-Servlet、Filter、Listener" class="headerlink" title="7.Web原生组件注入(Servlet、Filter、Listener)"></a>7.Web原生组件注入(Servlet、Filter、Listener)</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631685881305-ea779be7-bfba-4d63-bb09-a2dda5780519.png#clientId=udec2cb0c-a3fa-4&from=paste&height=402&id=udfbefec0&margin=%5Bobject%20Object%5D&name=&originHeight=402&originWidth=706&originalType=binary&ratio=1&size=40933&status=done&style=none&taskId=ud35374ff-ab7f-420c-a6d6-fa4a35da2eb&width=706"></p>
+<p>SpringBoot场景的正常运行得益于底层的自动配置</p>
+<p><strong>定制化原理</strong><br>如果接管SpringMVC，就要全面定义它底层的行为<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631686881524-49dbfa3a-481d-4e8c-a674-76442dbbda13.png#clientId=udec2cb0c-a3fa-4&from=paste&height=44&id=u597e4fbe&margin=%5Bobject%20Object%5D&name=&originHeight=44&originWidth=928&originalType=binary&ratio=1&size=64808&status=done&style=none&taskId=u868ed1bd-d40d-4762-9aa4-802c711b827&width=928"></p>
+<h2 id="8-数据访问"><a href="#8-数据访问" class="headerlink" title="8.数据访问"></a>8.数据访问</h2><h3 id="8-1-JDBCTempalte"><a href="#8-1-JDBCTempalte" class="headerlink" title="8.1 JDBCTempalte"></a>8.1 JDBCTempalte</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631687365008-3f821da9-ae1a-4bcc-9d18-b8a2741cdc4f.png#clientId=udec2cb0c-a3fa-4&from=paste&height=205&id=uc02ee31e&margin=%5Bobject%20Object%5D&name=&originHeight=205&originWidth=770&originalType=binary&ratio=1&size=14431&status=done&style=none&taskId=u4cbc34bb-c3bc-4603-84e0-b863eb15568&width=770"><br>数据库驱动？<br>为什么导入JDBC场景，官方不导入驱动？官方不知道我们接下要操作什么数据库。<br>数据库版本和驱动版本对应</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+
+<p>SpringBoot默认使用的是Hikari数据源，配置文件配置数据源的时候不用去配置，因为底层已经指定帮我们配好了。如果需要更换数据源，也可以进行配置<br>​</p>
+<p>使用JdbcTemplate模板引擎，就可以操作数据库了<br>​</p>
+<p><strong>使用某个中间件：首先要找starter，starter会把需要用到的组件都注入到容器中，我们只需要进行一些配置，就可以使用这些中间件了</strong></p>
+<p>目前比较流行的数据源是Hikari和Druid<br>​</p>
+<p><strong>​</strong></p>
+<p><strong>自定义整合Druid数据源：</strong><br>Druid提供内置监控页的功能，在配置文件中配置即可查看页面<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631691102372-6a7dbc49-3d11-4a20-b2a8-c2f23e60a638.png#clientId=udec2cb0c-a3fa-4&from=paste&height=331&id=u07649a35&margin=%5Bobject%20Object%5D&name=&originHeight=331&originWidth=1059&originalType=binary&ratio=1&size=230828&status=done&style=none&taskId=ubaf7fad5-1403-42ee-8789-ff915cedeb5&width=1059"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631691580980-9f05619d-cc27-4321-9b09-e3c6daebab1c.png#clientId=udec2cb0c-a3fa-4&from=paste&height=361&id=u793f1485&margin=%5Bobject%20Object%5D&name=&originHeight=361&originWidth=1032&originalType=binary&ratio=1&size=358430&status=done&style=none&taskId=uf4099a81-7596-4c60-a4ce-2dfc7e5e6a4&width=1032"><br>Arrays.asList()  创建一个集合<br>​</p>
+<p><strong>如果某个中间有starter启动类，就不用自己创建配置类进行配置了。所以用中间件之前，先引入starter，比如druid就有starter</strong><br><strong>​</strong></p>
+<p>druid的监控页可以配置账号密码<br>​</p>
+<h3 id="8-2-MyBatis"><a href="#8-2-MyBatis" class="headerlink" title="8.2 MyBatis"></a>8.2 MyBatis</h3><p>引入MyBatis的依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;com.baomidou&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;3.4.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>MyBatis开启驼峰命名规则，否则数据库带_的字段无法正常读取<br>mybatis-config.xml可以不写，配置直接写在application.properties中即可<br>mapper接口标注@Mapper注解<br>​</p>
+<p>sql语句可以用xml的方式，也可以用注解的方式<br>​</p>
+<h3 id="8-3-MyBatis-Plus"><a href="#8-3-MyBatis-Plus" class="headerlink" title="8.3 MyBatis Plus"></a>8.3 MyBatis Plus</h3><p>MyBatis-Plus（简称 MP）是一个 MyBatis 的增强工具，在 MyBatis 的基础上只做增强不做改变，为简化开发、提高效率而生。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">  &lt;groupId&gt;com.baomidou&lt;/groupId&gt;</span><br><span class="line">  &lt;artifactId&gt;mybatis-plus-boot-starter&lt;/artifactId&gt;</span><br><span class="line">  &lt;version&gt;3.4.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>mapper接口继承BaseMapper<T>，不用自己编写xml文件<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631696711988-4a74fe71-7e66-49b7-8c74-45fd449ad08f.png#clientId=udec2cb0c-a3fa-4&from=paste&height=243&id=ucaea7a0a&margin=%5Bobject%20Object%5D&name=&originHeight=243&originWidth=835&originalType=binary&ratio=1&size=172997&status=done&style=none&taskId=ue53d6fe1-1c7e-4a99-bb67-6a7956dd654&width=835"></p>
+<p>MyBatis Plus的pojo类示例：<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631696858682-0b336734-0072-40cf-b0cf-90deed01d10c.png#clientId=udec2cb0c-a3fa-4&from=paste&height=620&id=ub3a30d4c&margin=%5Bobject%20Object%5D&name=&originHeight=620&originWidth=460&originalType=binary&ratio=1&size=251786&status=done&style=none&taskId=ua6af1bb7-6373-4d80-8da6-5c04b519af1&width=460"><br>@TableField表示该字段不在数据库中<br>Service的实现类需要加@Service注解<br>​</p>
+<p>MyBatis Plus在mapper层和service层都进行了简化，提供了基础的方法，并且自己不用写xml文件<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631697133197-a037115e-9738-4162-8585-7c63a8b71859.png#clientId=udec2cb0c-a3fa-4&from=paste&height=68&id=u421fd858&margin=%5Bobject%20Object%5D&name=&originHeight=68&originWidth=757&originalType=binary&ratio=1&size=61403&status=done&style=none&taskId=u646ae702-5dea-4b36-80a4-2d52958cb00&width=757"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631697190080-6b3fbac1-090b-4a4c-b505-63e1d80fa741.png#clientId=udec2cb0c-a3fa-4&from=paste&height=174&id=ub6d32822&margin=%5Bobject%20Object%5D&name=&originHeight=174&originWidth=1211&originalType=binary&ratio=1&size=108140&status=done&style=none&taskId=u6872e4dc-ed52-41fc-90bf-5a401fc04f7&width=1211"><br>ctrl + F12可以查看类结构，由于继承了ServiceImpl，可以看到由MyBatis Plus已经实现的方法<br>​</p>
+<p>实现分页查询，创建Page对象，然后使用提供的分页查询方法。想要分页完成，需要整合分页插件<br>​</p>
+<p>MyBatis Plus结合Thymeleaf完成分页查询<br>​</p>
+<h3 id="8-4-Redis"><a href="#8-4-Redis" class="headerlink" title="8.4 Redis"></a>8.4 Redis</h3><p>redis-starter由官方整合，由官方整合的starter自动配置都在统一的一个包中可以进行查看<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631710788203-58f4a7e7-32b6-4059-8af5-1752f205cbfc.png#clientId=ubcae3f69-ac75-4&from=paste&id=u43acbe15&margin=%5Bobject%20Object%5D&name=&originHeight=245&originWidth=908&originalType=binary&ratio=1&size=84771&status=done&style=none&taskId=ube5b7741-3a62-47a2-a979-253605613f1"></p>
+<p>使用RedisTemplate即可操作Redis,对Redis中的数据进行增加、修改、删除等操作<br>​</p>
+<h2 id="9-单元测试"><a href="#9-单元测试" class="headerlink" title="9.单元测试"></a>9.单元测试</h2><p><strong>当前主要是JUnit5</strong>，相比于JUnit4使用起来更方便。SpringBoot2.4之后就不允许使用JUnit4了<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631715257345-0a10ee8a-15ae-45f8-b80c-02c288814b34.png#clientId=ubcae3f69-ac75-4&from=paste&id=u3959f422&margin=%5Bobject%20Object%5D&name=&originHeight=199&originWidth=1047&originalType=binary&ratio=1&size=60953&status=done&style=none&taskId=ubba0656b-70b3-4ff9-ab29-aaacd8355cb"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631715345279-36880286-2501-46b5-822b-4954248134d2.png#clientId=ubcae3f69-ac75-4&from=paste&id=ue162f8f3&margin=%5Bobject%20Object%5D&name=&originHeight=204&originWidth=398&originalType=binary&ratio=1&size=34006&status=done&style=none&taskId=uc234bfe2-656c-4e10-98d9-3afe4d03de7"><br>以上这种单元测试使用起来非常方便<br>​</p>
+<p>JUnit5的相关注解：<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631716028871-cbc169cb-f865-4f22-99be-acd33b3969f7.png#clientId=ubcae3f69-ac75-4&from=paste&id=u71dff98b&margin=%5Bobject%20Object%5D&name=&originHeight=446&originWidth=1060&originalType=binary&ratio=1&size=189236&status=done&style=none&taskId=ue8e5a17e-158a-4d3d-9060-c7d6ba8cbbd"></p>
+<p><strong>断言机制</strong><br>不满足的断言会使测试条件失败</p>
+<p><strong>前制条件</strong><br>​</p>
+<p><strong>嵌套测试</strong><br>​</p>
+<p><strong>参数化测试</strong><br>使用不同的参数多次运行某个测试  @ValueSource<br>​</p>
+<h2 id="10-指标监控"><a href="#10-指标监控" class="headerlink" title="10.指标监控"></a>10.指标监控</h2><p>SpringBoot Actuator<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631718011444-e1dab13b-0d5b-4b56-8c18-dacf671f5e57.png#clientId=ubcae3f69-ac75-4&from=paste&id=u3954f3b5&margin=%5Bobject%20Object%5D&name=&originHeight=137&originWidth=762&originalType=binary&ratio=1&size=91721&status=done&style=none&taskId=u0737ed26-320c-4881-a68c-155f1d69c2c"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631718497581-94c74683-4b65-4bdc-99f3-66d94c872e91.png#clientId=ubcae3f69-ac75-4&from=paste&id=ubda37100&margin=%5Bobject%20Object%5D&name=&originHeight=163&originWidth=218&originalType=binary&ratio=1&size=15123&status=done&style=none&taskId=u43ee0b45-926b-4b66-8924-60ab4c0a165"><br><strong>整合SpringBoot Admin Server：开源的应用监控可视化项目</strong><br>可以用来查看应用的启动状态、内存占用、cpu使用率等</p>
+<h2 id="11-原理解析"><a href="#11-原理解析" class="headerlink" title="11.原理解析"></a>11.原理解析</h2><h3 id="11-1-Profile配置环境切换"><a href="#11-1-Profile配置环境切换" class="headerlink" title="11.1 Profile配置环境切换"></a>11.1 Profile配置环境切换</h3><p>从配置文件取值，@Value加冒号，冒号后面表示如果不到值，赋予一个默认值<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631719367531-9ef7fd53-47ab-46cf-a718-034e3c293842.png#clientId=ubcae3f69-ac75-4&from=paste&height=73&id=u86b1f00e&margin=%5Bobject%20Object%5D&name=&originHeight=145&originWidth=663&originalType=binary&ratio=1&size=57104&status=done&style=none&taskId=ud78e0e88-4291-4f29-a6c8-da731bf1ae5&width=331.5"><br>如果两个配置文件中有相同的配置，以指定环境的配置为主<br>​</p>
+<p>打包一般使用clean  install，install包含了package的功能<br>​</p>
+<h3 id="11-2-自定义starter"><a href="#11-2-自定义starter" class="headerlink" title="11.2 自定义starter"></a>11.2 自定义starter</h3><p>SpringBoot也可以自定义starter<br>​</p>
+<h3 id="11-3-SpringBoot启动过程"><a href="#11-3-SpringBoot启动过程" class="headerlink" title="11.3 SpringBoot启动过程"></a>11.3 SpringBoot启动过程</h3><ul>
+<li>创建 <strong>SpringApplication</strong><ul>
+<li>保存一些信息。</li>
+<li>判定当前应用的类型。ClassUtils。Servlet</li>
+<li><strong>bootstrappers：初始启动引导器（</strong>List<Bootstrapper>**）：去spring.factories文件中找 **org.springframework.boot.<strong>Bootstrapper</strong></li>
+<li>找 <strong>ApplicationContextInitializer</strong>；去<strong>spring.factories找 ApplicationContextInitializer</strong><ul>
+<li>List&lt;ApplicationContextInitializer&lt;?&gt;&gt; <strong>initializers</strong></li>
+</ul>
+</li>
+<li><strong>找 ApplicationListener  ；应用监听器。</strong>去<strong>spring.factories找 ApplicationListener</strong><ul>
+<li>List&lt;ApplicationListener&lt;?&gt;&gt; <strong>listeners</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>运行 <strong>SpringApplication</strong><ul>
+<li><strong>StopWatch</strong></li>
+<li><strong>记录应用的启动时间</strong></li>
+<li><strong>创建引导上下文（Context环境）createBootstrapContext()</strong><ul>
+<li>获取到所有之前的 **bootstrappers 挨个执行 **intitialize() 来完成对引导启动器上下文环境设置</li>
+</ul>
+</li>
+<li>让当前应用进入<strong>headless</strong>模式。<strong>java.awt.headless</strong></li>
+<li><strong>获取所有 RunListener（运行监听器）【为了方便所有Listener进行事件感知】</strong><ul>
+<li>getSpringFactoriesInstances 去<strong>spring.factories找 SpringApplicationRunListener</strong>. </li>
+</ul>
+</li>
+<li>遍历 <strong>SpringApplicationRunListener 调用 starting 方法；</strong><ul>
+<li><strong>相当于通知所有感兴趣系统正在启动过程的人，项目正在 starting。</strong></li>
+</ul>
+</li>
+<li>保存命令行参数；ApplicationArguments</li>
+<li>准备环境 prepareEnvironment（）;<ul>
+<li>返回或者创建基础环境信息对象。<strong>StandardServletEnvironment</strong></li>
+<li><strong>配置环境信息对象。</strong><ul>
+<li><strong>读取所有的配置源的配置属性值。</strong></li>
+</ul>
+</li>
+<li>绑定环境信息</li>
+<li>监听器调用 listener.environmentPrepared()；通知所有的监听器当前环境准备完成</li>
+</ul>
+</li>
+<li>创建IOC容器（createApplicationContext（））<ul>
+<li>根据项目类型（Servlet）创建容器，</li>
+<li>当前会创建 <strong>AnnotationConfigServletWebServerApplicationContext</strong></li>
+</ul>
+</li>
+<li>**准备ApplicationContext IOC容器的基本信息 **  <strong>prepareContext()</strong><ul>
+<li>保存环境信息</li>
+<li>IOC容器的后置处理流程。</li>
+<li>应用初始化器；applyInitializers；<ul>
+<li>遍历所有的 <strong>ApplicationContextInitializer 。调用 initialize.。来对ioc容器进行初始化扩展功能</strong></li>
+<li>遍历所有的 listener 调用 <strong>contextPrepared。EventPublishRunListenr；通知所有的监听器contextPrepared</strong></li>
+</ul>
+</li>
+<li><strong>所有的监听器 调用 contextLoaded。通知所有的监听器 contextLoaded；</strong></li>
+</ul>
+</li>
+<li><strong>刷新IOC容器。</strong>refreshContext<ul>
+<li>创建容器中的所有组件（Spring注解）</li>
+</ul>
+</li>
+<li>容器刷新完成后工作？afterRefresh</li>
+<li>所有监听 器 调用 listeners.<strong>started</strong>(context); <strong>通知所有的监听器 started</strong></li>
+<li><strong>调用所有runners；</strong>callRunners()<ul>
+<li><strong>获取容器中的</strong> **ApplicationRunner **</li>
+<li><strong>获取容器中的  CommandLineRunner</strong></li>
+<li><strong>合并所有runner并且按照@Order进行排序</strong></li>
+<li><strong>遍历所有的runner。调用 run 方法</strong></li>
+</ul>
+</li>
+<li><strong>如果以上有异常，</strong><ul>
+<li><strong>调用Listener 的 failed</strong></li>
+</ul>
+</li>
+<li>**调用所有监听器的 running 方法  **listeners.running(context); **通知所有的监听器 running **</li>
+<li><strong>running如果有问题。继续通知 failed 。调用所有 Listener 的 failed；通知所有的监听器 failed</strong></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/c7f5.html" rel="prev" title="计算机网络学习笔记">
+      <i class="fa fa-chevron-left"></i> 计算机网络学习笔记
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8"><span class="nav-text">基础入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-SpringBoot%E6%A6%82%E8%BF%B0"><span class="nav-text">1.SpringBoot概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringBoot%E4%BC%98%E7%82%B9"><span class="nav-text">SpringBoot优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E7%AE%A1%E7%90%86"><span class="nav-text">依赖管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E6%B7%BB%E5%8A%A0%E3%80%90%E5%BA%95%E5%B1%82%E6%B3%A8%E8%A7%A3%E3%80%91"><span class="nav-text">组件添加【底层注解】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E9%85%8D%E7%BD%AE"><span class="nav-text">自动配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%BC%80%E5%8F%91%E5%B0%8F%E6%8A%80%E5%B7%A7"><span class="nav-text">2.开发小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Lombok"><span class="nav-text">1 Lombok</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-dev-tools"><span class="nav-text">2 dev-tools</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E5%8A%9F%E8%83%BD"><span class="nav-text">核心功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-text">1.配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Web%E5%BC%80%E5%8F%91"><span class="nav-text">2.Web开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E7%9B%AE%E5%BD%95"><span class="nav-text">2.1 静态资源目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E8%AF%B7%E6%B1%82%E6%98%A0%E5%B0%84"><span class="nav-text">2.2 请求映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E8%AF%B7%E6%B1%82%E5%A4%84%E7%90%86"><span class="nav-text">2.3 请求处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-POJO%E7%9A%84%E5%B0%81%E8%A3%85%E8%BF%87%E7%A8%8B"><span class="nav-text">2.4 POJO的封装过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E6%95%B0%E6%8D%AE%E5%93%8D%E5%BA%94%E4%B8%8E%E5%86%85%E5%AE%B9%E5%8D%8F%E5%95%86"><span class="nav-text">2.5 数据响应与内容协商</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Thymeleaf"><span class="nav-text">3.Thymeleaf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%8B%A6%E6%88%AA%E5%99%A8"><span class="nav-text">4.拦截器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="nav-text">5.文件上传</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86"><span class="nav-text">6.异常处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Web%E5%8E%9F%E7%94%9F%E7%BB%84%E4%BB%B6%E6%B3%A8%E5%85%A5-Servlet%E3%80%81Filter%E3%80%81Listener"><span class="nav-text">7.Web原生组件注入(Servlet、Filter、Listener)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E6%95%B0%E6%8D%AE%E8%AE%BF%E9%97%AE"><span class="nav-text">8.数据访问</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-JDBCTempalte"><span class="nav-text">8.1 JDBCTempalte</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-MyBatis"><span class="nav-text">8.2 MyBatis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-3-MyBatis-Plus"><span class="nav-text">8.3 MyBatis Plus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-4-Redis"><span class="nav-text">8.4 Redis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95"><span class="nav-text">9.单元测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E6%8C%87%E6%A0%87%E7%9B%91%E6%8E%A7"><span class="nav-text">10.指标监控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%8E%9F%E7%90%86%E8%A7%A3%E6%9E%90"><span class="nav-text">11.原理解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-1-Profile%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E5%88%87%E6%8D%A2"><span class="nav-text">11.1 Profile配置环境切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-2-%E8%87%AA%E5%AE%9A%E4%B9%89starter"><span class="nav-text">11.2 自定义starter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-3-SpringBoot%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B"><span class="nav-text">11.3 SpringBoot启动过程</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yuumiy"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Yuumiy</p>
+  <div class="site-description" itemprop="description">coding就是生产力</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuumiy" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yuumiy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:115274737@qq.com" title="E-Mail → mailto:115274737@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://blog.csdn.net/qq_44752641" title="CSDN → https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_44752641" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuumiy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">22k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">20 分钟</span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/10/2021 12:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()",250);
+</script>
+
+<script async src="/js/busuanzi.pure.mini.js"></script>
+<span><br></span>	
+
+<span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+</span>
+<span>总访客&nbsp<span id="busuanzi_value_site_uv"></span>&nbsp人</span>
+    <span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+</span>
+    <span>总访问量&nbsp<span id="busuanzi_value_site_pv"></span>&nbsp次</span>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('/js/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'PuhblTYT44STCX6Edvpd76zF-gzGzoHsz',
+      appKey     : '43DKcrM2QNBca1Ww68fepMOV',
+      placeholder: "填写邮箱作者能够及时反馈，欢迎评论哦(๑•̀ㅂ•́)و✧",
+      avatar     : 'monsterid',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
