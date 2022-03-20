@@ -6,7 +6,7 @@
   <link href="https://yuumiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuumiy.github.io/"/>
-  <updated>2021-09-15T16:13:36.000Z</updated>
+  <updated>2022-03-20T04:22:06.000Z</updated>
   <id>https://yuumiy.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jdk8新特性学习笔记</title>
+    <link href="https://yuumiy.github.io/posts/f6d8.html"/>
+    <id>https://yuumiy.github.io/posts/f6d8.html</id>
+    <published>2022-03-20T04:22:06.000Z</published>
+    <updated>2022-03-20T04:22:06.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;jdk8新特性学习，视频来自&lt;a href=&quot;https://www.bilibili.com/video/BV1HV411W78K&quot;&gt;2021最新版JDK8新特性详解&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;​</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="jdk8新特性" scheme="https://yuumiy.github.io/tags/jdk8%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
+  </entry>
   
   <entry>
     <title>SpringBoot学习笔记</title>
