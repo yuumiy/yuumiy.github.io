@@ -6,7 +6,7 @@
   <link href="https://yuumiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuumiy.github.io/"/>
-  <updated>2022-03-20T04:22:06.000Z</updated>
+  <updated>2022-04-23T07:42:39.000Z</updated>
   <id>https://yuumiy.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>尚医通学习总结</title>
+    <link href="https://yuumiy.github.io/posts/943f.html"/>
+    <id>https://yuumiy.github.io/posts/943f.html</id>
+    <published>2022-04-23T07:42:39.000Z</published>
+    <updated>2022-04-23T07:42:39.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;尚医通学习总结&quot;&gt;&lt;a href=&quot;#尚医通学习总结&quot; class=&quot;headerlink&quot; title=&quot;尚医通学习总结&quot;&gt;&lt;/a&gt;尚医通学习总结&lt;/h1&gt;&lt;p&gt;尚医通完结撒花！&lt;/p&gt;
+&lt;p&gt;视频来自&lt;a href=&quot;https://www.bilibili.com/video/BV1V5411K7rT&quot;&gt;Java微服务+分布式+全栈项目【尚医通】&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="项目" scheme="https://yuumiy.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="尚医通" scheme="https://yuumiy.github.io/tags/%E5%B0%9A%E5%8C%BB%E9%80%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>jdk8新特性学习笔记</title>
