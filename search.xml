@@ -18,6 +18,132 @@
       </tags>
   </entry>
   <entry>
+    <title>尚医通学习总结</title>
+    <url>/posts/943f.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<h1 id="尚医通学习总结"><a href="#尚医通学习总结" class="headerlink" title="尚医通学习总结"></a>尚医通学习总结</h1><p>尚医通完结撒花！</p>
+<p>视频来自<a href="https://www.bilibili.com/video/BV1V5411K7rT">Java微服务+分布式+全栈项目【尚医通】</a></p>
+<span id="more"></span>
+
+<h2 id="1-项目总结"><a href="#1-项目总结" class="headerlink" title="1 项目总结"></a>1 项目总结</h2><h3 id="1-1-项目功能总结-后台管理系统"><a href="#1-1-项目功能总结-后台管理系统" class="headerlink" title="1.1 项目功能总结(后台管理系统)"></a>1.1 项目功能总结(后台管理系统)</h3><p>1、医院设置管理</p>
+<ul>
+<li><p>医院设置列表、添加、锁定、删除  </p>
+</li>
+<li><p>医院列表、详情、排班、下线     </p>
+</li>
+</ul>
+<p>2、数据管理</p>
+<ul>
+<li>数据字典树形显示、导入、导出 </li>
+</ul>
+<p>3、用户管理  </p>
+<ul>
+<li><p>用户列表、查看、锁定  </p>
+</li>
+<li><p>认证用户审批 </p>
+</li>
+</ul>
+<p>4、订单管理  </p>
+<ul>
+<li>订单列表、详情     </li>
+</ul>
+<p>5、统计管理  </p>
+<ul>
+<li>预约统计  </li>
+</ul>
+<h3 id="1-2-项目功能总结-前台用户系统"><a href="#1-2-项目功能总结-前台用户系统" class="headerlink" title="1.2 项目功能总结(前台用户系统)"></a>1.2 项目功能总结(前台用户系统)</h3><p>1、首页数据显示</p>
+<ul>
+<li>医院列表</li>
+</ul>
+<p> 2、医院详情显示</p>
+<ul>
+<li>医院科室显示</li>
+</ul>
+<p> 3、用户登录功能</p>
+<ul>
+<li><p>手机号登录（短信验证码发送）</p>
+</li>
+<li><p>微信扫描登录</p>
+</li>
+</ul>
+<p>4、用户实名认证</p>
+<p>5、就诊人管理</p>
+<ul>
+<li>列表、添加、详情、删除</li>
+</ul>
+<p> 6、预约挂号功能</p>
+<ul>
+<li><p>排班和挂号详情信息</p>
+</li>
+<li><p>确认挂号信息</p>
+</li>
+<li><p>生成预约挂号订单</p>
+</li>
+<li><p>挂号订单支付（微信）</p>
+</li>
+<li><p>取消预约订单</p>
+</li>
+</ul>
+<p>7、就医提醒功能</p>
+<h3 id="1-3-项目技术点总结-后端技术"><a href="#1-3-项目技术点总结-后端技术" class="headerlink" title="1.3 项目技术点总结(后端技术)"></a>1.3 项目技术点总结(后端技术)</h3><p>1、SpringBoot</p>
+<p>2、SpringCloud</p>
+<ul>
+<li><p>Nacos注册中心</p>
+</li>
+<li><p>Feign</p>
+</li>
+<li><p>GateWay</p>
+</li>
+</ul>
+<p>3、Redis</p>
+<ul>
+<li><p>使用Redis作为缓存</p>
+</li>
+<li><p>验证码有效时间、支付二维码有效时间</p>
+</li>
+</ul>
+<p>4、MongoDB</p>
+<ul>
+<li>使用MongoDB存储 医院相关数据</li>
+</ul>
+<p>5、EasyExcel</p>
+<ul>
+<li>操作excel表格，进行读和写操作</li>
+</ul>
+<p>6、MyBatisPlus</p>
+<p>7、RabbitMQ</p>
+<ul>
+<li>订单相关操作，发送mq消息</li>
+</ul>
+<p>8、Docker</p>
+<ul>
+<li><p>下载镜像 docker pull </p>
+</li>
+<li><p>创建容器 docker run</p>
+</li>
+</ul>
+<p>9、阿里云OSS</p>
+<p>10、阿里云短信服务</p>
+<p>11、微信登录/支付</p>
+<p>12、定时任务</p>
+<h3 id="1-4-项目技术点总结-前端技术"><a href="#1-4-项目技术点总结-前端技术" class="headerlink" title="1.4 项目技术点总结(前端技术)"></a>1.4 项目技术点总结(前端技术)</h3><p>1、vue</p>
+<ul>
+<li>指令</li>
+</ul>
+<p>2、Element-ui</p>
+<p>3、nuxt</p>
+<p>4、npm </p>
+<p>5、ECharts</p>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>尚医通</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows和IDEA的常用快捷键</title>
     <url>/posts/bde9.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -267,132 +393,6 @@
         <tag>IDEA</tag>
         <tag>Windows</tag>
         <tag>快捷键</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>尚医通学习总结</title>
-    <url>/posts/943f.html</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-
-<h1 id="尚医通学习总结"><a href="#尚医通学习总结" class="headerlink" title="尚医通学习总结"></a>尚医通学习总结</h1><p>尚医通完结撒花！</p>
-<p>视频来自<a href="https://www.bilibili.com/video/BV1V5411K7rT">Java微服务+分布式+全栈项目【尚医通】</a></p>
-<span id="more"></span>
-
-<h2 id="1-项目总结"><a href="#1-项目总结" class="headerlink" title="1 项目总结"></a>1 项目总结</h2><h3 id="1-1-项目功能总结-后台管理系统"><a href="#1-1-项目功能总结-后台管理系统" class="headerlink" title="1.1 项目功能总结(后台管理系统)"></a>1.1 项目功能总结(后台管理系统)</h3><p>1、医院设置管理</p>
-<ul>
-<li><p>医院设置列表、添加、锁定、删除  </p>
-</li>
-<li><p>医院列表、详情、排班、下线     </p>
-</li>
-</ul>
-<p>2、数据管理</p>
-<ul>
-<li>数据字典树形显示、导入、导出 </li>
-</ul>
-<p>3、用户管理  </p>
-<ul>
-<li><p>用户列表、查看、锁定  </p>
-</li>
-<li><p>认证用户审批 </p>
-</li>
-</ul>
-<p>4、订单管理  </p>
-<ul>
-<li>订单列表、详情     </li>
-</ul>
-<p>5、统计管理  </p>
-<ul>
-<li>预约统计  </li>
-</ul>
-<h3 id="1-2-项目功能总结-前台用户系统"><a href="#1-2-项目功能总结-前台用户系统" class="headerlink" title="1.2 项目功能总结(前台用户系统)"></a>1.2 项目功能总结(前台用户系统)</h3><p>1、首页数据显示</p>
-<ul>
-<li>医院列表</li>
-</ul>
-<p> 2、医院详情显示</p>
-<ul>
-<li>医院科室显示</li>
-</ul>
-<p> 3、用户登录功能</p>
-<ul>
-<li><p>手机号登录（短信验证码发送）</p>
-</li>
-<li><p>微信扫描登录</p>
-</li>
-</ul>
-<p>4、用户实名认证</p>
-<p>5、就诊人管理</p>
-<ul>
-<li>列表、添加、详情、删除</li>
-</ul>
-<p> 6、预约挂号功能</p>
-<ul>
-<li><p>排班和挂号详情信息</p>
-</li>
-<li><p>确认挂号信息</p>
-</li>
-<li><p>生成预约挂号订单</p>
-</li>
-<li><p>挂号订单支付（微信）</p>
-</li>
-<li><p>取消预约订单</p>
-</li>
-</ul>
-<p>7、就医提醒功能</p>
-<h3 id="1-3-项目技术点总结-后端技术"><a href="#1-3-项目技术点总结-后端技术" class="headerlink" title="1.3 项目技术点总结(后端技术)"></a>1.3 项目技术点总结(后端技术)</h3><p>1、SpringBoot</p>
-<p>2、SpringCloud</p>
-<ul>
-<li><p>Nacos注册中心</p>
-</li>
-<li><p>Feign</p>
-</li>
-<li><p>GateWay</p>
-</li>
-</ul>
-<p>3、Redis</p>
-<ul>
-<li><p>使用Redis作为缓存</p>
-</li>
-<li><p>验证码有效时间、支付二维码有效时间</p>
-</li>
-</ul>
-<p>4、MongoDB</p>
-<ul>
-<li>使用MongoDB存储 医院相关数据</li>
-</ul>
-<p>5、EasyExcel</p>
-<ul>
-<li>操作excel表格，进行读和写操作</li>
-</ul>
-<p>6、MyBatisPlus</p>
-<p>7、RabbitMQ</p>
-<ul>
-<li>订单相关操作，发送mq消息</li>
-</ul>
-<p>8、Docker</p>
-<ul>
-<li><p>下载镜像 docker pull </p>
-</li>
-<li><p>创建容器 docker run</p>
-</li>
-</ul>
-<p>9、阿里云OSS</p>
-<p>10、阿里云短信服务</p>
-<p>11、微信登录/支付</p>
-<p>12、定时任务</p>
-<h3 id="1-4-项目技术点总结-前端技术"><a href="#1-4-项目技术点总结-前端技术" class="headerlink" title="1.4 项目技术点总结(前端技术)"></a>1.4 项目技术点总结(前端技术)</h3><p>1、vue</p>
-<ul>
-<li>指令</li>
-</ul>
-<p>2、Element-ui</p>
-<p>3、nuxt</p>
-<p>4、npm </p>
-<p>5、ECharts</p>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>尚医通</tag>
       </tags>
   </entry>
   <entry>
@@ -774,7 +774,7 @@
 <p>Lambda表达式使用时不关心接口名，抽象方法名。只关心抽象方法的参数列表和返回值类型 </p>
 <h3 id="二、接口新特性"><a href="#二、接口新特性" class="headerlink" title="二、接口新特性"></a>二、接口新特性</h3><p>1、默认方法 default void test()<br>接口中的抽象方法一定要重写，如果有默认方法存在。多个实现了接口的类，可以不重写默认方法<br>2、静态方法<br>直接通过接口类名调用</p>
 <p>3、两者的区别介绍<br><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647052456697-afd744e7-a8b6-45fa-a18f-1e93530a9166.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=103&id=u38de11f8&margin=%5Bobject%20Object%5D&name=image.png&originHeight=129&originWidth=798&originalType=binary&ratio=1&rotation=0&showTitle=false&size=95759&status=done&style=none&taskId=u515021a3-9317-4647-9937-89f30430d3e&title=&width=638.4" alt="image.png"> </p>
-<h3 id="三、函数式接口"><a href="#三、函数式接口" class="headerlink" title="三、函数式接口"></a>三、函数式接口</h3><p>1、函数式接口的由来<br>lambda表达式只关心入参和返回值类型，重写接口中的方法，lambda表达式相当于一个实现类<br>2、函数式接口介绍<br>String.valueOf   将其他类型转为String<br>Double.valueOf  将字符串转为Double<br>Arrays,sort()  对数组进行排序<br><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647055257602-a0197426-9c17-4a99-add2-ebfccc91d7d8.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=82&id=u5a076924&margin=%5Bobject%20Object%5D&name=image.png&originHeight=103&originWidth=725&originalType=binary&ratio=1&rotation=0&showTitle=false&size=42217&status=done&style=none&taskId=u75cbf198-88ef-4ec1-ab7b-975b6d25e89&title=&width=580" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647055306127-809a0863-58d9-4d67-8b50-08a4ff242434.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=113&id=u36c4a84a&margin=%5Bobject%20Object%5D&name=image.png&originHeight=141&originWidth=1176&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75678&status=done&style=none&taskId=uab77bf00-9f5d-4e85-9117-3af37cca920&title=&width=940.8" alt="image.png"><br> <img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647056563032-83df341e-e443-4516-a18c-1e8f9933e31a.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=553&id=ua57197a8&margin=%5Bobject%20Object%5D&name=image.png&originHeight=691&originWidth=590&originalType=binary&ratio=1&rotation=0&showTitle=false&size=139462&status=done&style=none&taskId=uf41cd682-b9f2-4f57-9aad-2269042a232&title=&width=472" alt="image.png"><br> <img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647056708846-37275818-55bc-4ef6-abdc-e3af6a33b73a.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=102&id=u2ac6c9a4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=128&originWidth=1214&originalType=binary&ratio=1&rotation=0&showTitle=false&size=68238&status=done&style=none&taskId=uc5a8dbd3-6bef-4f08-9532-226b7c61b32&title=&width=971.2" alt="image.png"></p>
+<h3 id="三、函数式接口"><a href="#三、函数式接口" class="headerlink" title="三、函数式接口"></a>三、函数式接口</h3><p>1、函数式接口的由来<br>lambda表达式只关心入参和返回值类型，重写接口中的方法，lambda表达式相当于一个实现类<br>2、函数式接口介绍<br>String.valueOf   将其他类型转为String<br>Double.valueOf  将字符串转为Double<br>Arrays.sort()  对数组进行排序<br><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647055257602-a0197426-9c17-4a99-add2-ebfccc91d7d8.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=82&id=u5a076924&margin=%5Bobject%20Object%5D&name=image.png&originHeight=103&originWidth=725&originalType=binary&ratio=1&rotation=0&showTitle=false&size=42217&status=done&style=none&taskId=u75cbf198-88ef-4ec1-ab7b-975b6d25e89&title=&width=580" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647055306127-809a0863-58d9-4d67-8b50-08a4ff242434.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=113&id=u36c4a84a&margin=%5Bobject%20Object%5D&name=image.png&originHeight=141&originWidth=1176&originalType=binary&ratio=1&rotation=0&showTitle=false&size=75678&status=done&style=none&taskId=uab77bf00-9f5d-4e85-9117-3af37cca920&title=&width=940.8" alt="image.png"><br> <img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647056563032-83df341e-e443-4516-a18c-1e8f9933e31a.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=553&id=ua57197a8&margin=%5Bobject%20Object%5D&name=image.png&originHeight=691&originWidth=590&originalType=binary&ratio=1&rotation=0&showTitle=false&size=139462&status=done&style=none&taskId=uf41cd682-b9f2-4f57-9aad-2269042a232&title=&width=472" alt="image.png"><br> <img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647056708846-37275818-55bc-4ef6-abdc-e3af6a33b73a.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=102&id=u2ac6c9a4&margin=%5Bobject%20Object%5D&name=image.png&originHeight=128&originWidth=1214&originalType=binary&ratio=1&rotation=0&showTitle=false&size=68238&status=done&style=none&taskId=uc5a8dbd3-6bef-4f08-9532-226b7c61b32&title=&width=971.2" alt="image.png"></p>
 <p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647062445281-051a04ab-63bd-44d6-9914-8101ae1656da.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=83&id=u93609191&margin=%5Bobject%20Object%5D&name=image.png&originHeight=104&originWidth=311&originalType=binary&ratio=1&rotation=0&showTitle=false&size=14571&status=done&style=none&taskId=u7de84a6c-a3a0-4007-b451-9ab5fa307a4&title=&width=248.8" alt="image.png"></p>
 <p>jdk提供了以上四种函数式接口，我们就不用自己再去写接口了</p>
 <h3 id="四、方法引用"><a href="#四、方法引用" class="headerlink" title="四、方法引用"></a>四、方法引用</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647068201968-98703cab-447c-45d0-890f-1655f13c5733.png#clientId=uaa1f0038-92a2-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=724&id=u53dde557&margin=%5Bobject%20Object%5D&name=image.png&originHeight=905&originWidth=1205&originalType=binary&ratio=1&rotation=0&showTitle=false&size=281748&status=done&style=none&taskId=ucfbe09bc-3cc5-49f2-aad8-2594d8fd6c3&title=&width=964" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1647077532053-eb2ec73a-5ebd-4d9a-a149-253f022a7805.png#clientId=u3d4aae83-b6ce-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=164&id=u50a8c6d0&margin=%5Bobject%20Object%5D&name=image.png&originHeight=205&originWidth=991&originalType=binary&ratio=1&rotation=0&showTitle=false&size=102734&status=done&style=none&taskId=ueebde7b7-f499-49b4-871b-6468765c809&title=&width=792.8" alt="image.png"><br>对象名::方法名<br>类名::静态方法名<br>类名::方法名<br>类名::构造器<br>数组::构造器</p>
