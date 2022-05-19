@@ -123,13 +123,6 @@
   </url>
   
   <url>
-    <loc>https://yuumiy.github.io/tags/SpringBoot/</loc>
-    <lastmod>2022-05-19</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yuumiy.github.io/tags/Github/</loc>
     <lastmod>2022-05-19</lastmod>
     <changefreq>daily</changefreq>
@@ -138,6 +131,13 @@
   
   <url>
     <loc>https://yuumiy.github.io/tags/Hexo/</loc>
+    <lastmod>2022-05-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuumiy.github.io/tags/SpringBoot/</loc>
     <lastmod>2022-05-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
