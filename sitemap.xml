@@ -95,13 +95,6 @@
   </url>
   
   <url>
-    <loc>https://yuumiy.github.io/tags/%E5%B0%9A%E5%8C%BB%E9%80%9A/</loc>
-    <lastmod>2022-07-04</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://yuumiy.github.io/tags/IDEA/</loc>
     <lastmod>2022-07-04</lastmod>
     <changefreq>daily</changefreq>
@@ -117,6 +110,13 @@
   
   <url>
     <loc>https://yuumiy.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2022-07-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://yuumiy.github.io/tags/%E5%B0%9A%E5%8C%BB%E9%80%9A/</loc>
     <lastmod>2022-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -167,14 +167,14 @@
   </url>
   
   <url>
-    <loc>https://yuumiy.github.io/categories/%E9%A1%B9%E7%9B%AE/</loc>
+    <loc>https://yuumiy.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2022-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://yuumiy.github.io/categories/%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://yuumiy.github.io/categories/%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2022-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
