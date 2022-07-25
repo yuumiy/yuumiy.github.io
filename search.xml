@@ -18,132 +18,6 @@
       </tags>
   </entry>
   <entry>
-    <title>尚医通学习总结</title>
-    <url>/posts/943f.html</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-
-<h1 id="尚医通学习总结"><a href="#尚医通学习总结" class="headerlink" title="尚医通学习总结"></a>尚医通学习总结</h1><p>尚医通完结撒花！</p>
-<p>视频来自<a href="https://www.bilibili.com/video/BV1V5411K7rT">Java微服务+分布式+全栈项目【尚医通】</a></p>
-<span id="more"></span>
-
-<h2 id="1-项目总结"><a href="#1-项目总结" class="headerlink" title="1 项目总结"></a>1 项目总结</h2><h3 id="1-1-项目功能总结-后台管理系统"><a href="#1-1-项目功能总结-后台管理系统" class="headerlink" title="1.1 项目功能总结(后台管理系统)"></a>1.1 项目功能总结(后台管理系统)</h3><p>1、医院设置管理</p>
-<ul>
-<li><p>医院设置列表、添加、锁定、删除  </p>
-</li>
-<li><p>医院列表、详情、排班、下线     </p>
-</li>
-</ul>
-<p>2、数据管理</p>
-<ul>
-<li>数据字典树形显示、导入、导出 </li>
-</ul>
-<p>3、用户管理  </p>
-<ul>
-<li><p>用户列表、查看、锁定  </p>
-</li>
-<li><p>认证用户审批 </p>
-</li>
-</ul>
-<p>4、订单管理  </p>
-<ul>
-<li>订单列表、详情     </li>
-</ul>
-<p>5、统计管理  </p>
-<ul>
-<li>预约统计  </li>
-</ul>
-<h3 id="1-2-项目功能总结-前台用户系统"><a href="#1-2-项目功能总结-前台用户系统" class="headerlink" title="1.2 项目功能总结(前台用户系统)"></a>1.2 项目功能总结(前台用户系统)</h3><p>1、首页数据显示</p>
-<ul>
-<li>医院列表</li>
-</ul>
-<p> 2、医院详情显示</p>
-<ul>
-<li>医院科室显示</li>
-</ul>
-<p> 3、用户登录功能</p>
-<ul>
-<li><p>手机号登录（短信验证码发送）</p>
-</li>
-<li><p>微信扫描登录</p>
-</li>
-</ul>
-<p>4、用户实名认证</p>
-<p>5、就诊人管理</p>
-<ul>
-<li>列表、添加、详情、删除</li>
-</ul>
-<p> 6、预约挂号功能</p>
-<ul>
-<li><p>排班和挂号详情信息</p>
-</li>
-<li><p>确认挂号信息</p>
-</li>
-<li><p>生成预约挂号订单</p>
-</li>
-<li><p>挂号订单支付（微信）</p>
-</li>
-<li><p>取消预约订单</p>
-</li>
-</ul>
-<p>7、就医提醒功能</p>
-<h3 id="1-3-项目技术点总结-后端技术"><a href="#1-3-项目技术点总结-后端技术" class="headerlink" title="1.3 项目技术点总结(后端技术)"></a>1.3 项目技术点总结(后端技术)</h3><p>1、SpringBoot</p>
-<p>2、SpringCloud</p>
-<ul>
-<li><p>Nacos注册中心</p>
-</li>
-<li><p>Feign</p>
-</li>
-<li><p>GateWay</p>
-</li>
-</ul>
-<p>3、Redis</p>
-<ul>
-<li><p>使用Redis作为缓存</p>
-</li>
-<li><p>验证码有效时间、支付二维码有效时间</p>
-</li>
-</ul>
-<p>4、MongoDB</p>
-<ul>
-<li>使用MongoDB存储 医院相关数据</li>
-</ul>
-<p>5、EasyExcel</p>
-<ul>
-<li>操作excel表格，进行读和写操作</li>
-</ul>
-<p>6、MyBatisPlus</p>
-<p>7、RabbitMQ</p>
-<ul>
-<li>订单相关操作，发送mq消息</li>
-</ul>
-<p>8、Docker</p>
-<ul>
-<li><p>下载镜像 docker pull </p>
-</li>
-<li><p>创建容器 docker run</p>
-</li>
-</ul>
-<p>9、阿里云OSS</p>
-<p>10、阿里云短信服务</p>
-<p>11、微信登录/支付</p>
-<p>12、定时任务</p>
-<h3 id="1-4-项目技术点总结-前端技术"><a href="#1-4-项目技术点总结-前端技术" class="headerlink" title="1.4 项目技术点总结(前端技术)"></a>1.4 项目技术点总结(前端技术)</h3><p>1、vue</p>
-<ul>
-<li>指令</li>
-</ul>
-<p>2、Element-ui</p>
-<p>3、nuxt</p>
-<p>4、npm </p>
-<p>5、ECharts</p>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>尚医通</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Windows和IDEA的常用快捷键</title>
     <url>/posts/bde9.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -393,6 +267,132 @@
         <tag>IDEA</tag>
         <tag>Windows</tag>
         <tag>快捷键</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>尚医通学习总结</title>
+    <url>/posts/943f.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<h1 id="尚医通学习总结"><a href="#尚医通学习总结" class="headerlink" title="尚医通学习总结"></a>尚医通学习总结</h1><p>尚医通完结撒花！</p>
+<p>视频来自<a href="https://www.bilibili.com/video/BV1V5411K7rT">Java微服务+分布式+全栈项目【尚医通】</a></p>
+<span id="more"></span>
+
+<h2 id="1-项目总结"><a href="#1-项目总结" class="headerlink" title="1 项目总结"></a>1 项目总结</h2><h3 id="1-1-项目功能总结-后台管理系统"><a href="#1-1-项目功能总结-后台管理系统" class="headerlink" title="1.1 项目功能总结(后台管理系统)"></a>1.1 项目功能总结(后台管理系统)</h3><p>1、医院设置管理</p>
+<ul>
+<li><p>医院设置列表、添加、锁定、删除  </p>
+</li>
+<li><p>医院列表、详情、排班、下线     </p>
+</li>
+</ul>
+<p>2、数据管理</p>
+<ul>
+<li>数据字典树形显示、导入、导出 </li>
+</ul>
+<p>3、用户管理  </p>
+<ul>
+<li><p>用户列表、查看、锁定  </p>
+</li>
+<li><p>认证用户审批 </p>
+</li>
+</ul>
+<p>4、订单管理  </p>
+<ul>
+<li>订单列表、详情     </li>
+</ul>
+<p>5、统计管理  </p>
+<ul>
+<li>预约统计  </li>
+</ul>
+<h3 id="1-2-项目功能总结-前台用户系统"><a href="#1-2-项目功能总结-前台用户系统" class="headerlink" title="1.2 项目功能总结(前台用户系统)"></a>1.2 项目功能总结(前台用户系统)</h3><p>1、首页数据显示</p>
+<ul>
+<li>医院列表</li>
+</ul>
+<p> 2、医院详情显示</p>
+<ul>
+<li>医院科室显示</li>
+</ul>
+<p> 3、用户登录功能</p>
+<ul>
+<li><p>手机号登录（短信验证码发送）</p>
+</li>
+<li><p>微信扫描登录</p>
+</li>
+</ul>
+<p>4、用户实名认证</p>
+<p>5、就诊人管理</p>
+<ul>
+<li>列表、添加、详情、删除</li>
+</ul>
+<p> 6、预约挂号功能</p>
+<ul>
+<li><p>排班和挂号详情信息</p>
+</li>
+<li><p>确认挂号信息</p>
+</li>
+<li><p>生成预约挂号订单</p>
+</li>
+<li><p>挂号订单支付（微信）</p>
+</li>
+<li><p>取消预约订单</p>
+</li>
+</ul>
+<p>7、就医提醒功能</p>
+<h3 id="1-3-项目技术点总结-后端技术"><a href="#1-3-项目技术点总结-后端技术" class="headerlink" title="1.3 项目技术点总结(后端技术)"></a>1.3 项目技术点总结(后端技术)</h3><p>1、SpringBoot</p>
+<p>2、SpringCloud</p>
+<ul>
+<li><p>Nacos注册中心</p>
+</li>
+<li><p>Feign</p>
+</li>
+<li><p>GateWay</p>
+</li>
+</ul>
+<p>3、Redis</p>
+<ul>
+<li><p>使用Redis作为缓存</p>
+</li>
+<li><p>验证码有效时间、支付二维码有效时间</p>
+</li>
+</ul>
+<p>4、MongoDB</p>
+<ul>
+<li>使用MongoDB存储 医院相关数据</li>
+</ul>
+<p>5、EasyExcel</p>
+<ul>
+<li>操作excel表格，进行读和写操作</li>
+</ul>
+<p>6、MyBatisPlus</p>
+<p>7、RabbitMQ</p>
+<ul>
+<li>订单相关操作，发送mq消息</li>
+</ul>
+<p>8、Docker</p>
+<ul>
+<li><p>下载镜像 docker pull </p>
+</li>
+<li><p>创建容器 docker run</p>
+</li>
+</ul>
+<p>9、阿里云OSS</p>
+<p>10、阿里云短信服务</p>
+<p>11、微信登录/支付</p>
+<p>12、定时任务</p>
+<h3 id="1-4-项目技术点总结-前端技术"><a href="#1-4-项目技术点总结-前端技术" class="headerlink" title="1.4 项目技术点总结(前端技术)"></a>1.4 项目技术点总结(前端技术)</h3><p>1、vue</p>
+<ul>
+<li>指令</li>
+</ul>
+<p>2、Element-ui</p>
+<p>3、nuxt</p>
+<p>4、npm </p>
+<p>5、ECharts</p>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>尚医通</tag>
       </tags>
   </entry>
   <entry>
