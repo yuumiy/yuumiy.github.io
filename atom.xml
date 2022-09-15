@@ -6,7 +6,7 @@
   <link href="https://yuumiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuumiy.github.io/"/>
-  <updated>2022-09-07T13:31:35.000Z</updated>
+  <updated>2022-09-15T15:43:49.000Z</updated>
   <id>https://yuumiy.github.io/</id>
   
   <author>
@@ -17,6 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>jdk9-17 新特性</title>
+    <link href="https://yuumiy.github.io/posts/c1f7.html"/>
+    <id>https://yuumiy.github.io/posts/c1f7.html</id>
+    <published>2022-09-15T15:43:49.000Z</published>
+    <updated>2022-09-15T15:43:49.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Java新特性介绍&quot;&gt;&lt;a href=&quot;#Java新特性介绍&quot; class=&quot;headerlink&quot; title=&quot;Java新特性介绍&quot;&gt;&lt;/a&gt;Java新特性介绍&lt;/h1&gt;&lt;p&gt;Java 8是Oracle 公司于 2014 年 3 月 18 日发布的，距离今天已经过了近十年的时间了，Java并没有就此止步，而是继续不断发展壮大，几乎每隔6个月，就会冒出一个新版本，最新的版本已经快要迭代到Java 20了，与Java 8相差了足足十来个版本，但是由于Java 8的稳定和生态完善（目前仍是LTS长期维护版本），依然有很多公司在坚持使用Java 8，不过随着SpringBoot 3.0的到来，现在强制要求使用Java 17版本（同样也是LTS长期维护版本），下一个Java版本的时代，或许已经临近了。&lt;/p&gt;
+&lt;p&gt;​</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="jdk新特性" scheme="https://yuumiy.github.io/tags/jdk%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
+  </entry>
+  
+  <entry>
     <title>谷粒商城学习总结</title>
     <link href="https://yuumiy.github.io/posts/7f37.html"/>
     <id>https://yuumiy.github.io/posts/7f37.html</id>
@@ -24,15 +46,11 @@
     <updated>2022-09-07T13:31:35.000Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 
-&lt;h1 id=&quot;谷粒商城学习总结&quot;&gt;&lt;a href=&quot;#谷粒商城学习总结&quot; class=&quot;headerlink&quot;</summary>
-        
-      
+&lt;h1 id=&quot;谷粒商城学习总结&quot;&gt;&lt;a href=&quot;#谷粒商城学习总结&quot; class=&quot;headerlink&quot; title=&quot;谷粒商城学习总结&quot;&gt;&lt;/a&gt;谷粒商城学习总结&lt;/h1&gt;&lt;p&gt;第一遍学习完结撒花，第一遍主要是熟悉整个项目背景。&lt;/p&gt;
+&lt;p&gt;第二遍打算结合视频独立完成，熟悉项目的整体设计、优秀业务代码的编写，并输出学习笔记。&lt;/p&gt;
+&lt;p&gt;​</summary>
     
     
     
@@ -66,7 +84,7 @@
   </entry>
   
   <entry>
-    <title>jdk8新特性学习笔记</title>
+    <title>jdk8新特性</title>
     <link href="https://yuumiy.github.io/posts/f6d8.html"/>
     <id>https://yuumiy.github.io/posts/f6d8.html</id>
     <published>2022-03-20T04:22:06.000Z</published>
@@ -85,7 +103,7 @@
     <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="jdk8新特性" scheme="https://yuumiy.github.io/tags/jdk8%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    <category term="jdk新特性" scheme="https://yuumiy.github.io/tags/jdk%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     
   </entry>
   
