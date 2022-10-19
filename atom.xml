@@ -6,7 +6,7 @@
   <link href="https://yuumiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuumiy.github.io/"/>
-  <updated>2022-09-28T14:50:19.000Z</updated>
+  <updated>2022-10-19T15:03:30.000Z</updated>
   <id>https://yuumiy.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>网络编程学习</title>
+    <link href="https://yuumiy.github.io/posts/3a8b.html"/>
+    <id>https://yuumiy.github.io/posts/3a8b.html</id>
+    <published>2022-10-19T15:03:30.000Z</published>
+    <updated>2022-10-19T15:03:30.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;网络编程学习&quot;&gt;&lt;a href=&quot;#网络编程学习&quot; class=&quot;headerlink&quot; title=&quot;网络编程学习&quot;&gt;&lt;/a&gt;网络编程学习&lt;/h1&gt;&lt;h1 id=&quot;NIO基础&quot;&gt;&lt;a href=&quot;#NIO基础&quot; class=&quot;headerlink&quot; title=&quot;NIO基础&quot;&gt;&lt;/a&gt;NIO基础&lt;/h1&gt;&lt;p&gt;在JavaSE的学习中，了解到如何使用IO进行数据传输，Java IO是阻塞的，如果在一次读写数据调用时数据还没有准备好，或者目前不可写，那么读写操作就会被阻塞直到数据准备好或目标可写为止。Java NIO则是非阻塞的，每一次数据读写调用都会立即返回，并将目前可读（或可写）的内容写入缓冲区或者从缓冲区中输出，即使当前没有可用数据，调用仍然会立即返回并且不对缓冲区做任何操作。&lt;/p&gt;
+&lt;p&gt;NIO框架是在JDK1.4推出的，它的出现就是为了解决传统IO的不足。&lt;/p&gt;
+&lt;p&gt;​</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="网络编程" scheme="https://yuumiy.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>并发编程学习</title>
