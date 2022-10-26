@@ -755,14 +755,6 @@
 <blockquote>
 <p>至此你的评论系统已经开启。</p>
 </blockquote>
-<h3 id="28、添加对表情符号的支持"><a href="#28、添加对表情符号的支持" class="headerlink" title="28、添加对表情符号的支持"></a>28、添加对表情符号的支持</h3><p>安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-filter-emoji</span><br></pre></td></tr></table></figure>
-
-<p>在站点配置文件添加：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 为博客添加emoji表情支持</span><br><span class="line">emoji:</span><br><span class="line">  enable: true</span><br><span class="line">  className: github-emoji</span><br><span class="line">  styles: </span><br><span class="line">  customEmojis: </span><br></pre></td></tr></table></figure>
-
-
-
 <h1 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h1><p>花了大概3个小时，终于把这篇『搭建自己的个人博客网站』完成。这篇文章是我第一篇真正意义上的博客，首先是用心去写，花了大量时间去思考内容和排版；其次，希望自己能保持写博客的好习惯，从今天起，能保持每个月4篇高质量博客的输出，毕竟好记性不如烂笔头，多去总结多去思考。<br>​</p>
 <p><strong>最后以维克托·雨果的话作为结束：</strong><br><strong>人的智慧掌握着三把钥匙，一把开启数字，一把开启字母，一把开启音符。知识、想象、幻想就在其中。</strong></p>
 ]]></content>
