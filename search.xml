@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/posts/3eeb.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><p>由Hexo Next搭建的博客网站，这是第一篇博客！</p>
+<p>文章将有以下分类：工具、技术、笔记、思考、生活、阅读</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>180天学习计划打卡</title>
+    <url>/posts/1b4c.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<h1 id="180天学习计划打卡"><a href="#180天学习计划打卡" class="headerlink" title="180天学习计划打卡"></a>180天学习计划打卡</h1><p>加油冲冲冲！！记录每天的学习时长</p>
+<span id="more"></span>
+
+<h3 id="day1-2024-1-13"><a href="#day1-2024-1-13" class="headerlink" title="day1 2024.1.13"></a>day1 2024.1.13</h3><p>学习时长：8h</p>
+]]></content>
+      <categories>
+        <category>打卡</category>
+      </categories>
+      <tags>
+        <tag>学习计划</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Windows和IDEA的常用快捷键</title>
     <url>/posts/bde9.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -376,23 +410,6 @@
       </categories>
       <tags>
         <tag>尚医通</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/3eeb.html</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-
-<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><p>由Hexo Next搭建的博客网站，这是第一篇博客！</p>
-<p>文章将有以下分类：工具、技术、笔记、思考、生活、阅读</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
