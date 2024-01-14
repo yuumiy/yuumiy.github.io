@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="NmvL2aBrGRwi3CzraBejtkwEbHmmH-7u73OJj3FMOoc">
+  <meta name="msvalidate.01" content="5DB1ECD7406CD70A251CF96C939178B9">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuumiy.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="开始计算机组成原理的学习吧！！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机组成原理">
+<meta property="og:url" content="https://yuumiy.github.io/posts/cacd.html">
+<meta property="og:site_name" content="岛田悠米">
+<meta property="og:description" content="开始计算机组成原理的学习吧！！">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631781628372-040630b2-a641-409c-9ac0-21e83445b5e3.png#clientId=ud9f9782b-2e4f-4&from=paste&height=177&id=ua543fe92&originHeight=706&originWidth=1264&originalType=binary&ratio=1&size=269372&status=done&style=none&taskId=u069bf526-87fd-4c29-b9f9-40b1aea24dd&width=316">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631782127621-346f7342-cffe-4baa-a4f1-ed7a6532735d.png#clientId=ud9f9782b-2e4f-4&from=paste&height=218&id=u1ddcb29d&originHeight=872&originWidth=1201&originalType=binary&ratio=1&size=415716&status=done&style=none&taskId=uab33536c-a790-43db-8e94-25f012dc442&width=300">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631782474528-7b067055-ac71-4b99-a5f0-21978425f5e6.png#clientId=ud9f9782b-2e4f-4&from=paste&height=199&id=uf4f391db&originHeight=795&originWidth=1020&originalType=binary&ratio=1&size=285921&status=done&style=none&taskId=u6cc4de53-a395-480c-b91b-2ec16aa8cdc&width=255">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631784125782-e2de40cd-c269-44c2-9932-b7d23f20d536.png#clientId=ud9f9782b-2e4f-4&from=paste&height=156&id=u6d9b2355&originHeight=624&originWidth=1245&originalType=binary&ratio=1&size=254712&status=done&style=none&taskId=ueaa803a8-0bef-4bc3-84ee-784dcb22b95&width=311">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631784248047-44113d2b-60f3-419a-ba62-32eff68c9581.png#clientId=ud9f9782b-2e4f-4&from=paste&height=123&id=ue8843a6f&originHeight=492&originWidth=1001&originalType=binary&ratio=1&size=151418&status=done&style=none&taskId=ue6e61c89-8a60-44aa-ae27-2af221bdf2e&width=250">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631871272938-04d4e94f-99f8-4bfe-9d20-5168bc751628.png#clientId=ub55dff59-a647-4&from=paste&height=208&id=u6423c1c2&originHeight=834&originWidth=1089&originalType=binary&ratio=1&size=342974&status=done&style=none&taskId=u8596467e-3e1d-4886-910f-a148bb23bbe&width=272">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631878090710-3fe8ff89-e17d-497a-a57a-7d9a88428b37.png#clientId=ub55dff59-a647-4&from=paste&height=316&id=ucd75eed1&originHeight=631&originWidth=813&originalType=binary&ratio=1&size=218782&status=done&style=none&taskId=u551584be-ac2e-4be1-965c-1985d2030de&width=407">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631879170915-27e38dcc-1aaa-4855-97a9-8d6ffad2a087.png#clientId=ub55dff59-a647-4&from=paste&height=198&id=u0fc65788&originHeight=791&originWidth=1315&originalType=binary&ratio=1&size=378781&status=done&style=none&taskId=ue72b0dbb-58fb-4b09-bf92-76f7ac6b39a&width=329">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631879767178-f904c1c3-33e4-4b47-9ccb-46306e9f2b76.png#clientId=ub55dff59-a647-4&from=paste&height=230&id=uf64b0a6f&originHeight=918&originWidth=1270&originalType=binary&ratio=1&size=396766&status=done&style=none&taskId=udea35bad-07ad-44d0-8518-267a9e9a29e&width=318">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711055263-ab6a534b-4fb5-4a51-b757-71c0e7ba763c.png#clientId=ue76f7e77-16dc-4&from=paste&height=199&id=ufd7e11ef&originHeight=795&originWidth=1311&originalType=binary&ratio=1&size=432548&status=done&style=none&taskId=ue55022b3-5d18-4dab-8ed0-ae8649e2307&width=328">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711077133-65b357d8-8ee9-4363-83d8-be0bb8b7cd4d.png#clientId=ue76f7e77-16dc-4&from=paste&height=203&id=ud7acb09a&originHeight=810&originWidth=1222&originalType=binary&ratio=1&size=398435&status=done&style=none&taskId=u60b486a6-2d4c-462e-b87a-411c80f2e23&width=306">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711138932-7465ae7b-805c-4952-b845-13fe82ef7ba3.png#clientId=ue76f7e77-16dc-4&from=paste&height=223&id=uae8f5c90&originHeight=893&originWidth=1367&originalType=binary&ratio=1&size=450614&status=done&style=none&taskId=u9e14de44-b9ed-4af2-9cff-ae27bb508ab&width=342">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711315052-eb11dc4e-3bf6-454e-8157-bc842ca14ec5.png#clientId=ue76f7e77-16dc-4&from=paste&height=154&id=uc61c11d7&originHeight=615&originWidth=1260&originalType=binary&ratio=1&size=371277&status=done&style=none&taskId=u6d1f6935-89fc-4311-a2c8-c32088f07af&width=315">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711326251-cd47f6cc-f007-4ed7-9e88-3ad9050bfe1e.png#clientId=ue76f7e77-16dc-4&from=paste&height=112&id=u7f011754&originHeight=450&originWidth=1145&originalType=binary&ratio=1&size=246611&status=done&style=none&taskId=u55a91a98-d053-47ae-9745-eb9104101c9&width=286">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712294289-ca079b1b-65e7-4a36-b7cb-43cbc043be27.png#clientId=ue76f7e77-16dc-4&from=paste&height=229&id=u65fc0a7c&originHeight=914&originWidth=1239&originalType=binary&ratio=1&size=459354&status=done&style=none&taskId=ua704759e-30d0-435a-9740-19c463b3bf4&width=310">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712356115-6744648f-4706-453f-850a-d375fc936544.png#clientId=ue76f7e77-16dc-4&from=paste&height=216&id=u2b60aae9&originHeight=862&originWidth=1290&originalType=binary&ratio=1&size=391398&status=done&style=none&taskId=u7dd6e294-731b-4283-9874-3fbe4fcc5e4&width=323">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712889062-e54908c5-11e3-4def-9618-9b2d1057a462.png#clientId=ue76f7e77-16dc-4&from=paste&height=164&id=u3d4d7918&originHeight=328&originWidth=1060&originalType=binary&ratio=1&size=102475&status=done&style=none&taskId=ubec23bf7-b9a5-4a8b-a505-16761dc572b&width=530">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712915997-d312af1c-479f-4869-a1f8-92520a226192.png#clientId=ue76f7e77-16dc-4&from=paste&height=226&id=ud027ba07&originHeight=904&originWidth=1336&originalType=binary&ratio=1&size=339982&status=done&style=none&taskId=ue0eb66c4-bff5-4fb4-925b-16474df5486&width=334">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632726635511-d797dda8-c790-4195-8a41-baba879bc9f1.png#clientId=u2678fa93-e947-4&from=paste&height=197&id=u7be49d8e&originHeight=789&originWidth=1332&originalType=binary&ratio=1&size=425984&status=done&style=none&taskId=u986c044d-e339-41f0-89d8-db2db5b4999&width=333">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632737579318-6f145ad3-b616-4c25-937c-99a672853345.png#clientId=u2678fa93-e947-4&from=paste&height=226&id=u6ed9efa1&originHeight=905&originWidth=1216&originalType=binary&ratio=1&size=514309&status=done&style=none&taskId=u13450b1c-7c79-44d9-a9ab-372bc8bb853&width=304">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632737618221-1e28d638-2088-4e7a-b98c-2f4f6cf932e3.png#clientId=u2678fa93-e947-4&from=paste&height=172&id=u79340067&originHeight=687&originWidth=1120&originalType=binary&ratio=1&size=210945&status=done&style=none&taskId=u8fa9a04d-2950-4d29-9e04-35b62e7be92&width=280">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632738447925-99db606f-4be2-4fdb-989e-2d11e88a9a0c.png#clientId=u2678fa93-e947-4&from=paste&height=203&id=uf0bb2ea0&originHeight=813&originWidth=1099&originalType=binary&ratio=1&size=217313&status=done&style=none&taskId=ue2480d2a-ebeb-4b86-9ee6-bd20cdf1199&width=275">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632738401115-21f6ca51-0f83-4ffa-9b5e-00b5c6bb23b8.png#clientId=u2678fa93-e947-4&from=paste&height=186&id=uf16992d2&originHeight=743&originWidth=1353&originalType=binary&ratio=1&size=331943&status=done&style=none&taskId=ucb7623b0-7cb6-433f-9e81-11d9c5cbf73&width=338">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632797639839-2ee08861-acbc-42b3-a3c1-7d93d5e7948d.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=239&id=u8f5d58ae&originHeight=957&originWidth=1353&originalType=binary&ratio=1&size=445559&status=done&style=none&taskId=u4b6de69e-899f-413f-8426-4b9006201bd&width=338">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632823553558-e9fc6dac-7620-4651-93f9-268ffcbc5046.png#clientId=u2173fce3-fd34-4&from=paste&height=113&id=u3c32272e&originHeight=452&originWidth=800&originalType=binary&ratio=1&size=107642&status=done&style=none&taskId=ufb904efe-7bc3-4168-ac36-3541fed4664&width=200">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632823619887-2102d53d-7400-4a6c-8e97-b549abb252b5.png#clientId=u2173fce3-fd34-4&from=paste&height=196&id=u8a7bee1c&originHeight=782&originWidth=1195&originalType=binary&ratio=1&size=198840&status=done&style=none&taskId=uec3f8809-fd23-4ed1-926b-827c77cd00e&width=299">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632825435197-330630c7-0fb7-402f-bc4a-d412d4088ca1.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=190&id=u925d63ee&originHeight=759&originWidth=1354&originalType=binary&ratio=1&size=350513&status=done&style=none&taskId=u993886fa-b085-4b7b-97ab-d720e2ac444&width=339">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632826748753-5480df6f-e980-4291-b635-16e06bb904e9.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=250&id=ueaae7f39&originHeight=999&originWidth=1106&originalType=binary&ratio=1&size=247202&status=done&style=none&taskId=u377ff34b-5fd4-4e2a-b8f5-306785e625c&width=277">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632828037967-647d62ed-4c50-45be-a905-e79f58e5c5d5.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=252&id=u40ae86e5&originHeight=1007&originWidth=1384&originalType=binary&ratio=1&size=479381&status=done&style=none&taskId=u94b0f280-64fd-4cdc-a3ea-c3afe50e5a5&width=346">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632989882476-04cab272-e994-46a7-901a-79a7f90cb0bc.png#clientId=uf5d5275e-3279-4&from=paste&height=243&id=u650c8f83&originHeight=970&originWidth=1306&originalType=binary&ratio=1&size=366437&status=done&style=none&taskId=ub121fdd6-a49b-4970-aa1c-a37979e079c&width=327">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632991300733-2013a8a1-781b-445e-9532-532c861f8821.png#clientId=uf5d5275e-3279-4&from=paste&height=184&id=ufd6be6e3&originHeight=733&originWidth=810&originalType=binary&ratio=1&size=277552&status=done&style=none&taskId=u87658f23-fd83-4deb-a3da-ab6d8c47117&width=203">
+<meta property="article:published_time" content="2024-01-14T02:18:08.000Z">
+<meta property="article:modified_time" content="2024-01-14T02:18:08.000Z">
+<meta property="article:author" content="Yuumiy">
+<meta property="article:tag" content="计算机组成原理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631781628372-040630b2-a641-409c-9ac0-21e83445b5e3.png#clientId=ud9f9782b-2e4f-4&from=paste&height=177&id=ua543fe92&originHeight=706&originWidth=1264&originalType=binary&ratio=1&size=269372&status=done&style=none&taskId=u069bf526-87fd-4c29-b9f9-40b1aea24dd&width=316">
+
+<link rel="canonical" href="https://yuumiy.github.io/posts/cacd.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机组成原理 | 岛田悠米</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="岛田悠米" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">岛田悠米</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">心中有梦 不负韶华</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yuumiy.github.io/posts/cacd.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Yuumiy">
+      <meta itemprop="description" content="coding就是生产力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="岛田悠米">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机组成原理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-01-14 10:18:08" itemprop="dateCreated datePublished" datetime="2024-01-14T10:18:08+08:00">2024-01-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/cacd.html" class="post-meta-item leancloud_visitors" data-flag-title="计算机组成原理" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论次数：</span>
+    
+    <a title="valine" href="/posts/cacd.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/cacd.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer" />
+
+<p>开始计算机组成原理的学习吧！！</p>
+<span id="more"></span>
+
+<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h2 id="1-计算机系统简介"><a href="#1-计算机系统简介" class="headerlink" title="1.计算机系统简介"></a>1.计算机系统简介</h2><p>HPC：高性能计算机群<br>计算机由硬件和软件组成<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631781628372-040630b2-a641-409c-9ac0-21e83445b5e3.png#clientId=ud9f9782b-2e4f-4&from=paste&height=177&id=ua543fe92&originHeight=706&originWidth=1264&originalType=binary&ratio=1&size=269372&status=done&style=none&taskId=u069bf526-87fd-4c29-b9f9-40b1aea24dd&width=316" alt="image.png"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631782127621-346f7342-cffe-4baa-a4f1-ed7a6532735d.png#clientId=ud9f9782b-2e4f-4&from=paste&height=218&id=u1ddcb29d&originHeight=872&originWidth=1201&originalType=binary&ratio=1&size=415716&status=done&style=none&taskId=uab33536c-a790-43db-8e94-25f012dc442&width=300" alt="image.png"></p>
+<h2 id="2-计算机的基本组成"><a href="#2-计算机的基本组成" class="headerlink" title="2.计算机的基本组成"></a>2.计算机的基本组成</h2><h3 id="2-1-冯·诺依曼计算机"><a href="#2-1-冯·诺依曼计算机" class="headerlink" title="2.1 冯·诺依曼计算机"></a>2.1 冯·诺依曼计算机</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631782474528-7b067055-ac71-4b99-a5f0-21978425f5e6.png#clientId=ud9f9782b-2e4f-4&from=paste&height=199&id=uf4f391db&originHeight=795&originWidth=1020&originalType=binary&ratio=1&size=285921&status=done&style=none&taskId=u6cc4de53-a395-480c-b91b-2ec16aa8cdc&width=255" alt="image.png"><br>五大组成部件是控制器、运算器、存储器、输入设备、输出设备<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631784125782-e2de40cd-c269-44c2-9932-b7d23f20d536.png#clientId=ud9f9782b-2e4f-4&from=paste&height=156&id=u6d9b2355&originHeight=624&originWidth=1245&originalType=binary&ratio=1&size=254712&status=done&style=none&taskId=ueaa803a8-0bef-4bc3-84ee-784dcb22b95&width=311" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631784248047-44113d2b-60f3-419a-ba62-32eff68c9581.png#clientId=ud9f9782b-2e4f-4&from=paste&height=123&id=ue8843a6f&originHeight=492&originWidth=1001&originalType=binary&ratio=1&size=151418&status=done&style=none&taskId=ue6e61c89-8a60-44aa-ae27-2af221bdf2e&width=250" alt="image.png"></p>
+<h3 id="2-2-计算机的基本组成"><a href="#2-2-计算机的基本组成" class="headerlink" title="2.2 计算机的基本组成"></a>2.2 计算机的基本组成</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631871272938-04d4e94f-99f8-4bfe-9d20-5168bc751628.png#clientId=ub55dff59-a647-4&from=paste&height=208&id=u6423c1c2&originHeight=834&originWidth=1089&originalType=binary&ratio=1&size=342974&status=done&style=none&taskId=u8596467e-3e1d-4886-910f-a148bb23bbe&width=272" alt="image.png"><br>第二种方式运算速度更快<br>指令和数据都是存在存储器中的</p>
+<h4 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h4><p>存储体由许多存储单元组成，每个存储单元又包含若干个存储元件，每个存储元件可以寄存一位二进制代码0/1。</p>
+<p>对于其组成我们可以这样来记忆：<br>存储体呢，相当于一栋大楼，大楼内有很多房间（存储单元），每个房间内又有很多床位（存储元件），那么0代表床上无人，1代表床上有人。</p>
+<p>存储单元<br>以8位二进制作为一个存储单元，也就是一个字节。<br>一个存储单元可以存储一串二进制代码，称这串二进制代码为一个存储字，代码位数位存储字长。<br>存储单元有编号，这些编号称为存储单元的地址号。存储单元按地址寻访。这些地址都是二进制的形式。</p>
+<h4 id="运算器"><a href="#运算器" class="headerlink" title="运算器"></a>运算器</h4><p>计算机中执行各种算术和逻辑运算操作的部件。运算器的基本操作包括加、减、乘、除四则运算，与、或、非、异或等逻辑操作，以及移位、比较和传送等操作，亦称算术逻辑部件</p>
+<h4 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h4><p>功能：解释指令、保证指令的按序执行<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631878090710-3fe8ff89-e17d-497a-a57a-7d9a88428b37.png#clientId=ub55dff59-a647-4&from=paste&height=316&id=ucd75eed1&originHeight=631&originWidth=813&originalType=binary&ratio=1&size=218782&status=done&style=none&taskId=u551584be-ac2e-4be1-965c-1985d2030de&width=407" alt="image.png"><br>取指令：把指令的地址从存储体中取出来<br>分析指令：存放当前欲执行的指令<br>执行指令CU</p>
+<h2 id="3-计算机硬件的主要技术指标"><a href="#3-计算机硬件的主要技术指标" class="headerlink" title="3.计算机硬件的主要技术指标"></a>3.计算机硬件的主要技术指标</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631879170915-27e38dcc-1aaa-4855-97a9-8d6ffad2a087.png#clientId=ub55dff59-a647-4&from=paste&height=198&id=u0fc65788&originHeight=791&originWidth=1315&originalType=binary&ratio=1&size=378781&status=done&style=none&taskId=ue72b0dbb-58fb-4b09-bf92-76f7ac6b39a&width=329" alt="image.png"></p>
+<h2 id="4-计算机的发展史"><a href="#4-计算机的发展史" class="headerlink" title="4.计算机的发展史"></a>4.计算机的发展史</h2><p> 现在计算机产生的驱动力是需求<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631879767178-f904c1c3-33e4-4b47-9ccb-46306e9f2b76.png#clientId=ub55dff59-a647-4&from=paste&height=230&id=uf64b0a6f&originHeight=918&originWidth=1270&originalType=binary&ratio=1&size=396766&status=done&style=none&taskId=udea35bad-07ad-44d0-8518-267a9e9a29e&width=318" alt="image.png"><br>64位系统处理数据的效率比32位高</p>
+<p>处理器的性能每隔两年翻一倍</p>
+<p>机器语言–&gt;汇编语言–&gt;高级语言</p>
+<h1 id="系统总线"><a href="#系统总线" class="headerlink" title="系统总线"></a>系统总线</h1><p>总线是连接各个部件的信息传输线，是各个部件<strong>共享的传输介质</strong></p>
+<h2 id="1-总线的结构"><a href="#1-总线的结构" class="headerlink" title="1.总线的结构"></a>1.总线的结构</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711055263-ab6a534b-4fb5-4a51-b757-71c0e7ba763c.png#clientId=ue76f7e77-16dc-4&from=paste&height=199&id=ufd7e11ef&originHeight=795&originWidth=1311&originalType=binary&ratio=1&size=432548&status=done&style=none&taskId=ue55022b3-5d18-4dab-8ed0-ae8649e2307&width=328" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711077133-65b357d8-8ee9-4363-83d8-be0bb8b7cd4d.png#clientId=ue76f7e77-16dc-4&from=paste&height=203&id=ud7acb09a&originHeight=810&originWidth=1222&originalType=binary&ratio=1&size=398435&status=done&style=none&taskId=u60b486a6-2d4c-462e-b87a-411c80f2e23&width=306" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711138932-7465ae7b-805c-4952-b845-13fe82ef7ba3.png#clientId=ue76f7e77-16dc-4&from=paste&height=223&id=uae8f5c90&originHeight=893&originWidth=1367&originalType=binary&ratio=1&size=450614&status=done&style=none&taskId=u9e14de44-b9ed-4af2-9cff-ae27bb508ab&width=342" alt="image.png"><br>双总线结构也可以是主存总线和I/O总线，两个总线进行分离</p>
+<h2 id="2-总线的分类"><a href="#2-总线的分类" class="headerlink" title="2.总线的分类"></a>2.总线的分类</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711315052-eb11dc4e-3bf6-454e-8157-bc842ca14ec5.png#clientId=ue76f7e77-16dc-4&from=paste&height=154&id=uc61c11d7&originHeight=615&originWidth=1260&originalType=binary&ratio=1&size=371277&status=done&style=none&taskId=u6d1f6935-89fc-4311-a2c8-c32088f07af&width=315" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711326251-cd47f6cc-f007-4ed7-9e88-3ad9050bfe1e.png#clientId=ue76f7e77-16dc-4&from=paste&height=112&id=u7f011754&originHeight=450&originWidth=1145&originalType=binary&ratio=1&size=246611&status=done&style=none&taskId=u55a91a98-d053-47ae-9745-eb9104101c9&width=286" alt="image.png"></p>
+<h2 id="3-总线的性能指标"><a href="#3-总线的性能指标" class="headerlink" title="3.总线的性能指标"></a>3.总线的性能指标</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712294289-ca079b1b-65e7-4a36-b7cb-43cbc043be27.png#clientId=ue76f7e77-16dc-4&from=paste&height=229&id=u65fc0a7c&originHeight=914&originWidth=1239&originalType=binary&ratio=1&size=459354&status=done&style=none&taskId=ua704759e-30d0-435a-9740-19c463b3bf4&width=310" alt="image.png"></p>
+<h2 id="4-总线标准"><a href="#4-总线标准" class="headerlink" title="4.总线标准"></a>4.总线标准</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712356115-6744648f-4706-453f-850a-d375fc936544.png#clientId=ue76f7e77-16dc-4&from=paste&height=216&id=u2b60aae9&originHeight=862&originWidth=1290&originalType=binary&ratio=1&size=391398&status=done&style=none&taskId=u7dd6e294-731b-4283-9874-3fbe4fcc5e4&width=323" alt="image.png"></p>
+<h2 id="5-总线控制"><a href="#5-总线控制" class="headerlink" title="5.总线控制"></a>5.总线控制</h2><h3 id="5-1-总线判优控制"><a href="#5-1-总线判优控制" class="headerlink" title="5.1 总线判优控制"></a>5.1 总线判优控制</h3><p>主设备  对总线有控制权<br>从设备  响应从主设备发来的总线命令<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712889062-e54908c5-11e3-4def-9618-9b2d1057a462.png#clientId=ue76f7e77-16dc-4&from=paste&height=164&id=u3d4d7918&originHeight=328&originWidth=1060&originalType=binary&ratio=1&size=102475&status=done&style=none&taskId=ubec23bf7-b9a5-4a8b-a505-16761dc572b&width=530" alt="image.png"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712915997-d312af1c-479f-4869-a1f8-92520a226192.png#clientId=ue76f7e77-16dc-4&from=paste&height=226&id=ud027ba07&originHeight=904&originWidth=1336&originalType=binary&ratio=1&size=339982&status=done&style=none&taskId=ue0eb66c4-bff5-4fb4-925b-16474df5486&width=334" alt="image.png"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632726635511-d797dda8-c790-4195-8a41-baba879bc9f1.png#clientId=u2678fa93-e947-4&from=paste&height=197&id=u7be49d8e&originHeight=789&originWidth=1332&originalType=binary&ratio=1&size=425984&status=done&style=none&taskId=u986c044d-e339-41f0-89d8-db2db5b4999&width=333" alt="image.png"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632737579318-6f145ad3-b616-4c25-937c-99a672853345.png#clientId=u2678fa93-e947-4&from=paste&height=226&id=u6ed9efa1&originHeight=905&originWidth=1216&originalType=binary&ratio=1&size=514309&status=done&style=none&taskId=u13450b1c-7c79-44d9-a9ab-372bc8bb853&width=304" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632737618221-1e28d638-2088-4e7a-b98c-2f4f6cf932e3.png#clientId=u2678fa93-e947-4&from=paste&height=172&id=u79340067&originHeight=687&originWidth=1120&originalType=binary&ratio=1&size=210945&status=done&style=none&taskId=u8fa9a04d-2950-4d29-9e04-35b62e7be92&width=280" alt="image.png"></p>
+<h1 id="存储器-1"><a href="#存储器-1" class="headerlink" title="存储器"></a>存储器</h1><h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h2><h3 id="1-1-存储器分类"><a href="#1-1-存储器分类" class="headerlink" title="1.1 存储器分类"></a>1.1 存储器分类</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632738447925-99db606f-4be2-4fdb-989e-2d11e88a9a0c.png#clientId=u2678fa93-e947-4&from=paste&height=203&id=uf0bb2ea0&originHeight=813&originWidth=1099&originalType=binary&ratio=1&size=217313&status=done&style=none&taskId=ue2480d2a-ebeb-4b86-9ee6-bd20cdf1199&width=275" alt="image.png"></p>
+<h3 id="1-2-存储器的层次结构"><a href="#1-2-存储器的层次结构" class="headerlink" title="1.2 存储器的层次结构"></a>1.2 存储器的层次结构</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632738401115-21f6ca51-0f83-4ffa-9b5e-00b5c6bb23b8.png#clientId=u2678fa93-e947-4&from=paste&height=186&id=uf16992d2&originHeight=743&originWidth=1353&originalType=binary&ratio=1&size=331943&status=done&style=none&taskId=ucb7623b0-7cb6-433f-9e81-11d9c5cbf73&width=338" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632797639839-2ee08861-acbc-42b3-a3c1-7d93d5e7948d.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=239&id=u8f5d58ae&originHeight=957&originWidth=1353&originalType=binary&ratio=1&size=445559&status=done&style=none&taskId=u4b6de69e-899f-413f-8426-4b9006201bd&width=338" alt="image.png"><br>缓存和主存之间的区别通常情况下，高速缓存均是依托于静态随机访问存储器（SRAM），而主存一般是依托于动态随机访问存储器（DRAM）</p>
+<h2 id="2-主存储器"><a href="#2-主存储器" class="headerlink" title="2.主存储器"></a>2.主存储器</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632823553558-e9fc6dac-7620-4651-93f9-268ffcbc5046.png#clientId=u2173fce3-fd34-4&from=paste&height=113&id=u3c32272e&originHeight=452&originWidth=800&originalType=binary&ratio=1&size=107642&status=done&style=none&taskId=ufb904efe-7bc3-4168-ac36-3541fed4664&width=200" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632823619887-2102d53d-7400-4a6c-8e97-b549abb252b5.png#clientId=u2173fce3-fd34-4&from=paste&height=196&id=u8a7bee1c&originHeight=782&originWidth=1195&originalType=binary&ratio=1&size=198840&status=done&style=none&taskId=uec3f8809-fd23-4ed1-926b-827c77cd00e&width=299" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632825435197-330630c7-0fb7-402f-bc4a-d412d4088ca1.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=190&id=u925d63ee&originHeight=759&originWidth=1354&originalType=binary&ratio=1&size=350513&status=done&style=none&taskId=u993886fa-b085-4b7b-97ab-d720e2ac444&width=339" alt="image.png"><br>12345678H   12代表高位，78代表低位</p>
+<h2 id="3-半导体芯片"><a href="#3-半导体芯片" class="headerlink" title="3.半导体芯片"></a>3.半导体芯片</h2><p>2的十次方 = 1 k    k代表的是1024<br>1K有10条地址线，1M有20条地址线<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632826748753-5480df6f-e980-4291-b635-16e06bb904e9.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=250&id=ueaae7f39&originHeight=999&originWidth=1106&originalType=binary&ratio=1&size=247202&status=done&style=none&taskId=u377ff34b-5fd4-4e2a-b8f5-306785e625c&width=277" alt="image.png"></p>
+<h3 id="随机存取存储器"><a href="#随机存取存储器" class="headerlink" title="随机存取存储器"></a>随机存取存储器</h3><p>动态RAM会周期性的刷新，静态RAM不进行刷新<br>1、静态RAM，指SRAM：只要有供电，它保存的数据就不会丢失，且为高速存储器，如<strong>CPU中的高速缓存</strong>（cache）<br>2、动态RAM，指DRAM：有供电，还要根据它要求的刷新时间参数，才能保持存储的数据不丢失，如<strong>电脑中的内存条</strong><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632828037967-647d62ed-4c50-45be-a905-e79f58e5c5d5.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=252&id=u40ae86e5&originHeight=1007&originWidth=1384&originalType=binary&ratio=1&size=479381&status=done&style=none&taskId=u94b0f280-64fd-4cdc-a3ea-c3afe50e5a5&width=346" alt="image.png"><br>分为64行，64列，64列被分为4组，如图所示<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632989882476-04cab272-e994-46a7-901a-79a7f90cb0bc.png#clientId=uf5d5275e-3279-4&from=paste&height=243&id=u650c8f83&originHeight=970&originWidth=1306&originalType=binary&ratio=1&size=366437&status=done&style=none&taskId=ub121fdd6-a49b-4970-aa1c-a37979e079c&width=327" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632991300733-2013a8a1-781b-445e-9532-532c861f8821.png#clientId=uf5d5275e-3279-4&from=paste&height=184&id=ufd6be6e3&originHeight=733&originWidth=810&originalType=binary&ratio=1&size=277552&status=done&style=none&taskId=u87658f23-fd83-4deb-a3da-ab6d8c47117&width=203" alt="image.png"></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 计算机组成原理</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/518a.html" rel="prev" title="算法与数据结构打卡">
+      <i class="fa fa-chevron-left"></i> 算法与数据结构打卡
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/437.html" rel="next" title="操作系统">
+      操作系统 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E8%AE%BA"><span class="nav-text">概论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F%E7%AE%80%E4%BB%8B"><span class="nav-text">1.计算机系统简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="nav-text">2.计算机的基本组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E5%86%AF%C2%B7%E8%AF%BA%E4%BE%9D%E6%9B%BC%E8%AE%A1%E7%AE%97%E6%9C%BA"><span class="nav-text">2.1 冯·诺依曼计算机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="nav-text">2.2 计算机的基本组成</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-text">存储器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E5%99%A8"><span class="nav-text">运算器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E5%99%A8"><span class="nav-text">控制器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6%E7%9A%84%E4%B8%BB%E8%A6%81%E6%8A%80%E6%9C%AF%E6%8C%87%E6%A0%87"><span class="nav-text">3.计算机硬件的主要技术指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E5%8F%91%E5%B1%95%E5%8F%B2"><span class="nav-text">4.计算机的发展史</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B3%BB%E7%BB%9F%E6%80%BB%E7%BA%BF"><span class="nav-text">系统总线</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%80%BB%E7%BA%BF%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-text">1.总线的结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E6%80%BB%E7%BA%BF%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-text">2.总线的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E6%80%BB%E7%BA%BF%E7%9A%84%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-text">3.总线的性能指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E6%80%BB%E7%BA%BF%E6%A0%87%E5%87%86"><span class="nav-text">4.总线标准</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E6%80%BB%E7%BA%BF%E6%8E%A7%E5%88%B6"><span class="nav-text">5.总线控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-%E6%80%BB%E7%BA%BF%E5%88%A4%E4%BC%98%E6%8E%A7%E5%88%B6"><span class="nav-text">5.1 总线判优控制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%99%A8-1"><span class="nav-text">存储器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="nav-text">1.概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E5%AD%98%E5%82%A8%E5%99%A8%E5%88%86%E7%B1%BB"><span class="nav-text">1.1 存储器分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84"><span class="nav-text">1.2 存储器的层次结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%B8%BB%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-text">2.主存储器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%8D%8A%E5%AF%BC%E4%BD%93%E8%8A%AF%E7%89%87"><span class="nav-text">3.半导体芯片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%AD%98%E5%8F%96%E5%AD%98%E5%82%A8%E5%99%A8"><span class="nav-text">随机存取存储器</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yuumiy"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Yuumiy</p>
+  <div class="site-description" itemprop="description">coding就是生产力</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuumiy" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yuumiy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:115274737@qq.com" title="E-Mail → mailto:115274737@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://yuumiy.blog.csdn.net/" title="CSDN → https:&#x2F;&#x2F;yuumiy.blog.csdn.net" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuumiy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">318k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4:49</span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/10/2021 12:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()",250);
+</script>
+
+<script async src="/js/busuanzi.pure.mini.js"></script>
+<span><br></span>	
+
+<span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+</span>
+<span>总访客&nbsp<span id="busuanzi_value_site_uv"></span>&nbsp人</span>
+    <span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+</span>
+    <span>总访问量&nbsp<span id="busuanzi_value_site_pv"></span>&nbsp次</span>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('/js/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'PuhblTYT44STCX6Edvpd76zF-gzGzoHsz',
+      appKey     : '43DKcrM2QNBca1Ww68fepMOV',
+      placeholder: "填写邮箱作者能够及时反馈，欢迎评论哦(๑•̀ㅂ•́)و✧",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

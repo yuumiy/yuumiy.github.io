@@ -6,7 +6,7 @@
   <link href="https://yuumiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuumiy.github.io/"/>
-  <updated>2024-01-13T16:17:08.000Z</updated>
+  <updated>2024-01-14T02:35:08.000Z</updated>
   <id>https://yuumiy.github.io/</id>
   
   <author>
@@ -15,6 +15,96 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jvm虚拟机</title>
+    <link href="https://yuumiy.github.io/posts/d776.html"/>
+    <id>https://yuumiy.github.io/posts/d776.html</id>
+    <published>2024-01-14T02:35:08.000Z</published>
+    <updated>2024-01-14T02:35:08.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;p&gt;作为一个Java后端攻城狮，jvm是必须要懂的知识点。我主要是看书+看视频结合起来学习，书看的是『深入理解java虚拟机第三版』，视频看的是宋红康的jvm教程。&lt;br&gt;&lt;a href=&quot;https://www.bilibili.com/video/BV1PJ411n7xZ&quot;&gt;宋红康jvm教程&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;接下来就开始漫长的jvm学习之旅吧(◕ᴗ◕✿)&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="jvm虚拟机" scheme="https://yuumiy.github.io/tags/jvm%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统</title>
+    <link href="https://yuumiy.github.io/posts/437.html"/>
+    <id>https://yuumiy.github.io/posts/437.html</id>
+    <published>2024-01-14T02:26:08.000Z</published>
+    <updated>2024-01-14T02:26:08.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;p&gt;开始操作系统的学习吧！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="操作系统" scheme="https://yuumiy.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机组成原理</title>
+    <link href="https://yuumiy.github.io/posts/cacd.html"/>
+    <id>https://yuumiy.github.io/posts/cacd.html</id>
+    <published>2024-01-14T02:18:08.000Z</published>
+    <updated>2024-01-14T02:18:08.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;p&gt;开始计算机组成原理的学习吧！！&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="计算机组成原理" scheme="https://yuumiy.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法与数据结构打卡</title>
+    <link href="https://yuumiy.github.io/posts/518a.html"/>
+    <id>https://yuumiy.github.io/posts/518a.html</id>
+    <published>2024-01-14T02:06:08.000Z</published>
+    <updated>2024-01-14T02:06:08.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;算法与数据结构&quot;&gt;&lt;a href=&quot;#算法与数据结构&quot; class=&quot;headerlink&quot; title=&quot;算法与数据结构&quot;&gt;&lt;/a&gt;算法与数据结构&lt;/h1&gt;&lt;p&gt;算法与数据结构需要日常积累&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;刷题小技巧：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;数据结构 + 算法，以类型去leetcode刷题&lt;/p&gt;
+&lt;p&gt;推荐github算法教程：代码随想录&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="打卡" scheme="https://yuumiy.github.io/categories/%E6%89%93%E5%8D%A1/"/>
+    
+    
+    <category term="算法与数据结构打卡" scheme="https://yuumiy.github.io/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%89%93%E5%8D%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>180天学习计划打卡</title>

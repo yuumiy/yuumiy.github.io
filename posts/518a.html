@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="NmvL2aBrGRwi3CzraBejtkwEbHmmH-7u73OJj3FMOoc">
+  <meta name="msvalidate.01" content="5DB1ECD7406CD70A251CF96C939178B9">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuumiy.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="算法与数据结构算法与数据结构需要日常积累 刷题小技巧： 数据结构 + 算法，以类型去leetcode刷题 推荐github算法教程：代码随想录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法与数据结构打卡">
+<meta property="og:url" content="https://yuumiy.github.io/posts/518a.html">
+<meta property="og:site_name" content="岛田悠米">
+<meta property="og:description" content="算法与数据结构算法与数据结构需要日常积累 刷题小技巧： 数据结构 + 算法，以类型去leetcode刷题 推荐github算法教程：代码随想录">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776240-d8b6d71e-99b0-4ede-b5bf-8ae897d793b1.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776176-0851acef-7705-4a77-899a-eea6d7b277c1.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776169-f3d43a35-91bd-4cce-a3a1-f68bc6764015.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776396-ef82a965-0635-4ca6-af30-1cf5bcccf046.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776411-c6952616-3fa0-4ab2-bbe4-53be64b898fa.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776433-23a7d485-8b9a-462e-8b23-0334a605d81e.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776435-990f8acb-0d28-49df-8e67-81e5119caa65.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776454-86c89063-5723-4a5c-b833-3b80c6c26d6e.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776645-6e30cccc-7eb4-4774-a06d-dbe3274901da.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776664-fdfd4d81-c016-4d9f-bbe4-bb10d9e2cd11.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776688-aab63601-b896-4a38-affb-fa9b9fa9e7ed.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776693-16e28ab3-ce57-4f3b-a7d3-7e886f05f842.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776702-bbcc52ad-f6be-4a2e-8812-3b8f97324c58.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776877-02a2c358-7fb0-4138-b96b-5010bcdb0b90.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776883-2695eab4-feec-4c86-b112-703768cd07b4.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776924-612c736e-679d-4a75-b43c-5f272a0ebe99.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776926-67c8449b-db5a-49fe-b6d8-8a7bac00a5e6.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776946-662c4329-7c6b-4fdd-824c-ae7307378c14.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198777117-b0efabfd-7d42-4fae-8af7-ed390a13d66c.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198777154-f10e2dd5-591d-4078-aee0-20bf18d47efc.png">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198777163-94ba6149-05f5-42e7-978c-ed19a13da90f.png">
+<meta property="article:published_time" content="2024-01-14T02:06:08.000Z">
+<meta property="article:modified_time" content="2024-01-14T02:06:08.000Z">
+<meta property="article:author" content="Yuumiy">
+<meta property="article:tag" content="算法与数据结构打卡">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776240-d8b6d71e-99b0-4ede-b5bf-8ae897d793b1.png">
+
+<link rel="canonical" href="https://yuumiy.github.io/posts/518a.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>算法与数据结构打卡 | 岛田悠米</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="岛田悠米" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">岛田悠米</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">心中有梦 不负韶华</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yuumiy.github.io/posts/518a.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Yuumiy">
+      <meta itemprop="description" content="coding就是生产力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="岛田悠米">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          算法与数据结构打卡
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-01-14 10:06:08" itemprop="dateCreated datePublished" datetime="2024-01-14T10:06:08+08:00">2024-01-14</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%89%93%E5%8D%A1/" itemprop="url" rel="index"><span itemprop="name">打卡</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/518a.html" class="post-meta-item leancloud_visitors" data-flag-title="算法与数据结构打卡" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论次数：</span>
+    
+    <a title="valine" href="/posts/518a.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/518a.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer" />
+
+<h1 id="算法与数据结构"><a href="#算法与数据结构" class="headerlink" title="算法与数据结构"></a>算法与数据结构</h1><p>算法与数据结构需要日常积累</p>
+<p><strong>刷题小技巧：</strong></p>
+<p>数据结构 + 算法，以类型去leetcode刷题</p>
+<p>推荐github算法教程：代码随想录</p>
+<span id="more"></span>
+
+<h2 id="一、leetcode刷题"><a href="#一、leetcode刷题" class="headerlink" title="一、leetcode刷题"></a>一、leetcode刷题</h2><h3 id="2023-12-15"><a href="#2023-12-15" class="headerlink" title="2023.12.15"></a>2023.12.15</h3><p>时间复杂度O(n)指的是最坏的情况</p>
+<p>算法的logn，忽略底数</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776240-d8b6d71e-99b0-4ede-b5bf-8ae897d793b1.png" alt="image-20231215225637561"></p>
+<h3 id="2023-12-16"><a href="#2023-12-16" class="headerlink" title="2023.12.16"></a>2023.12.16</h3><p>空间复杂度O(n)，当消耗空间随着输入参数n随线性增长</p>
+<p>计算机一般会有内存对齐的策略，提高效率</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776176-0851acef-7705-4a77-899a-eea6d7b277c1.png" alt="image-20231216114607574"></p>
+<h3 id="2023-12-17"><a href="#2023-12-17" class="headerlink" title="2023.12.17"></a>2023.12.17</h3><p>二分查找：左闭右闭 注意边界</p>
+<p>移除元素：快慢指针</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776169-f3d43a35-91bd-4cce-a3a1-f68bc6764015.png" alt="image-20231217130141898"></p>
+<h3 id="2023-12-19"><a href="#2023-12-19" class="headerlink" title="2023.12.19"></a>2023.12.19</h3><p>有序数组的平方：左右指针</p>
+<p>长度最小的子数组：滑动窗口，也是两个指针</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776396-ef82a965-0635-4ca6-af30-1cf5bcccf046.png" alt="image-20231219232013636"></p>
+<h3 id="2023-12-20"><a href="#2023-12-20" class="headerlink" title="2023.12.20"></a>2023.12.20</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776411-c6952616-3fa0-4ab2-bbe4-53be64b898fa.png" alt="image-20231221222532697"></p>
+<h3 id="2023-12-21"><a href="#2023-12-21" class="headerlink" title="2023.12.21"></a>2023.12.21</h3><p>快速判断一个元素是否出现在集合里，使用哈希法</p>
+<h3 id="2023-12-24"><a href="#2023-12-24" class="headerlink" title="2023.12.24"></a>2023.12.24</h3><p>两个字符char，ASCII值相加减</p>
+<img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776433-23a7d485-8b9a-462e-8b23-0334a605d81e.png" style="zoom: 67%;" />
+
+
+
+<p>链表  统一的逻辑 虚拟头节点</p>
+<p>链表最后指向null</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776435-990f8acb-0d28-49df-8e67-81e5119caa65.png" alt="image-20231225003411954"></p>
+<h3 id="2023-12-25"><a href="#2023-12-25" class="headerlink" title="2023.12.25"></a>2023.12.25</h3><p>设计链表</p>
+<h3 id="2023-12-26"><a href="#2023-12-26" class="headerlink" title="2023.12.26"></a>2023.12.26</h3><p>设计链表</p>
+<p>类里面有成员变量，构造函数</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776454-86c89063-5723-4a5c-b833-3b80c6c26d6e.png" alt="image-20231226205215267"></p>
+<p>dummy 虚拟的</p>
+<p>pre cur temp  变量取名</p>
+<p>链表的最后一个节点指向空节点</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776645-6e30cccc-7eb4-4774-a06d-dbe3274901da.png" alt="image-20231227003254687"></p>
+<h3 id="2023-12-29"><a href="#2023-12-29" class="headerlink" title="2023.12.29"></a>2023.12.29</h3><p>虚拟头节点的使用 ListNode dummy = new ListNode(-1);</p>
+<p>链表反转使用双指针法</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776664-fdfd4d81-c016-4d9f-bbe4-bb10d9e2cd11.png" alt="image-20231229231044718"></p>
+<p>找环的入口：快慢指针相遇点和head的相遇点，就是环的入口</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776688-aab63601-b896-4a38-affb-fa9b9fa9e7ed.png" alt="image-20231230000516412"></p>
+<h3 id="2023-12-31"><a href="#2023-12-31" class="headerlink" title="2023.12.31"></a>2023.12.31</h3><p>数组 length</p>
+<p>字符串 length()</p>
+<p>for循环内还有for，就要用j，按i、j、k顺序使用</p>
+<p>首先是对数组循环，然后是对字符串循环</p>
+<p>list set 是contains</p>
+<p>map是containsKey</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776693-16e28ab3-ce57-4f3b-a7d3-7e886f05f842.png" alt="image-20231231140458321"></p>
+<h3 id="2024-1-2"><a href="#2024-1-2" class="headerlink" title="2024.1.2"></a>2024.1.2</h3><p>字符串的方法都是加()的，数组的length没有()</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776702-bbcc52ad-f6be-4a2e-8812-3b8f97324c58.png" alt="image-20240102233153793"></p>
+<h3 id="2024-1-3"><a href="#2024-1-3" class="headerlink" title="2024.1.3"></a>2024.1.3</h3><p>反转字符串(双指针法)</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776877-02a2c358-7fb0-4138-b96b-5010bcdb0b90.png" alt="image-20240103231226273"></p>
+<h3 id="2024-1-4"><a href="#2024-1-4" class="headerlink" title="2024.1.4"></a>2024.1.4</h3><p>KMP算法 字符串匹配</p>
+<h3 id="2024-1-6"><a href="#2024-1-6" class="headerlink" title="2024.1.6"></a>2024.1.6</h3><p>文本串和模式串</p>
+<p>KMP 适用于字符串查找</p>
+<p><strong>双指针法的复习</strong></p>
+<p>l  r   fast  slow</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776883-2695eab4-feec-4c86-b112-703768cd07b4.png" alt="image-20240106145758533"></p>
+<h3 id="2024-1-7"><a href="#2024-1-7" class="headerlink" title="2024.1.7"></a>2024.1.7</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776924-612c736e-679d-4a75-b43c-5f272a0ebe99.png" alt="image-20240107164002362"></p>
+<h3 id="2024-1-8"><a href="#2024-1-8" class="headerlink" title="2024.1.8"></a>2024.1.8</h3><p>双指针 l  r    slow   fast</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776926-67c8449b-db5a-49fe-b6d8-8a7bac00a5e6.png" alt="image-20240108233849363"></p>
+<h3 id="2024-1-9"><a href="#2024-1-9" class="headerlink" title="2024.1.9"></a>2024.1.9</h3><p>栈与队列</p>
+<p>队列  先进先出</p>
+<p>栈  后进先出</p>
+<p>构造函数：初始化类中的成员变量</p>
+<p>栈  push  把值压入栈   pop移除栈顶元素并返回     peek返回栈顶元素</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198776946-662c4329-7c6b-4fdd-824c-ae7307378c14.png" alt="image-20240110212553222"></p>
+<h3 id="2024-1-10"><a href="#2024-1-10" class="headerlink" title="2024.1.10"></a>2024.1.10</h3><p>deque  双向队列   Deque deque = new LinkedList();   push()   pop()</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198777117-b0efabfd-7d42-4fae-8af7-ed390a13d66c.png" alt="image-20240111204027148"></p>
+<h3 id="2024-1-12"><a href="#2024-1-12" class="headerlink" title="2024.1.12"></a>2024.1.12</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198777154-f10e2dd5-591d-4078-aee0-20bf18d47efc.png" alt="image-20240112211046798"></p>
+<h3 id="2024-1-13"><a href="#2024-1-13" class="headerlink" title="2024.1.13"></a>2024.1.13</h3><p>二叉树的遍历  前序  中序   后序</p>
+<p>二叉树的递归遍历(简单一些)</p>
+<p><strong>二叉树的迭代遍历</strong> 用栈实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 前序遍历顺序：中-左-右，入栈顺序：中-右-左</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">        Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty())&#123;</span><br><span class="line">            TreeNode node = stack.pop();</span><br><span class="line">            result.add(node.val);</span><br><span class="line">            <span class="keyword">if</span> (node.right != <span class="keyword">null</span>)&#123;</span><br><span class="line">                stack.push(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (node.left != <span class="keyword">null</span>)&#123;</span><br><span class="line">                stack.push(node.left);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>层序遍历，也可以使用递归的方式</p>
+<p>翻转二叉树</p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1705198777163-94ba6149-05f5-42e7-978c-ed19a13da90f.png" alt="image-20240113113007326"></p>
+<h2 id="二、内功修炼：图解数据结构-小傅哥"><a href="#二、内功修炼：图解数据结构-小傅哥" class="headerlink" title="二、内功修炼：图解数据结构(小傅哥)"></a>二、内功修炼：图解数据结构(小傅哥)</h2>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%89%93%E5%8D%A1/" rel="tag"><i class="fa fa-tag"></i> 算法与数据结构打卡</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/1b4c.html" rel="prev" title="180天学习计划打卡">
+      <i class="fa fa-chevron-left"></i> 180天学习计划打卡
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/cacd.html" rel="next" title="计算机组成原理">
+      计算机组成原理 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">算法与数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81leetcode%E5%88%B7%E9%A2%98"><span class="nav-text">一、leetcode刷题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-15"><span class="nav-text">2023.12.15</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-16"><span class="nav-text">2023.12.16</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-17"><span class="nav-text">2023.12.17</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-19"><span class="nav-text">2023.12.19</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-20"><span class="nav-text">2023.12.20</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-21"><span class="nav-text">2023.12.21</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-24"><span class="nav-text">2023.12.24</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-25"><span class="nav-text">2023.12.25</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-26"><span class="nav-text">2023.12.26</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-29"><span class="nav-text">2023.12.29</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2023-12-31"><span class="nav-text">2023.12.31</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-2"><span class="nav-text">2024.1.2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-3"><span class="nav-text">2024.1.3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-4"><span class="nav-text">2024.1.4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-6"><span class="nav-text">2024.1.6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-7"><span class="nav-text">2024.1.7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-8"><span class="nav-text">2024.1.8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-9"><span class="nav-text">2024.1.9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-10"><span class="nav-text">2024.1.10</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-12"><span class="nav-text">2024.1.12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2024-1-13"><span class="nav-text">2024.1.13</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%86%85%E5%8A%9F%E4%BF%AE%E7%82%BC%EF%BC%9A%E5%9B%BE%E8%A7%A3%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E5%B0%8F%E5%82%85%E5%93%A5"><span class="nav-text">二、内功修炼：图解数据结构(小傅哥)</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yuumiy"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Yuumiy</p>
+  <div class="site-description" itemprop="description">coding就是生产力</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuumiy" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yuumiy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:115274737@qq.com" title="E-Mail → mailto:115274737@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://yuumiy.blog.csdn.net/" title="CSDN → https:&#x2F;&#x2F;yuumiy.blog.csdn.net" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuumiy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">318k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4:49</span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/10/2021 12:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()",250);
+</script>
+
+<script async src="/js/busuanzi.pure.mini.js"></script>
+<span><br></span>	
+
+<span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+</span>
+<span>总访客&nbsp<span id="busuanzi_value_site_uv"></span>&nbsp人</span>
+    <span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+</span>
+    <span>总访问量&nbsp<span id="busuanzi_value_site_pv"></span>&nbsp次</span>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('/js/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'PuhblTYT44STCX6Edvpd76zF-gzGzoHsz',
+      appKey     : '43DKcrM2QNBca1Ww68fepMOV',
+      placeholder: "填写邮箱作者能够及时反馈，欢迎评论哦(๑•̀ㅂ•́)و✧",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>
