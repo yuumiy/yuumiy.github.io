@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/posts/3eeb.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><p>由Hexo Next搭建的博客网站，这是第一篇博客！</p>
+<p>文章将有以下分类：工具、技术、笔记、思考、生活、阅读</p>
+<span id="more"></span>
+
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>180天学习计划打卡</title>
     <url>/posts/1b4c.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -20,23 +37,6 @@
       </categories>
       <tags>
         <tag>学习计划</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/posts/3eeb.html</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-
-<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World!"></a>Hello World!</h1><p>由Hexo Next搭建的博客网站，这是第一篇博客！</p>
-<p>文章将有以下分类：工具、技术、笔记、思考、生活、阅读</p>
-<span id="more"></span>
-
-]]></content>
-      <categories>
-        <category>技术</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -418,6 +418,71 @@
       </tags>
   </entry>
   <entry>
+    <title>操作系统</title>
+    <url>/posts/437.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<p>开始操作系统的学习吧！</p>
+<span id="more"></span>
+
+<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="1-操作系统的历史"><a href="#1-操作系统的历史" class="headerlink" title="1.操作系统的历史"></a>1.操作系统的历史</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762042600-e2d49f67-00b1-43b3-b6cd-0b44b6abfcd3.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=112&id=u6bbe1cc7&originHeight=223&originWidth=997&originalType=binary&ratio=1&size=116765&status=done&style=none&taskId=uee526110-6923-4fb9-821f-f6216031d3b&width=499" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762148041-391b239d-5fa4-46be-a550-4797be4a9a07.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=138&id=ubc28b705&originHeight=275&originWidth=1002&originalType=binary&ratio=1&size=111350&status=done&style=none&taskId=u804df73a-e1d0-4eac-861b-90ed1fa9e82&width=501" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762466208-4416576f-79b4-4011-83dd-80ea6c11980f.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=222&id=u313ed5ae&originHeight=443&originWidth=855&originalType=binary&ratio=1&size=241734&status=done&style=none&taskId=u8c6ec8e3-4131-4cd6-a545-25036476039&width=428" alt="image.png"></p>
+<h2 id="2-应用眼中的操作系统"><a href="#2-应用眼中的操作系统" class="headerlink" title="2.应用眼中的操作系统"></a>2.应用眼中的操作系统</h2><p>什么是程序？<br>可执行的二进制文件</p>
+<p>什么是软件？<br>按照特定顺序组织的计算机数据和指令的集合</p>
+<p>线程崩溃不会导致进程崩溃。一个进程可以有多个线程<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631763096878-c87f48d3-7373-4d5a-9efd-53130ad898bb.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=268&id=ue3e8b29e&originHeight=536&originWidth=996&originalType=binary&ratio=1&size=168570&status=done&style=none&taskId=ud61b0e7f-d421-43c0-b7ba-c098d001225&width=498" alt="image.png"><br> <img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631771650693-fc5af4b2-c672-4525-945c-d1859458140a.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=328&id=u106f1694&originHeight=655&originWidth=978&originalType=binary&ratio=1&size=369803&status=done&style=none&taskId=u8bbf06f3-1a3c-4359-868d-eb855b23296&width=489" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631772179790-7d68bdd3-41bc-4904-8898-dc27e8e9c448.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=201&id=u0535f9d1&originHeight=402&originWidth=1000&originalType=binary&ratio=1&size=150185&status=done&style=none&taskId=uda816a36-940b-4f0a-8ca3-6e74f9931f2&width=500" alt="image.png"><br>gcc  将源代码程序编译成二进制程序</p>
+<p>strace命令是一个集诊断、调试、统计与一体的工具，我们可以使用strace对应用的系统调用和信号传递的跟踪结果来对应用进行分析，以达到解决问题或者是了解应用工作过程的目的<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631772946401-c27460cc-2d64-4bb8-bf25-45fd6a7af47e.png#clientId=u9d6e65e6-f1f8-4&from=paste&id=u6b0837c5&originHeight=240&originWidth=570&originalType=binary&ratio=1&size=159266&status=done&style=none&taskId=ucbf080fb-7d69-405f-a3e8-5879bf8262d" alt="image.png"></p>
+<h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><h2 id="1-并发与并行"><a href="#1-并发与并行" class="headerlink" title="1.并发与并行"></a>1.并发与并行</h2><p>并发(Concurrency)：有些事情可以同时发生，这个事情就是并发的<br>每隔一定时间，就切换到另一个进程执行(看起来进程好像是同时执行的)<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631774208483-d770848b-b372-4161-9e63-d94f5969aed6.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=293&id=ue2a70221&originHeight=390&originWidth=950&originalType=binary&ratio=1&size=192528&status=done&style=none&taskId=ua842a16a-1403-428c-84a3-f48ddc97e08&width=713" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机组成原理</title>
+    <url>/posts/cacd.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<p>开始计算机组成原理的学习吧！！</p>
+<span id="more"></span>
+
+<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h2 id="1-计算机系统简介"><a href="#1-计算机系统简介" class="headerlink" title="1.计算机系统简介"></a>1.计算机系统简介</h2><p>HPC：高性能计算机群<br>计算机由硬件和软件组成<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631781628372-040630b2-a641-409c-9ac0-21e83445b5e3.png#clientId=ud9f9782b-2e4f-4&from=paste&height=177&id=ua543fe92&originHeight=706&originWidth=1264&originalType=binary&ratio=1&size=269372&status=done&style=none&taskId=u069bf526-87fd-4c29-b9f9-40b1aea24dd&width=316"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631782127621-346f7342-cffe-4baa-a4f1-ed7a6532735d.png#clientId=ud9f9782b-2e4f-4&from=paste&height=218&id=u1ddcb29d&originHeight=872&originWidth=1201&originalType=binary&ratio=1&size=415716&status=done&style=none&taskId=uab33536c-a790-43db-8e94-25f012dc442&width=300" alt="image.png"></p>
+<h2 id="2-计算机的基本组成"><a href="#2-计算机的基本组成" class="headerlink" title="2.计算机的基本组成"></a>2.计算机的基本组成</h2><h3 id="2-1-冯·诺依曼计算机"><a href="#2-1-冯·诺依曼计算机" class="headerlink" title="2.1 冯·诺依曼计算机"></a>2.1 冯·诺依曼计算机</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631782474528-7b067055-ac71-4b99-a5f0-21978425f5e6.png#clientId=ud9f9782b-2e4f-4&from=paste&height=199&id=uf4f391db&originHeight=795&originWidth=1020&originalType=binary&ratio=1&size=285921&status=done&style=none&taskId=u6cc4de53-a395-480c-b91b-2ec16aa8cdc&width=255"><br>五大组成部件是控制器、运算器、存储器、输入设备、输出设备<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631784125782-e2de40cd-c269-44c2-9932-b7d23f20d536.png#clientId=ud9f9782b-2e4f-4&from=paste&height=156&id=u6d9b2355&originHeight=624&originWidth=1245&originalType=binary&ratio=1&size=254712&status=done&style=none&taskId=ueaa803a8-0bef-4bc3-84ee-784dcb22b95&width=311"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631784248047-44113d2b-60f3-419a-ba62-32eff68c9581.png#clientId=ud9f9782b-2e4f-4&from=paste&height=123&id=ue8843a6f&originHeight=492&originWidth=1001&originalType=binary&ratio=1&size=151418&status=done&style=none&taskId=ue6e61c89-8a60-44aa-ae27-2af221bdf2e&width=250" alt="image.png"></p>
+<h3 id="2-2-计算机的基本组成"><a href="#2-2-计算机的基本组成" class="headerlink" title="2.2 计算机的基本组成"></a>2.2 计算机的基本组成</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631871272938-04d4e94f-99f8-4bfe-9d20-5168bc751628.png#clientId=ub55dff59-a647-4&from=paste&height=208&id=u6423c1c2&originHeight=834&originWidth=1089&originalType=binary&ratio=1&size=342974&status=done&style=none&taskId=u8596467e-3e1d-4886-910f-a148bb23bbe&width=272"><br>第二种方式运算速度更快<br>指令和数据都是存在存储器中的</p>
+<h4 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h4><p>存储体由许多存储单元组成，每个存储单元又包含若干个存储元件，每个存储元件可以寄存一位二进制代码0/1。</p>
+<p>对于其组成我们可以这样来记忆：<br>存储体呢，相当于一栋大楼，大楼内有很多房间（存储单元），每个房间内又有很多床位（存储元件），那么0代表床上无人，1代表床上有人。</p>
+<p>存储单元<br>以8位二进制作为一个存储单元，也就是一个字节。<br>一个存储单元可以存储一串二进制代码，称这串二进制代码为一个存储字，代码位数位存储字长。<br>存储单元有编号，这些编号称为存储单元的地址号。存储单元按地址寻访。这些地址都是二进制的形式。</p>
+<h4 id="运算器"><a href="#运算器" class="headerlink" title="运算器"></a>运算器</h4><p>计算机中执行各种算术和逻辑运算操作的部件。运算器的基本操作包括加、减、乘、除四则运算，与、或、非、异或等逻辑操作，以及移位、比较和传送等操作，亦称算术逻辑部件</p>
+<h4 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h4><p>功能：解释指令、保证指令的按序执行<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631878090710-3fe8ff89-e17d-497a-a57a-7d9a88428b37.png#clientId=ub55dff59-a647-4&from=paste&height=316&id=ucd75eed1&originHeight=631&originWidth=813&originalType=binary&ratio=1&size=218782&status=done&style=none&taskId=u551584be-ac2e-4be1-965c-1985d2030de&width=407"><br>取指令：把指令的地址从存储体中取出来<br>分析指令：存放当前欲执行的指令<br>执行指令CU</p>
+<h2 id="3-计算机硬件的主要技术指标"><a href="#3-计算机硬件的主要技术指标" class="headerlink" title="3.计算机硬件的主要技术指标"></a>3.计算机硬件的主要技术指标</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631879170915-27e38dcc-1aaa-4855-97a9-8d6ffad2a087.png#clientId=ub55dff59-a647-4&from=paste&height=198&id=u0fc65788&originHeight=791&originWidth=1315&originalType=binary&ratio=1&size=378781&status=done&style=none&taskId=ue72b0dbb-58fb-4b09-bf92-76f7ac6b39a&width=329"></p>
+<h2 id="4-计算机的发展史"><a href="#4-计算机的发展史" class="headerlink" title="4.计算机的发展史"></a>4.计算机的发展史</h2><p> 现在计算机产生的驱动力是需求<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631879767178-f904c1c3-33e4-4b47-9ccb-46306e9f2b76.png#clientId=ub55dff59-a647-4&from=paste&height=230&id=uf64b0a6f&originHeight=918&originWidth=1270&originalType=binary&ratio=1&size=396766&status=done&style=none&taskId=udea35bad-07ad-44d0-8518-267a9e9a29e&width=318"><br>64位系统处理数据的效率比32位高</p>
+<p>处理器的性能每隔两年翻一倍</p>
+<p>机器语言–&gt;汇编语言–&gt;高级语言</p>
+<h1 id="系统总线"><a href="#系统总线" class="headerlink" title="系统总线"></a>系统总线</h1><p>总线是连接各个部件的信息传输线，是各个部件<strong>共享的传输介质</strong></p>
+<h2 id="1-总线的结构"><a href="#1-总线的结构" class="headerlink" title="1.总线的结构"></a>1.总线的结构</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711055263-ab6a534b-4fb5-4a51-b757-71c0e7ba763c.png#clientId=ue76f7e77-16dc-4&from=paste&height=199&id=ufd7e11ef&originHeight=795&originWidth=1311&originalType=binary&ratio=1&size=432548&status=done&style=none&taskId=ue55022b3-5d18-4dab-8ed0-ae8649e2307&width=328"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711077133-65b357d8-8ee9-4363-83d8-be0bb8b7cd4d.png#clientId=ue76f7e77-16dc-4&from=paste&height=203&id=ud7acb09a&originHeight=810&originWidth=1222&originalType=binary&ratio=1&size=398435&status=done&style=none&taskId=u60b486a6-2d4c-462e-b87a-411c80f2e23&width=306"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711138932-7465ae7b-805c-4952-b845-13fe82ef7ba3.png#clientId=ue76f7e77-16dc-4&from=paste&height=223&id=uae8f5c90&originHeight=893&originWidth=1367&originalType=binary&ratio=1&size=450614&status=done&style=none&taskId=u9e14de44-b9ed-4af2-9cff-ae27bb508ab&width=342"><br>双总线结构也可以是主存总线和I/O总线，两个总线进行分离</p>
+<h2 id="2-总线的分类"><a href="#2-总线的分类" class="headerlink" title="2.总线的分类"></a>2.总线的分类</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711315052-eb11dc4e-3bf6-454e-8157-bc842ca14ec5.png#clientId=ue76f7e77-16dc-4&from=paste&height=154&id=uc61c11d7&originHeight=615&originWidth=1260&originalType=binary&ratio=1&size=371277&status=done&style=none&taskId=u6d1f6935-89fc-4311-a2c8-c32088f07af&width=315"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711326251-cd47f6cc-f007-4ed7-9e88-3ad9050bfe1e.png#clientId=ue76f7e77-16dc-4&from=paste&height=112&id=u7f011754&originHeight=450&originWidth=1145&originalType=binary&ratio=1&size=246611&status=done&style=none&taskId=u55a91a98-d053-47ae-9745-eb9104101c9&width=286"></p>
+<h2 id="3-总线的性能指标"><a href="#3-总线的性能指标" class="headerlink" title="3.总线的性能指标"></a>3.总线的性能指标</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712294289-ca079b1b-65e7-4a36-b7cb-43cbc043be27.png#clientId=ue76f7e77-16dc-4&from=paste&height=229&id=u65fc0a7c&originHeight=914&originWidth=1239&originalType=binary&ratio=1&size=459354&status=done&style=none&taskId=ua704759e-30d0-435a-9740-19c463b3bf4&width=310"></p>
+<h2 id="4-总线标准"><a href="#4-总线标准" class="headerlink" title="4.总线标准"></a>4.总线标准</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712356115-6744648f-4706-453f-850a-d375fc936544.png#clientId=ue76f7e77-16dc-4&from=paste&height=216&id=u2b60aae9&originHeight=862&originWidth=1290&originalType=binary&ratio=1&size=391398&status=done&style=none&taskId=u7dd6e294-731b-4283-9874-3fbe4fcc5e4&width=323"></p>
+<h2 id="5-总线控制"><a href="#5-总线控制" class="headerlink" title="5.总线控制"></a>5.总线控制</h2><h3 id="5-1-总线判优控制"><a href="#5-1-总线判优控制" class="headerlink" title="5.1 总线判优控制"></a>5.1 总线判优控制</h3><p>主设备  对总线有控制权<br>从设备  响应从主设备发来的总线命令<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712889062-e54908c5-11e3-4def-9618-9b2d1057a462.png#clientId=ue76f7e77-16dc-4&from=paste&height=164&id=u3d4d7918&originHeight=328&originWidth=1060&originalType=binary&ratio=1&size=102475&status=done&style=none&taskId=ubec23bf7-b9a5-4a8b-a505-16761dc572b&width=530"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712915997-d312af1c-479f-4869-a1f8-92520a226192.png#clientId=ue76f7e77-16dc-4&from=paste&height=226&id=ud027ba07&originHeight=904&originWidth=1336&originalType=binary&ratio=1&size=339982&status=done&style=none&taskId=ue0eb66c4-bff5-4fb4-925b-16474df5486&width=334"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632726635511-d797dda8-c790-4195-8a41-baba879bc9f1.png#clientId=u2678fa93-e947-4&from=paste&height=197&id=u7be49d8e&originHeight=789&originWidth=1332&originalType=binary&ratio=1&size=425984&status=done&style=none&taskId=u986c044d-e339-41f0-89d8-db2db5b4999&width=333"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632737579318-6f145ad3-b616-4c25-937c-99a672853345.png#clientId=u2678fa93-e947-4&from=paste&height=226&id=u6ed9efa1&originHeight=905&originWidth=1216&originalType=binary&ratio=1&size=514309&status=done&style=none&taskId=u13450b1c-7c79-44d9-a9ab-372bc8bb853&width=304"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632737618221-1e28d638-2088-4e7a-b98c-2f4f6cf932e3.png#clientId=u2678fa93-e947-4&from=paste&height=172&id=u79340067&originHeight=687&originWidth=1120&originalType=binary&ratio=1&size=210945&status=done&style=none&taskId=u8fa9a04d-2950-4d29-9e04-35b62e7be92&width=280"></p>
+<h1 id="存储器-1"><a href="#存储器-1" class="headerlink" title="存储器"></a>存储器</h1><h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h2><h3 id="1-1-存储器分类"><a href="#1-1-存储器分类" class="headerlink" title="1.1 存储器分类"></a>1.1 存储器分类</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632738447925-99db606f-4be2-4fdb-989e-2d11e88a9a0c.png#clientId=u2678fa93-e947-4&from=paste&height=203&id=uf0bb2ea0&originHeight=813&originWidth=1099&originalType=binary&ratio=1&size=217313&status=done&style=none&taskId=ue2480d2a-ebeb-4b86-9ee6-bd20cdf1199&width=275"></p>
+<h3 id="1-2-存储器的层次结构"><a href="#1-2-存储器的层次结构" class="headerlink" title="1.2 存储器的层次结构"></a>1.2 存储器的层次结构</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632738401115-21f6ca51-0f83-4ffa-9b5e-00b5c6bb23b8.png#clientId=u2678fa93-e947-4&from=paste&height=186&id=uf16992d2&originHeight=743&originWidth=1353&originalType=binary&ratio=1&size=331943&status=done&style=none&taskId=ucb7623b0-7cb6-433f-9e81-11d9c5cbf73&width=338"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632797639839-2ee08861-acbc-42b3-a3c1-7d93d5e7948d.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=239&id=u8f5d58ae&originHeight=957&originWidth=1353&originalType=binary&ratio=1&size=445559&status=done&style=none&taskId=u4b6de69e-899f-413f-8426-4b9006201bd&width=338"><br>缓存和主存之间的区别通常情况下，高速缓存均是依托于静态随机访问存储器（SRAM），而主存一般是依托于动态随机访问存储器（DRAM）</p>
+<h2 id="2-主存储器"><a href="#2-主存储器" class="headerlink" title="2.主存储器"></a>2.主存储器</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632823553558-e9fc6dac-7620-4651-93f9-268ffcbc5046.png#clientId=u2173fce3-fd34-4&from=paste&height=113&id=u3c32272e&originHeight=452&originWidth=800&originalType=binary&ratio=1&size=107642&status=done&style=none&taskId=ufb904efe-7bc3-4168-ac36-3541fed4664&width=200"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632823619887-2102d53d-7400-4a6c-8e97-b549abb252b5.png#clientId=u2173fce3-fd34-4&from=paste&height=196&id=u8a7bee1c&originHeight=782&originWidth=1195&originalType=binary&ratio=1&size=198840&status=done&style=none&taskId=uec3f8809-fd23-4ed1-926b-827c77cd00e&width=299"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632825435197-330630c7-0fb7-402f-bc4a-d412d4088ca1.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=190&id=u925d63ee&originHeight=759&originWidth=1354&originalType=binary&ratio=1&size=350513&status=done&style=none&taskId=u993886fa-b085-4b7b-97ab-d720e2ac444&width=339"><br>12345678H   12代表高位，78代表低位</p>
+<h2 id="3-半导体芯片"><a href="#3-半导体芯片" class="headerlink" title="3.半导体芯片"></a>3.半导体芯片</h2><p>2的十次方 = 1 k    k代表的是1024<br>1K有10条地址线，1M有20条地址线<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632826748753-5480df6f-e980-4291-b635-16e06bb904e9.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=250&id=ueaae7f39&originHeight=999&originWidth=1106&originalType=binary&ratio=1&size=247202&status=done&style=none&taskId=u377ff34b-5fd4-4e2a-b8f5-306785e625c&width=277"></p>
+<h3 id="随机存取存储器"><a href="#随机存取存储器" class="headerlink" title="随机存取存储器"></a>随机存取存储器</h3><p>动态RAM会周期性的刷新，静态RAM不进行刷新<br>1、静态RAM，指SRAM：只要有供电，它保存的数据就不会丢失，且为高速存储器，如<strong>CPU中的高速缓存</strong>（cache）<br>2、动态RAM，指DRAM：有供电，还要根据它要求的刷新时间参数，才能保持存储的数据不丢失，如<strong>电脑中的内存条</strong><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632828037967-647d62ed-4c50-45be-a905-e79f58e5c5d5.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=252&id=u40ae86e5&originHeight=1007&originWidth=1384&originalType=binary&ratio=1&size=479381&status=done&style=none&taskId=u94b0f280-64fd-4cdc-a3ea-c3afe50e5a5&width=346"><br>分为64行，64列，64列被分为4组，如图所示<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632989882476-04cab272-e994-46a7-901a-79a7f90cb0bc.png#clientId=uf5d5275e-3279-4&from=paste&height=243&id=u650c8f83&originHeight=970&originWidth=1306&originalType=binary&ratio=1&size=366437&status=done&style=none&taskId=ub121fdd6-a49b-4970-aa1c-a37979e079c&width=327"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632991300733-2013a8a1-781b-445e-9532-532c861f8821.png#clientId=uf5d5275e-3279-4&from=paste&height=184&id=ufd6be6e3&originHeight=733&originWidth=810&originalType=binary&ratio=1&size=277552&status=done&style=none&taskId=u87658f23-fd83-4deb-a3da-ab6d8c47117&width=203"></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>计算机组成原理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法与数据结构打卡</title>
     <url>/posts/518a.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -572,28 +637,6 @@
       </tags>
   </entry>
   <entry>
-    <title>操作系统</title>
-    <url>/posts/437.html</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-
-<p>开始操作系统的学习吧！</p>
-<span id="more"></span>
-
-<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="1-操作系统的历史"><a href="#1-操作系统的历史" class="headerlink" title="1.操作系统的历史"></a>1.操作系统的历史</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762042600-e2d49f67-00b1-43b3-b6cd-0b44b6abfcd3.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=112&id=u6bbe1cc7&originHeight=223&originWidth=997&originalType=binary&ratio=1&size=116765&status=done&style=none&taskId=uee526110-6923-4fb9-821f-f6216031d3b&width=499" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762148041-391b239d-5fa4-46be-a550-4797be4a9a07.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=138&id=ubc28b705&originHeight=275&originWidth=1002&originalType=binary&ratio=1&size=111350&status=done&style=none&taskId=u804df73a-e1d0-4eac-861b-90ed1fa9e82&width=501" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762466208-4416576f-79b4-4011-83dd-80ea6c11980f.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=222&id=u313ed5ae&originHeight=443&originWidth=855&originalType=binary&ratio=1&size=241734&status=done&style=none&taskId=u8c6ec8e3-4131-4cd6-a545-25036476039&width=428" alt="image.png"></p>
-<h2 id="2-应用眼中的操作系统"><a href="#2-应用眼中的操作系统" class="headerlink" title="2.应用眼中的操作系统"></a>2.应用眼中的操作系统</h2><p>什么是程序？<br>可执行的二进制文件</p>
-<p>什么是软件？<br>按照特定顺序组织的计算机数据和指令的集合</p>
-<p>线程崩溃不会导致进程崩溃。一个进程可以有多个线程<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631763096878-c87f48d3-7373-4d5a-9efd-53130ad898bb.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=268&id=ue3e8b29e&originHeight=536&originWidth=996&originalType=binary&ratio=1&size=168570&status=done&style=none&taskId=ud61b0e7f-d421-43c0-b7ba-c098d001225&width=498" alt="image.png"><br> <img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631771650693-fc5af4b2-c672-4525-945c-d1859458140a.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=328&id=u106f1694&originHeight=655&originWidth=978&originalType=binary&ratio=1&size=369803&status=done&style=none&taskId=u8bbf06f3-1a3c-4359-868d-eb855b23296&width=489" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631772179790-7d68bdd3-41bc-4904-8898-dc27e8e9c448.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=201&id=u0535f9d1&originHeight=402&originWidth=1000&originalType=binary&ratio=1&size=150185&status=done&style=none&taskId=uda816a36-940b-4f0a-8ca3-6e74f9931f2&width=500" alt="image.png"><br>gcc  将源代码程序编译成二进制程序</p>
-<p>strace命令是一个集诊断、调试、统计与一体的工具，我们可以使用strace对应用的系统调用和信号传递的跟踪结果来对应用进行分析，以达到解决问题或者是了解应用工作过程的目的<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631772946401-c27460cc-2d64-4bb8-bf25-45fd6a7af47e.png#clientId=u9d6e65e6-f1f8-4&from=paste&id=u6b0837c5&originHeight=240&originWidth=570&originalType=binary&ratio=1&size=159266&status=done&style=none&taskId=ucbf080fb-7d69-405f-a3e8-5879bf8262d" alt="image.png"></p>
-<h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><h2 id="1-并发与并行"><a href="#1-并发与并行" class="headerlink" title="1.并发与并行"></a>1.并发与并行</h2><p>并发(Concurrency)：有些事情可以同时发生，这个事情就是并发的<br>每隔一定时间，就切换到另一个进程执行(看起来进程好像是同时执行的)<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631774208483-d770848b-b372-4161-9e63-d94f5969aed6.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=293&id=ue2a70221&originHeight=390&originWidth=950&originalType=binary&ratio=1&size=192528&status=done&style=none&taskId=ua842a16a-1403-428c-84a3-f48ddc97e08&width=713" alt="image.png"></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>谷粒商城学习总结</title>
     <url>/posts/7f37.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -607,49 +650,6 @@
       </categories>
       <tags>
         <tag>谷粒商城</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机组成原理</title>
-    <url>/posts/cacd.html</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-
-<p>开始计算机组成原理的学习吧！！</p>
-<span id="more"></span>
-
-<h1 id="概论"><a href="#概论" class="headerlink" title="概论"></a>概论</h1><h2 id="1-计算机系统简介"><a href="#1-计算机系统简介" class="headerlink" title="1.计算机系统简介"></a>1.计算机系统简介</h2><p>HPC：高性能计算机群<br>计算机由硬件和软件组成<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631781628372-040630b2-a641-409c-9ac0-21e83445b5e3.png#clientId=ud9f9782b-2e4f-4&from=paste&height=177&id=ua543fe92&originHeight=706&originWidth=1264&originalType=binary&ratio=1&size=269372&status=done&style=none&taskId=u069bf526-87fd-4c29-b9f9-40b1aea24dd&width=316"></p>
-<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631782127621-346f7342-cffe-4baa-a4f1-ed7a6532735d.png#clientId=ud9f9782b-2e4f-4&from=paste&height=218&id=u1ddcb29d&originHeight=872&originWidth=1201&originalType=binary&ratio=1&size=415716&status=done&style=none&taskId=uab33536c-a790-43db-8e94-25f012dc442&width=300" alt="image.png"></p>
-<h2 id="2-计算机的基本组成"><a href="#2-计算机的基本组成" class="headerlink" title="2.计算机的基本组成"></a>2.计算机的基本组成</h2><h3 id="2-1-冯·诺依曼计算机"><a href="#2-1-冯·诺依曼计算机" class="headerlink" title="2.1 冯·诺依曼计算机"></a>2.1 冯·诺依曼计算机</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631782474528-7b067055-ac71-4b99-a5f0-21978425f5e6.png#clientId=ud9f9782b-2e4f-4&from=paste&height=199&id=uf4f391db&originHeight=795&originWidth=1020&originalType=binary&ratio=1&size=285921&status=done&style=none&taskId=u6cc4de53-a395-480c-b91b-2ec16aa8cdc&width=255"><br>五大组成部件是控制器、运算器、存储器、输入设备、输出设备<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631784125782-e2de40cd-c269-44c2-9932-b7d23f20d536.png#clientId=ud9f9782b-2e4f-4&from=paste&height=156&id=u6d9b2355&originHeight=624&originWidth=1245&originalType=binary&ratio=1&size=254712&status=done&style=none&taskId=ueaa803a8-0bef-4bc3-84ee-784dcb22b95&width=311"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631784248047-44113d2b-60f3-419a-ba62-32eff68c9581.png#clientId=ud9f9782b-2e4f-4&from=paste&height=123&id=ue8843a6f&originHeight=492&originWidth=1001&originalType=binary&ratio=1&size=151418&status=done&style=none&taskId=ue6e61c89-8a60-44aa-ae27-2af221bdf2e&width=250" alt="image.png"></p>
-<h3 id="2-2-计算机的基本组成"><a href="#2-2-计算机的基本组成" class="headerlink" title="2.2 计算机的基本组成"></a>2.2 计算机的基本组成</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631871272938-04d4e94f-99f8-4bfe-9d20-5168bc751628.png#clientId=ub55dff59-a647-4&from=paste&height=208&id=u6423c1c2&originHeight=834&originWidth=1089&originalType=binary&ratio=1&size=342974&status=done&style=none&taskId=u8596467e-3e1d-4886-910f-a148bb23bbe&width=272"><br>第二种方式运算速度更快<br>指令和数据都是存在存储器中的</p>
-<h4 id="存储器"><a href="#存储器" class="headerlink" title="存储器"></a>存储器</h4><p>存储体由许多存储单元组成，每个存储单元又包含若干个存储元件，每个存储元件可以寄存一位二进制代码0/1。</p>
-<p>对于其组成我们可以这样来记忆：<br>存储体呢，相当于一栋大楼，大楼内有很多房间（存储单元），每个房间内又有很多床位（存储元件），那么0代表床上无人，1代表床上有人。</p>
-<p>存储单元<br>以8位二进制作为一个存储单元，也就是一个字节。<br>一个存储单元可以存储一串二进制代码，称这串二进制代码为一个存储字，代码位数位存储字长。<br>存储单元有编号，这些编号称为存储单元的地址号。存储单元按地址寻访。这些地址都是二进制的形式。</p>
-<h4 id="运算器"><a href="#运算器" class="headerlink" title="运算器"></a>运算器</h4><p>计算机中执行各种算术和逻辑运算操作的部件。运算器的基本操作包括加、减、乘、除四则运算，与、或、非、异或等逻辑操作，以及移位、比较和传送等操作，亦称算术逻辑部件</p>
-<h4 id="控制器"><a href="#控制器" class="headerlink" title="控制器"></a>控制器</h4><p>功能：解释指令、保证指令的按序执行<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631878090710-3fe8ff89-e17d-497a-a57a-7d9a88428b37.png#clientId=ub55dff59-a647-4&from=paste&height=316&id=ucd75eed1&originHeight=631&originWidth=813&originalType=binary&ratio=1&size=218782&status=done&style=none&taskId=u551584be-ac2e-4be1-965c-1985d2030de&width=407"><br>取指令：把指令的地址从存储体中取出来<br>分析指令：存放当前欲执行的指令<br>执行指令CU</p>
-<h2 id="3-计算机硬件的主要技术指标"><a href="#3-计算机硬件的主要技术指标" class="headerlink" title="3.计算机硬件的主要技术指标"></a>3.计算机硬件的主要技术指标</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631879170915-27e38dcc-1aaa-4855-97a9-8d6ffad2a087.png#clientId=ub55dff59-a647-4&from=paste&height=198&id=u0fc65788&originHeight=791&originWidth=1315&originalType=binary&ratio=1&size=378781&status=done&style=none&taskId=ue72b0dbb-58fb-4b09-bf92-76f7ac6b39a&width=329"></p>
-<h2 id="4-计算机的发展史"><a href="#4-计算机的发展史" class="headerlink" title="4.计算机的发展史"></a>4.计算机的发展史</h2><p> 现在计算机产生的驱动力是需求<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631879767178-f904c1c3-33e4-4b47-9ccb-46306e9f2b76.png#clientId=ub55dff59-a647-4&from=paste&height=230&id=uf64b0a6f&originHeight=918&originWidth=1270&originalType=binary&ratio=1&size=396766&status=done&style=none&taskId=udea35bad-07ad-44d0-8518-267a9e9a29e&width=318"><br>64位系统处理数据的效率比32位高</p>
-<p>处理器的性能每隔两年翻一倍</p>
-<p>机器语言–&gt;汇编语言–&gt;高级语言</p>
-<h1 id="系统总线"><a href="#系统总线" class="headerlink" title="系统总线"></a>系统总线</h1><p>总线是连接各个部件的信息传输线，是各个部件<strong>共享的传输介质</strong></p>
-<h2 id="1-总线的结构"><a href="#1-总线的结构" class="headerlink" title="1.总线的结构"></a>1.总线的结构</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711055263-ab6a534b-4fb5-4a51-b757-71c0e7ba763c.png#clientId=ue76f7e77-16dc-4&from=paste&height=199&id=ufd7e11ef&originHeight=795&originWidth=1311&originalType=binary&ratio=1&size=432548&status=done&style=none&taskId=ue55022b3-5d18-4dab-8ed0-ae8649e2307&width=328"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711077133-65b357d8-8ee9-4363-83d8-be0bb8b7cd4d.png#clientId=ue76f7e77-16dc-4&from=paste&height=203&id=ud7acb09a&originHeight=810&originWidth=1222&originalType=binary&ratio=1&size=398435&status=done&style=none&taskId=u60b486a6-2d4c-462e-b87a-411c80f2e23&width=306"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711138932-7465ae7b-805c-4952-b845-13fe82ef7ba3.png#clientId=ue76f7e77-16dc-4&from=paste&height=223&id=uae8f5c90&originHeight=893&originWidth=1367&originalType=binary&ratio=1&size=450614&status=done&style=none&taskId=u9e14de44-b9ed-4af2-9cff-ae27bb508ab&width=342"><br>双总线结构也可以是主存总线和I/O总线，两个总线进行分离</p>
-<h2 id="2-总线的分类"><a href="#2-总线的分类" class="headerlink" title="2.总线的分类"></a>2.总线的分类</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711315052-eb11dc4e-3bf6-454e-8157-bc842ca14ec5.png#clientId=ue76f7e77-16dc-4&from=paste&height=154&id=uc61c11d7&originHeight=615&originWidth=1260&originalType=binary&ratio=1&size=371277&status=done&style=none&taskId=u6d1f6935-89fc-4311-a2c8-c32088f07af&width=315"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632711326251-cd47f6cc-f007-4ed7-9e88-3ad9050bfe1e.png#clientId=ue76f7e77-16dc-4&from=paste&height=112&id=u7f011754&originHeight=450&originWidth=1145&originalType=binary&ratio=1&size=246611&status=done&style=none&taskId=u55a91a98-d053-47ae-9745-eb9104101c9&width=286"></p>
-<h2 id="3-总线的性能指标"><a href="#3-总线的性能指标" class="headerlink" title="3.总线的性能指标"></a>3.总线的性能指标</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712294289-ca079b1b-65e7-4a36-b7cb-43cbc043be27.png#clientId=ue76f7e77-16dc-4&from=paste&height=229&id=u65fc0a7c&originHeight=914&originWidth=1239&originalType=binary&ratio=1&size=459354&status=done&style=none&taskId=ua704759e-30d0-435a-9740-19c463b3bf4&width=310"></p>
-<h2 id="4-总线标准"><a href="#4-总线标准" class="headerlink" title="4.总线标准"></a>4.总线标准</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712356115-6744648f-4706-453f-850a-d375fc936544.png#clientId=ue76f7e77-16dc-4&from=paste&height=216&id=u2b60aae9&originHeight=862&originWidth=1290&originalType=binary&ratio=1&size=391398&status=done&style=none&taskId=u7dd6e294-731b-4283-9874-3fbe4fcc5e4&width=323"></p>
-<h2 id="5-总线控制"><a href="#5-总线控制" class="headerlink" title="5.总线控制"></a>5.总线控制</h2><h3 id="5-1-总线判优控制"><a href="#5-1-总线判优控制" class="headerlink" title="5.1 总线判优控制"></a>5.1 总线判优控制</h3><p>主设备  对总线有控制权<br>从设备  响应从主设备发来的总线命令<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712889062-e54908c5-11e3-4def-9618-9b2d1057a462.png#clientId=ue76f7e77-16dc-4&from=paste&height=164&id=u3d4d7918&originHeight=328&originWidth=1060&originalType=binary&ratio=1&size=102475&status=done&style=none&taskId=ubec23bf7-b9a5-4a8b-a505-16761dc572b&width=530"></p>
-<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632712915997-d312af1c-479f-4869-a1f8-92520a226192.png#clientId=ue76f7e77-16dc-4&from=paste&height=226&id=ud027ba07&originHeight=904&originWidth=1336&originalType=binary&ratio=1&size=339982&status=done&style=none&taskId=ue0eb66c4-bff5-4fb4-925b-16474df5486&width=334"></p>
-<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632726635511-d797dda8-c790-4195-8a41-baba879bc9f1.png#clientId=u2678fa93-e947-4&from=paste&height=197&id=u7be49d8e&originHeight=789&originWidth=1332&originalType=binary&ratio=1&size=425984&status=done&style=none&taskId=u986c044d-e339-41f0-89d8-db2db5b4999&width=333"></p>
-<p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632737579318-6f145ad3-b616-4c25-937c-99a672853345.png#clientId=u2678fa93-e947-4&from=paste&height=226&id=u6ed9efa1&originHeight=905&originWidth=1216&originalType=binary&ratio=1&size=514309&status=done&style=none&taskId=u13450b1c-7c79-44d9-a9ab-372bc8bb853&width=304"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632737618221-1e28d638-2088-4e7a-b98c-2f4f6cf932e3.png#clientId=u2678fa93-e947-4&from=paste&height=172&id=u79340067&originHeight=687&originWidth=1120&originalType=binary&ratio=1&size=210945&status=done&style=none&taskId=u8fa9a04d-2950-4d29-9e04-35b62e7be92&width=280"></p>
-<h1 id="存储器-1"><a href="#存储器-1" class="headerlink" title="存储器"></a>存储器</h1><h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1.概述"></a>1.概述</h2><h3 id="1-1-存储器分类"><a href="#1-1-存储器分类" class="headerlink" title="1.1 存储器分类"></a>1.1 存储器分类</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632738447925-99db606f-4be2-4fdb-989e-2d11e88a9a0c.png#clientId=u2678fa93-e947-4&from=paste&height=203&id=uf0bb2ea0&originHeight=813&originWidth=1099&originalType=binary&ratio=1&size=217313&status=done&style=none&taskId=ue2480d2a-ebeb-4b86-9ee6-bd20cdf1199&width=275"></p>
-<h3 id="1-2-存储器的层次结构"><a href="#1-2-存储器的层次结构" class="headerlink" title="1.2 存储器的层次结构"></a>1.2 存储器的层次结构</h3><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632738401115-21f6ca51-0f83-4ffa-9b5e-00b5c6bb23b8.png#clientId=u2678fa93-e947-4&from=paste&height=186&id=uf16992d2&originHeight=743&originWidth=1353&originalType=binary&ratio=1&size=331943&status=done&style=none&taskId=ucb7623b0-7cb6-433f-9e81-11d9c5cbf73&width=338"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632797639839-2ee08861-acbc-42b3-a3c1-7d93d5e7948d.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=239&id=u8f5d58ae&originHeight=957&originWidth=1353&originalType=binary&ratio=1&size=445559&status=done&style=none&taskId=u4b6de69e-899f-413f-8426-4b9006201bd&width=338"><br>缓存和主存之间的区别通常情况下，高速缓存均是依托于静态随机访问存储器（SRAM），而主存一般是依托于动态随机访问存储器（DRAM）</p>
-<h2 id="2-主存储器"><a href="#2-主存储器" class="headerlink" title="2.主存储器"></a>2.主存储器</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632823553558-e9fc6dac-7620-4651-93f9-268ffcbc5046.png#clientId=u2173fce3-fd34-4&from=paste&height=113&id=u3c32272e&originHeight=452&originWidth=800&originalType=binary&ratio=1&size=107642&status=done&style=none&taskId=ufb904efe-7bc3-4168-ac36-3541fed4664&width=200"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632823619887-2102d53d-7400-4a6c-8e97-b549abb252b5.png#clientId=u2173fce3-fd34-4&from=paste&height=196&id=u8a7bee1c&originHeight=782&originWidth=1195&originalType=binary&ratio=1&size=198840&status=done&style=none&taskId=uec3f8809-fd23-4ed1-926b-827c77cd00e&width=299"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632825435197-330630c7-0fb7-402f-bc4a-d412d4088ca1.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=190&id=u925d63ee&originHeight=759&originWidth=1354&originalType=binary&ratio=1&size=350513&status=done&style=none&taskId=u993886fa-b085-4b7b-97ab-d720e2ac444&width=339"><br>12345678H   12代表高位，78代表低位</p>
-<h2 id="3-半导体芯片"><a href="#3-半导体芯片" class="headerlink" title="3.半导体芯片"></a>3.半导体芯片</h2><p>2的十次方 = 1 k    k代表的是1024<br>1K有10条地址线，1M有20条地址线<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632826748753-5480df6f-e980-4291-b635-16e06bb904e9.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=250&id=ueaae7f39&originHeight=999&originWidth=1106&originalType=binary&ratio=1&size=247202&status=done&style=none&taskId=u377ff34b-5fd4-4e2a-b8f5-306785e625c&width=277"></p>
-<h3 id="随机存取存储器"><a href="#随机存取存储器" class="headerlink" title="随机存取存储器"></a>随机存取存储器</h3><p>动态RAM会周期性的刷新，静态RAM不进行刷新<br>1、静态RAM，指SRAM：只要有供电，它保存的数据就不会丢失，且为高速存储器，如<strong>CPU中的高速缓存</strong>（cache）<br>2、动态RAM，指DRAM：有供电，还要根据它要求的刷新时间参数，才能保持存储的数据不丢失，如<strong>电脑中的内存条</strong><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632828037967-647d62ed-4c50-45be-a905-e79f58e5c5d5.png#clientId=u3b5ad4b7-21d2-4&from=paste&height=252&id=u40ae86e5&originHeight=1007&originWidth=1384&originalType=binary&ratio=1&size=479381&status=done&style=none&taskId=u94b0f280-64fd-4cdc-a3ea-c3afe50e5a5&width=346"><br>分为64行，64列，64列被分为4组，如图所示<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632989882476-04cab272-e994-46a7-901a-79a7f90cb0bc.png#clientId=uf5d5275e-3279-4&from=paste&height=243&id=u650c8f83&originHeight=970&originWidth=1306&originalType=binary&ratio=1&size=366437&status=done&style=none&taskId=ub121fdd6-a49b-4970-aa1c-a37979e079c&width=327"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1632991300733-2013a8a1-781b-445e-9532-532c861f8821.png#clientId=uf5d5275e-3279-4&from=paste&height=184&id=ufd6be6e3&originHeight=733&originWidth=810&originalType=binary&ratio=1&size=277552&status=done&style=none&taskId=u87658f23-fd83-4deb-a3da-ab6d8c47117&width=203"></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>计算机组成原理</tag>
       </tags>
   </entry>
   <entry>
