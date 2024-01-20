@@ -178,13 +178,12 @@
     <link href="https://yuumiy.github.io/posts/1141.html"/>
     <id>https://yuumiy.github.io/posts/1141.html</id>
     <published>2022-09-28T14:48:56.000Z</published>
-    <updated>2022-09-28T14:48:56.000Z</updated>
+    <updated>2024-01-20T08:32:45.000Z</updated>
     
     
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 
-&lt;h1 id=&quot;设计模式学习&quot;&gt;&lt;a href=&quot;#设计模式学习&quot; class=&quot;headerlink&quot; title=&quot;设计模式学习&quot;&gt;&lt;/a&gt;设计模式学习&lt;/h1&gt;&lt;h2 id=&quot;一、面向对象设计原则-7原则&quot;&gt;&lt;a href=&quot;#一、面向对象设计原则-7原则&quot; class=&quot;headerlink&quot; title=&quot;一、面向对象设计原则(7原则)&quot;&gt;&lt;/a&gt;一、面向对象设计原则(7原则)&lt;/h2&gt;&lt;p&gt;我们在进行软件开发时，不仅需要将基本的业务给完成，还要考虑整个项目的可维护性和可复用性，我们开发的项目不单单需要我们自己来维护，也需要其他的开发者一起来进行共同维护，因此我们在编写代码时，应该尽可能的规范。如果我们在编写代码时不注重这些问题，随着项目的不断扩大，整体结构只会越来越糟。为了避免这种情况的发生，我们就可以使用设计模式&lt;/p&gt;
-&lt;p&gt;​</summary>
+&lt;h1 id=&quot;设计模式学习&quot;&gt;&lt;a href=&quot;#设计模式学习&quot; class=&quot;headerlink&quot; title=&quot;设计模式学习&quot;&gt;&lt;/a&gt;设计模式学习&lt;/h1&gt;&lt;h2 id=&quot;一、面向对象设计原则-7原则&quot;&gt;&lt;a href=&quot;#一、面向对象设计原则-7原则&quot; class=&quot;headerlink&quot; title=&quot;一、面向对象设计原则(7原则)&quot;&gt;&lt;/a&gt;一、面向对象设计原则(7原则)&lt;/h2&gt;&lt;p&gt;我们在进行软件开发时，不仅需要将基本的业务给完成，还要考虑整个项目的可维护性和可复用性，我们开发的项目不单单需要我们自己来维护，也需要其他的开发者一起来进行共同维护，因此我们在编写代码时，应该尽可能的规范。如果我们在编写代码时不注重这些问题，随着项目的不断扩大，整体结构只会越来越糟。为了避免这种情况的发生，我们就可以使用设计模式&lt;/p&gt;</summary>
     
     
     
