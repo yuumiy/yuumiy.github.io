@@ -77,6 +77,7 @@
 <h3 id="day19-2024-1-31"><a href="#day19-2024-1-31" class="headerlink" title="day19 2024.1.31"></a>day19 2024.1.31</h3><p>学习时长：1.5h</p>
 <h3 id="day20-2024-2-1"><a href="#day20-2024-2-1" class="headerlink" title="day20 2024.2.1"></a>day20 2024.2.1</h3><p>学习时长：2.5h</p>
 <h3 id="day21-2024-2-2"><a href="#day21-2024-2-2" class="headerlink" title="day21 2024.2.2"></a>day21 2024.2.2</h3><p>学习时长：1h</p>
+<h3 id="day22-2024-2-3"><a href="#day22-2024-2-3" class="headerlink" title="day22 2024.2.3"></a>day22 2024.2.3</h3><p>学习时长：4h</p>
 ]]></content>
       <categories>
         <category>打卡</category>
@@ -464,6 +465,28 @@
       </tags>
   </entry>
   <entry>
+    <title>操作系统</title>
+    <url>/posts/437.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<p>开始操作系统的学习吧！</p>
+<span id="more"></span>
+
+<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="1-操作系统的历史"><a href="#1-操作系统的历史" class="headerlink" title="1.操作系统的历史"></a>1.操作系统的历史</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762042600-e2d49f67-00b1-43b3-b6cd-0b44b6abfcd3.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=112&id=u6bbe1cc7&originHeight=223&originWidth=997&originalType=binary&ratio=1&size=116765&status=done&style=none&taskId=uee526110-6923-4fb9-821f-f6216031d3b&width=499" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762148041-391b239d-5fa4-46be-a550-4797be4a9a07.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=138&id=ubc28b705&originHeight=275&originWidth=1002&originalType=binary&ratio=1&size=111350&status=done&style=none&taskId=u804df73a-e1d0-4eac-861b-90ed1fa9e82&width=501" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762466208-4416576f-79b4-4011-83dd-80ea6c11980f.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=222&id=u313ed5ae&originHeight=443&originWidth=855&originalType=binary&ratio=1&size=241734&status=done&style=none&taskId=u8c6ec8e3-4131-4cd6-a545-25036476039&width=428" alt="image.png"></p>
+<h2 id="2-应用眼中的操作系统"><a href="#2-应用眼中的操作系统" class="headerlink" title="2.应用眼中的操作系统"></a>2.应用眼中的操作系统</h2><p>什么是程序？<br>可执行的二进制文件</p>
+<p>什么是软件？<br>按照特定顺序组织的计算机数据和指令的集合</p>
+<p>线程崩溃不会导致进程崩溃。一个进程可以有多个线程<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631763096878-c87f48d3-7373-4d5a-9efd-53130ad898bb.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=268&id=ue3e8b29e&originHeight=536&originWidth=996&originalType=binary&ratio=1&size=168570&status=done&style=none&taskId=ud61b0e7f-d421-43c0-b7ba-c098d001225&width=498" alt="image.png"><br> <img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631771650693-fc5af4b2-c672-4525-945c-d1859458140a.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=328&id=u106f1694&originHeight=655&originWidth=978&originalType=binary&ratio=1&size=369803&status=done&style=none&taskId=u8bbf06f3-1a3c-4359-868d-eb855b23296&width=489" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631772179790-7d68bdd3-41bc-4904-8898-dc27e8e9c448.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=201&id=u0535f9d1&originHeight=402&originWidth=1000&originalType=binary&ratio=1&size=150185&status=done&style=none&taskId=uda816a36-940b-4f0a-8ca3-6e74f9931f2&width=500" alt="image.png"><br>gcc  将源代码程序编译成二进制程序</p>
+<p>strace命令是一个集诊断、调试、统计与一体的工具，我们可以使用strace对应用的系统调用和信号传递的跟踪结果来对应用进行分析，以达到解决问题或者是了解应用工作过程的目的<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631772946401-c27460cc-2d64-4bb8-bf25-45fd6a7af47e.png#clientId=u9d6e65e6-f1f8-4&from=paste&id=u6b0837c5&originHeight=240&originWidth=570&originalType=binary&ratio=1&size=159266&status=done&style=none&taskId=ucbf080fb-7d69-405f-a3e8-5879bf8262d" alt="image.png"></p>
+<h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><h2 id="1-并发与并行"><a href="#1-并发与并行" class="headerlink" title="1.并发与并行"></a>1.并发与并行</h2><p>并发(Concurrency)：有些事情可以同时发生，这个事情就是并发的<br>每隔一定时间，就切换到另一个进程执行(看起来进程好像是同时执行的)<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631774208483-d770848b-b372-4161-9e63-d94f5969aed6.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=293&id=ue2a70221&originHeight=390&originWidth=950&originalType=binary&ratio=1&size=192528&status=done&style=none&taskId=ua842a16a-1403-428c-84a3-f48ddc97e08&width=713" alt="image.png"></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>操作系统</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法与数据结构打卡</title>
     <url>/posts/518a.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -605,6 +628,10 @@
 <h3 id="2024-2-1"><a href="#2024-2-1" class="headerlink" title="2024.2.1"></a>2024.2.1</h3><p>背包问题：两个for循环</p>
 <p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1706798394204-10fbcbd1-b9ca-4020-a7aa-0648c83a634d.png"></p>
 <p><img data-src="C:\Users\zhongdawei\AppData\Roaming\Typora\typora-user-images\image-20240201224024975.png"></p>
+<h3 id="2024-2-3"><a href="#2024-2-3" class="headerlink" title="2024.2.3"></a>2024.2.3</h3><p>动态规划：dp数组</p>
+<p><strong>当前状态和前面状态会有一种依赖关系，那么这种依赖关系都是动规的递推公式</strong></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1706933384034-f50cbf0a-2ee7-4a6f-a626-0897965c47d7.png"></p>
+<p><img data-src="https://cdn.nlark.com/yuque/0/2024/png/12855610/1706934108985-b20ddf4a-93c1-45c1-89b5-35ba72334533.png"></p>
 <h2 id="二、内功修炼：图解数据结构-小傅哥"><a href="#二、内功修炼：图解数据结构-小傅哥" class="headerlink" title="二、内功修炼：图解数据结构(小傅哥)"></a>二、内功修炼：图解数据结构(小傅哥)</h2><h3 id="第一章-链表"><a href="#第一章-链表" class="headerlink" title="第一章 链表"></a>第一章 链表</h3><p>链表、双向链表、循环链表</p>
 <p>prev  next</p>
 <p>LinkedList  底层是双向链表  查询慢增删快</p>
@@ -654,28 +681,6 @@
       </tags>
   </entry>
   <entry>
-    <title>操作系统</title>
-    <url>/posts/437.html</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-
-<p>开始操作系统的学习吧！</p>
-<span id="more"></span>
-
-<h1 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h1><h2 id="1-操作系统的历史"><a href="#1-操作系统的历史" class="headerlink" title="1.操作系统的历史"></a>1.操作系统的历史</h2><p><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762042600-e2d49f67-00b1-43b3-b6cd-0b44b6abfcd3.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=112&id=u6bbe1cc7&originHeight=223&originWidth=997&originalType=binary&ratio=1&size=116765&status=done&style=none&taskId=uee526110-6923-4fb9-821f-f6216031d3b&width=499" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762148041-391b239d-5fa4-46be-a550-4797be4a9a07.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=138&id=ubc28b705&originHeight=275&originWidth=1002&originalType=binary&ratio=1&size=111350&status=done&style=none&taskId=u804df73a-e1d0-4eac-861b-90ed1fa9e82&width=501" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631762466208-4416576f-79b4-4011-83dd-80ea6c11980f.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=222&id=u313ed5ae&originHeight=443&originWidth=855&originalType=binary&ratio=1&size=241734&status=done&style=none&taskId=u8c6ec8e3-4131-4cd6-a545-25036476039&width=428" alt="image.png"></p>
-<h2 id="2-应用眼中的操作系统"><a href="#2-应用眼中的操作系统" class="headerlink" title="2.应用眼中的操作系统"></a>2.应用眼中的操作系统</h2><p>什么是程序？<br>可执行的二进制文件</p>
-<p>什么是软件？<br>按照特定顺序组织的计算机数据和指令的集合</p>
-<p>线程崩溃不会导致进程崩溃。一个进程可以有多个线程<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631763096878-c87f48d3-7373-4d5a-9efd-53130ad898bb.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=268&id=ue3e8b29e&originHeight=536&originWidth=996&originalType=binary&ratio=1&size=168570&status=done&style=none&taskId=ud61b0e7f-d421-43c0-b7ba-c098d001225&width=498" alt="image.png"><br> <img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631771650693-fc5af4b2-c672-4525-945c-d1859458140a.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=328&id=u106f1694&originHeight=655&originWidth=978&originalType=binary&ratio=1&size=369803&status=done&style=none&taskId=u8bbf06f3-1a3c-4359-868d-eb855b23296&width=489" alt="image.png"><br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631772179790-7d68bdd3-41bc-4904-8898-dc27e8e9c448.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=201&id=u0535f9d1&originHeight=402&originWidth=1000&originalType=binary&ratio=1&size=150185&status=done&style=none&taskId=uda816a36-940b-4f0a-8ca3-6e74f9931f2&width=500" alt="image.png"><br>gcc  将源代码程序编译成二进制程序</p>
-<p>strace命令是一个集诊断、调试、统计与一体的工具，我们可以使用strace对应用的系统调用和信号传递的跟踪结果来对应用进行分析，以达到解决问题或者是了解应用工作过程的目的<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631772946401-c27460cc-2d64-4bb8-bf25-45fd6a7af47e.png#clientId=u9d6e65e6-f1f8-4&from=paste&id=u6b0837c5&originHeight=240&originWidth=570&originalType=binary&ratio=1&size=159266&status=done&style=none&taskId=ucbf080fb-7d69-405f-a3e8-5879bf8262d" alt="image.png"></p>
-<h1 id="并发"><a href="#并发" class="headerlink" title="并发"></a>并发</h1><h2 id="1-并发与并行"><a href="#1-并发与并行" class="headerlink" title="1.并发与并行"></a>1.并发与并行</h2><p>并发(Concurrency)：有些事情可以同时发生，这个事情就是并发的<br>每隔一定时间，就切换到另一个进程执行(看起来进程好像是同时执行的)<br><img data-src="https://cdn.nlark.com/yuque/0/2021/png/12855610/1631774208483-d770848b-b372-4161-9e63-d94f5969aed6.png#clientId=u9d6e65e6-f1f8-4&from=paste&height=293&id=ue2a70221&originHeight=390&originWidth=950&originalType=binary&ratio=1&size=192528&status=done&style=none&taskId=ua842a16a-1403-428c-84a3-f48ddc97e08&width=713" alt="image.png"></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>操作系统</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>计算机组成原理</title>
     <url>/posts/cacd.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -719,24 +724,6 @@
       </tags>
   </entry>
   <entry>
-    <title>读书计划打卡</title>
-    <url>/posts/602.html</url>
-    <content><![CDATA[<meta name="referrer" content="no-referrer" />
-
-<h1 id="读书计划打卡"><a href="#读书计划打卡" class="headerlink" title="读书计划打卡"></a>读书计划打卡</h1><p>记录一些自己读过的书~</p>
-<span id="more"></span>
-
-<h3 id="《奔跑吧程序员》"><a href="#《奔跑吧程序员》" class="headerlink" title="《奔跑吧程序员》"></a>《奔跑吧程序员》</h3><p>P1-113</p>
-<h3 id="《练好口才的第一本书》"><a href="#《练好口才的第一本书》" class="headerlink" title="《练好口才的第一本书》"></a>《练好口才的第一本书》</h3><p>P1-5</p>
-]]></content>
-      <categories>
-        <category>打卡</category>
-      </categories>
-      <tags>
-        <tag>学习计划</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>谷粒商城学习总结</title>
     <url>/posts/7f37.html</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -750,6 +737,25 @@
       </categories>
       <tags>
         <tag>谷粒商城</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>读书计划打卡</title>
+    <url>/posts/602.html</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<h1 id="读书计划打卡"><a href="#读书计划打卡" class="headerlink" title="读书计划打卡"></a>读书计划打卡</h1><p>记录一些自己读过的书~</p>
+<span id="more"></span>
+
+<h3 id="1、《奔跑吧程序员》"><a href="#1、《奔跑吧程序员》" class="headerlink" title="1、《奔跑吧程序员》"></a>1、《奔跑吧程序员》</h3><p>P1-113</p>
+<h3 id="2、《练好口才的第一本书》"><a href="#2、《练好口才的第一本书》" class="headerlink" title="2、《练好口才的第一本书》"></a>2、《练好口才的第一本书》</h3><p>P1-5</p>
+<p>P5-9</p>
+]]></content>
+      <categories>
+        <category>打卡</category>
+      </categories>
+      <tags>
+        <tag>学习计划</tag>
       </tags>
   </entry>
   <entry>
