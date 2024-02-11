@@ -6,7 +6,7 @@
   <link href="https://yuumiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuumiy.github.io/"/>
-  <updated>2024-02-07T12:52:08.000Z</updated>
+  <updated>2024-02-11T15:08:08.000Z</updated>
   <id>https://yuumiy.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lottery抽奖系统项目</title>
+    <link href="https://yuumiy.github.io/posts/6eb4.html"/>
+    <id>https://yuumiy.github.io/posts/6eb4.html</id>
+    <published>2024-02-11T15:08:08.000Z</published>
+    <updated>2024-02-11T15:08:08.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;h1 id=&quot;Lottery抽奖系统项目&quot;&gt;&lt;a href=&quot;#Lottery抽奖系统项目&quot; class=&quot;headerlink&quot; title=&quot;Lottery抽奖系统项目&quot;&gt;&lt;/a&gt;Lottery抽奖系统项目&lt;/h1&gt;&lt;p&gt;项目来自小傅哥的知识星球&lt;/p&gt;
+&lt;p&gt;项目地址：&lt;a href=&quot;https://wx.zsxq.com/dweb2/index/topic_detail/185215881418152&quot;&gt;https://wx.zsxq.com/dweb2/index/topic_detail/185215881418152&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;项目gitcode：&lt;a href=&quot;https://gitcode.net/KnowledgePlanet/Lottery&quot;&gt;https://gitcode.net/KnowledgePlanet/Lottery&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="项目" scheme="https://yuumiy.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
+    
+    
+    <category term="项目实战" scheme="https://yuumiy.github.io/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
+    
+  </entry>
   
   <entry>
     <title>100天微笑训练打卡</title>
@@ -26,7 +49,8 @@
     
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 
-&lt;h1 id=&quot;100天微笑训练打卡&quot;&gt;&lt;a href=&quot;#100天微笑训练打卡&quot; class=&quot;headerlink&quot; title=&quot;100天微笑训练打卡&quot;&gt;&lt;/a&gt;100天微笑训练打卡&lt;/h1&gt;&lt;p&gt;每天对着镜子练习100遍“引”字；舌头转圈，左转40圈，右转40圈&lt;/p&gt;</summary>
+&lt;h1 id=&quot;100天微笑训练打卡&quot;&gt;&lt;a href=&quot;#100天微笑训练打卡&quot; class=&quot;headerlink&quot; title=&quot;100天微笑训练打卡&quot;&gt;&lt;/a&gt;100天微笑训练打卡&lt;/h1&gt;&lt;p&gt;&lt;code&gt;打卡计划来源自《练好口才的第一本书》&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;每天对着镜子练习100遍“引”字；舌头转圈，左转40圈，右转40圈&lt;/p&gt;</summary>
     
     
     
@@ -290,13 +314,14 @@
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
 
 &lt;h1 id=&quot;谷粒商城学习总结&quot;&gt;&lt;a href=&quot;#谷粒商城学习总结&quot; class=&quot;headerlink&quot; title=&quot;谷粒商城学习总结&quot;&gt;&lt;/a&gt;谷粒商城学习总结&lt;/h1&gt;&lt;p&gt;第一遍学习完结撒花，第一遍主要是熟悉整个项目背景。&lt;/p&gt;
-&lt;p&gt;第二遍打算结合视频独立完成，熟悉项目的整体设计、优秀业务代码的编写，并输出学习笔记。&lt;/p&gt;
-&lt;p&gt;​</summary>
+&lt;p&gt;第二遍打算结合视频独立完成，熟悉项目的整体设计、优秀业务代码的编写，并输出学习笔记。&lt;/p&gt;</summary>
     
     
     
     <category term="项目" scheme="https://yuumiy.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
     
+    
+    <category term="项目实战" scheme="https://yuumiy.github.io/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
     
     <category term="谷粒商城" scheme="https://yuumiy.github.io/tags/%E8%B0%B7%E7%B2%92%E5%95%86%E5%9F%8E/"/>
     
@@ -319,6 +344,8 @@
     
     <category term="项目" scheme="https://yuumiy.github.io/categories/%E9%A1%B9%E7%9B%AE/"/>
     
+    
+    <category term="项目实战" scheme="https://yuumiy.github.io/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
     
     <category term="尚医通" scheme="https://yuumiy.github.io/tags/%E5%B0%9A%E5%8C%BB%E9%80%9A/"/>
     
@@ -445,28 +472,6 @@
     <category term="Github" scheme="https://yuumiy.github.io/tags/Github/"/>
     
     <category term="Hexo" scheme="https://yuumiy.github.io/tags/Hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://yuumiy.github.io/posts/3eeb.html"/>
-    <id>https://yuumiy.github.io/posts/3eeb.html</id>
-    <published>2021-08-11T03:05:08.000Z</published>
-    <updated>2021-08-12T01:07:53.000Z</updated>
-    
-    
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World!&quot;&gt;&lt;/a&gt;Hello World!&lt;/h1&gt;&lt;p&gt;由Hexo Next搭建的博客网站，这是第一篇博客！&lt;/p&gt;
-&lt;p&gt;文章将有以下分类：工具、技术、笔记、思考、生活、阅读&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="技术" scheme="https://yuumiy.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="博客" scheme="https://yuumiy.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   
