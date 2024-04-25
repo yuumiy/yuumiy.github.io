@@ -4,7 +4,7 @@
   <url>
     <loc>https://yuumiy.github.io/about/index.html</loc>
     
-    <lastmod>2024-04-24</lastmod>
+    <lastmod>2024-04-25</lastmod>
     
   </url>
   
@@ -207,6 +207,13 @@
   </url>
   
   <url>
+    <loc>https://yuumiy.github.io/tags/%E5%B0%9A%E5%8C%BB%E9%80%9A/</loc>
+    <lastmod>2024-04-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://yuumiy.github.io/tags/IDEA/</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>daily</changefreq>
@@ -222,13 +229,6 @@
   
   <url>
     <loc>https://yuumiy.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2024-04-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://yuumiy.github.io/tags/%E5%B0%9A%E5%8C%BB%E9%80%9A/</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -312,14 +312,14 @@
   </url>
   
   <url>
-    <loc>https://yuumiy.github.io/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://yuumiy.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://yuumiy.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/</loc>
+    <loc>https://yuumiy.github.io/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/</loc>
     <lastmod>2024-04-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
