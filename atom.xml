@@ -6,7 +6,7 @@
   <link href="https://yuumiy.github.io/atom.xml" rel="self"/>
   
   <link href="https://yuumiy.github.io/"/>
-  <updated>2024-02-11T15:08:08.000Z</updated>
+  <updated>2025-01-06T04:22:06.000Z</updated>
   <id>https://yuumiy.github.io/</id>
   
   <author>
@@ -17,11 +17,84 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>RabbitMq基本使用</title>
+    <link href="https://yuumiy.github.io/posts/d128.html"/>
+    <id>https://yuumiy.github.io/posts/d128.html</id>
+    <published>2025-01-06T04:22:06.000Z</published>
+    <updated>2025-01-06T04:22:06.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;介绍RabbitMq的基本使用&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="RabbitMq，消息中间件，笔记" scheme="https://yuumiy.github.io/tags/RabbitMq%EF%BC%8C%E6%B6%88%E6%81%AF%E4%B8%AD%E9%97%B4%E4%BB%B6%EF%BC%8C%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>DDD架构是什么</title>
+    <link href="https://yuumiy.github.io/posts/5b03.html"/>
+    <id>https://yuumiy.github.io/posts/5b03.html</id>
+    <published>2024-12-15T04:22:06.000Z</published>
+    <updated>2024-12-15T04:22:06.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;本文学习DDD架构是什么，它与MVC架构存在什么区别&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="DDD架构" scheme="https://yuumiy.github.io/tags/DDD%E6%9E%B6%E6%9E%84/"/>
+    
+    <category term="MVC架构" scheme="https://yuumiy.github.io/tags/MVC%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基于wkhtmltopdf实现html转pdf导出</title>
+    <link href="https://yuumiy.github.io/posts/3b7c.html"/>
+    <id>https://yuumiy.github.io/posts/3b7c.html</id>
+    <published>2024-08-23T04:22:06.000Z</published>
+    <updated>2024-08-23T04:22:06.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;html转pdf功能方案实现&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="方案实现" scheme="https://yuumiy.github.io/categories/%E6%96%B9%E6%A1%88%E5%AE%9E%E7%8E%B0/"/>
+    
+    
+    <category term="wkhtmltopdf" scheme="https://yuumiy.github.io/tags/wkhtmltopdf/"/>
+    
+    <category term="Java" scheme="https://yuumiy.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Lottery抽奖系统项目</title>
     <link href="https://yuumiy.github.io/posts/6eb4.html"/>
     <id>https://yuumiy.github.io/posts/6eb4.html</id>
     <published>2024-02-11T15:08:08.000Z</published>
-    <updated>2024-02-11T15:08:08.000Z</updated>
+    <updated>2025-02-16T15:08:08.000Z</updated>
     
     
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
@@ -38,29 +111,6 @@
     
     
     <category term="项目实战" scheme="https://yuumiy.github.io/tags/%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>100天微笑训练打卡</title>
-    <link href="https://yuumiy.github.io/posts/b45e.html"/>
-    <id>https://yuumiy.github.io/posts/b45e.html</id>
-    <published>2024-02-07T03:18:08.000Z</published>
-    <updated>2024-02-07T12:52:08.000Z</updated>
-    
-    
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;h1 id=&quot;100天微笑训练打卡&quot;&gt;&lt;a href=&quot;#100天微笑训练打卡&quot; class=&quot;headerlink&quot; title=&quot;100天微笑训练打卡&quot;&gt;&lt;/a&gt;100天微笑训练打卡&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;打卡计划来源自《练好口才的第一本书》&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="打卡" scheme="https://yuumiy.github.io/categories/%E6%89%93%E5%8D%A1/"/>
-    
-    
-    <category term="学习计划" scheme="https://yuumiy.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/"/>
     
   </entry>
   
@@ -169,6 +219,31 @@
     
     
     <category term="计算机组成原理" scheme="https://yuumiy.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDK8新特性使用方法总结</title>
+    <link href="https://yuumiy.github.io/posts/caff.html"/>
+    <id>https://yuumiy.github.io/posts/caff.html</id>
+    <published>2023-08-11T04:22:06.000Z</published>
+    <updated>2023-08-11T04:22:06.000Z</updated>
+    
+    
+    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;jdk8新特性学习的使用方法总结笔记&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="jdk新特性" scheme="https://yuumiy.github.io/tags/jdk%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    
+    <category term="jdk8" scheme="https://yuumiy.github.io/tags/jdk8/"/>
     
   </entry>
   
@@ -335,7 +410,7 @@
     <link href="https://yuumiy.github.io/posts/943f.html"/>
     <id>https://yuumiy.github.io/posts/943f.html</id>
     <published>2022-04-23T07:42:39.000Z</published>
-    <updated>2022-04-23T07:42:39.000Z</updated>
+    <updated>2023-04-23T07:42:39.000Z</updated>
     
     
     <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
@@ -355,7 +430,7 @@
   </entry>
   
   <entry>
-    <title>jdk8新特性</title>
+    <title>jdk8新特性学习记录</title>
     <link href="https://yuumiy.github.io/posts/f6d8.html"/>
     <id>https://yuumiy.github.io/posts/f6d8.html</id>
     <published>2022-03-20T04:22:06.000Z</published>
@@ -366,8 +441,7 @@
 
 &lt;blockquote&gt;
 &lt;p&gt;jdk8新特性学习，视频来自&lt;a href=&quot;https://www.bilibili.com/video/BV1HV411W78K&quot;&gt;2021最新版JDK8新特性详解&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;​</summary>
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -376,10 +450,12 @@
     
     <category term="jdk新特性" scheme="https://yuumiy.github.io/tags/jdk%E6%96%B0%E7%89%B9%E6%80%A7/"/>
     
+    <category term="jdk8" scheme="https://yuumiy.github.io/tags/jdk8/"/>
+    
   </entry>
   
   <entry>
-    <title>SpringBoot学习笔记</title>
+    <title>SpringBoot概述</title>
     <link href="https://yuumiy.github.io/posts/251e.html"/>
     <id>https://yuumiy.github.io/posts/251e.html</id>
     <published>2021-09-15T15:53:20.000Z</published>
@@ -396,85 +472,6 @@
     
     
     <category term="SpringBoot" scheme="https://yuumiy.github.io/tags/SpringBoot/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机网络学习笔记</title>
-    <link href="https://yuumiy.github.io/posts/c7f5.html"/>
-    <id>https://yuumiy.github.io/posts/c7f5.html</id>
-    <published>2021-08-29T12:15:30.000Z</published>
-    <updated>2021-09-07T06:13:55.000Z</updated>
-    
-    
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;开始路途漫漫的计算机网络学习吧，视频来自&lt;a href=&quot;https://www.bilibili.com/video/BV1c4411d7jb&quot;&gt;计算机网络微课堂&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img data-src=&quot;https://cdn.nlark.com/yuque/0/2021/jpeg/12855610/1630208621955-a4a8ad3a-087d-4521-ab8a-0ca28358b4fd.jpeg?x-oss-process=image/resize,w_750,limit_0&quot;&gt;&lt;br&gt;​</summary>
-    
-    
-    
-    <category term="笔记" scheme="https://yuumiy.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="计算机网络" scheme="https://yuumiy.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Windows和IDEA的常用快捷键</title>
-    <link href="https://yuumiy.github.io/posts/bde9.html"/>
-    <id>https://yuumiy.github.io/posts/bde9.html</id>
-    <published>2021-08-17T08:45:08.000Z</published>
-    <updated>2021-09-17T08:51:35.000Z</updated>
-    
-    
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;博主作为一个Java后端攻城狮，开发过程中不免要使用许多的快捷键。合理使用快捷键能极大提高工作效率，那么这么多的快捷键又该记住哪些呢，把所有快捷键都记下显然是不太现实的。因此我根据平时的使用习惯，总结了自己在Windows和IDEA中常用的快捷键。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="工具" scheme="https://yuumiy.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="IDEA" scheme="https://yuumiy.github.io/tags/IDEA/"/>
-    
-    <category term="Windows" scheme="https://yuumiy.github.io/tags/Windows/"/>
-    
-    <category term="快捷键" scheme="https://yuumiy.github.io/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭建自己的个人博客网站(Github+Hexo+Next)</title>
-    <link href="https://yuumiy.github.io/posts/2789.html"/>
-    <id>https://yuumiy.github.io/posts/2789.html</id>
-    <published>2021-08-14T03:22:35.000Z</published>
-    <updated>2021-09-16T07:51:20.000Z</updated>
-    
-    
-    <summary type="html">&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;从大二开始就一直很想有一个属于自己的博客网站，可一拖再拖，直到最近才下了决心去搭建一个网站。在网上了解到基于Hexo的博客搭建比较简单并且美观，在查阅了许多教程，走过无数坑后，写下了这篇文章。本文主要讲解个人博客网站的搭建，内容比较详细，适合小白食用。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;网页预览：&lt;a href=&quot;https://yuumiy.github.io/&quot;&gt;https://yuumiy.github.io&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="工具" scheme="https://yuumiy.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="博客" scheme="https://yuumiy.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-    <category term="Github" scheme="https://yuumiy.github.io/tags/Github/"/>
-    
-    <category term="Hexo" scheme="https://yuumiy.github.io/tags/Hexo/"/>
     
   </entry>
   

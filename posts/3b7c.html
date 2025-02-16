@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="NmvL2aBrGRwi3CzraBejtkwEbHmmH-7u73OJj3FMOoc">
+  <meta name="msvalidate.01" content="5DB1ECD7406CD70A251CF96C939178B9">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yuumiy.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="html转pdf功能方案实现">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于wkhtmltopdf实现html转pdf导出">
+<meta property="og:url" content="https://yuumiy.github.io/posts/3b7c.html">
+<meta property="og:site_name" content="岛田悠米">
+<meta property="og:description" content="html转pdf功能方案实现">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/63e4a6709a236a4b4cf0bd863b479804.png">
+<meta property="og:image" content="https://yuumiy.github.io/posts/html%E8%BD%ACpdf%E5%AF%BC%E5%87%BA/image-20230531142557112.png">
+<meta property="article:published_time" content="2024-08-23T04:22:06.000Z">
+<meta property="article:modified_time" content="2024-08-23T04:22:06.000Z">
+<meta property="article:author" content="Yuumiy">
+<meta property="article:tag" content="wkhtmltopdf">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/63e4a6709a236a4b4cf0bd863b479804.png">
+
+<link rel="canonical" href="https://yuumiy.github.io/posts/3b7c.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>基于wkhtmltopdf实现html转pdf导出 | 岛田悠米</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="岛田悠米" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">岛田悠米</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">心中有梦 不负韶华</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yuumiy.github.io/posts/3b7c.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Yuumiy">
+      <meta itemprop="description" content="coding就是生产力">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="岛田悠米">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基于wkhtmltopdf实现html转pdf导出
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-23 12:22:06" itemprop="dateCreated datePublished" datetime="2024-08-23T12:22:06+08:00">2024-08-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%B9%E6%A1%88%E5%AE%9E%E7%8E%B0/" itemprop="url" rel="index"><span itemprop="name">方案实现</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/3b7c.html" class="post-meta-item leancloud_visitors" data-flag-title="基于wkhtmltopdf实现html转pdf导出" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">评论次数：</span>
+    
+    <a title="valine" href="/posts/3b7c.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/3b7c.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer" />
+
+<blockquote>
+<p>html转pdf功能方案实现</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="一、html导出pdf方案优缺点比较"><a href="#一、html导出pdf方案优缺点比较" class="headerlink" title="一、html导出pdf方案优缺点比较"></a>一、html导出pdf方案优缺点比较</h3><p><img data-src="https://i-blog.csdnimg.cn/blog_migrate/63e4a6709a236a4b4cf0bd863b479804.png" alt="image-20250216093311591"></p>
+<h3 id="二、html转pdf导出"><a href="#二、html转pdf导出" class="headerlink" title="二、html转pdf导出"></a>二、html转pdf导出</h3><p>导出效果是将定制化的页面报表html页面导出为pdf文件，根据需求可对html进一步排版，展示表格化的元素</p>
+<h4 id="1、知识介绍"><a href="#1、知识介绍" class="headerlink" title="1、知识介绍"></a>1、知识介绍</h4><h5 id="1）freemarker"><a href="#1）freemarker" class="headerlink" title="1）freemarker"></a>1）freemarker</h5><p><code>Freemarker</code>是一款纯 <code>Java</code>编写的模板引擎软件，可以用来生成各种文本，包括但不限于：<code>HTML</code>，<code>E-Mail</code>以及各种源代码等等。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;title&gt;index&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;你好，$&#123;userName&#125;&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p><code>$&#123;userName&#125;</code>是 FTL 的<strong>插值</strong>语法，这个值由后端代码放到Model中</p>
+<h5 id="2）wkhtmltopdf"><a href="#2）wkhtmltopdf" class="headerlink" title="2）wkhtmltopdf"></a>2）wkhtmltopdf</h5><p>工具全名叫 “wkhtmltopdf” ，能够把html 文档转换成 pdf 文档 或 图片(image) 的命令行工具，可在win、linux等系统下运行</p>
+<h4 id="2、开发步骤"><a href="#2、开发步骤" class="headerlink" title="2、开发步骤"></a>2、开发步骤</h4><h5 id="1）windows服务器"><a href="#1）windows服务器" class="headerlink" title="1）windows服务器"></a>1）windows服务器</h5><p>wkhtmltopdf直接解压即可，我的电脑配置wkhtml环境变量后，本地才可进行调试</p>
+<h5 id="2）linux服务器"><a href="#2）linux服务器" class="headerlink" title="2）linux服务器"></a>2）linux服务器</h5><p>组件装到平台上时，平台服务器需要安装wkhtmltopdf，才可以使用pdf导出功能</p>
+<p><strong>如何安装：</strong></p>
+<p>使用root用户，进入到/mnt/目录，mkdir wkhtmltopdf创建文件夹</p>
+<p>解压wkhtmltopdf.zip压缩包，将压缩包里的内容上传到wkhtmltopdf文件夹</p>
+<p>进入wkhtmltopdf文件夹，cd /mnt /wkhtmltopdf/ ，执行 sh install.sh命令安装wkhtmltopdf</p>
+<p>安装完成后，打开当前目录的tmp文件，出现install rpm success，wkhtmltopdf则安装成功</p>
+<p><img data-src="html%E8%BD%ACpdf%E5%AF%BC%E5%87%BA/image-20230531142557112.png" alt="image-20230531142557112"></p>
+<p><strong>注意：一些高版本的JavaScript的语法，高版本的Jquery库，js库，Echarts中的一些高阶参数配置都会让wkhtmltopdf软件渲染异常。原因是wkhtmltopdf内部的webkit浏览器内核版本太低，导致某些语法解析不了，导致报错</strong></p>
+<h4 id="3、代码示例"><a href="#3、代码示例" class="headerlink" title="3、代码示例"></a>3、代码示例</h4><h5 id="1）pdf下载接口示例"><a href="#1）pdf下载接口示例" class="headerlink" title="1）pdf下载接口示例"></a>1）pdf下载接口示例</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">@ApiOperation(&quot;全量导出pdf&quot;)</span><br><span class="line">   @PostMapping(value = &quot;/exportAllPdf&quot;)</span><br><span class="line">   public void exportAllPdf(@RequestBody ExportAllQo qo, @ApiIgnore HttpServletResponse response,</span><br><span class="line">   		@ApiIgnore HttpServletRequest request) &#123;</span><br><span class="line"></span><br><span class="line">       byte[] jsonByte = Base64Utils.encodeUrlSafe(JSONObject.toJSONString(qo).getBytes(StandardCharsets.UTF_8));</span><br><span class="line">       String jsonStgr = new String(jsonByte,StandardCharsets.UTF_8 );</span><br><span class="line"></span><br><span class="line">       String ipPort = HttpRequestUtil.getHost(request);</span><br><span class="line"></span><br><span class="line">       String newUrl = request.getScheme() + &quot;://&quot; + ipPort + &quot;/&quot; + CTM05SMARTPASS_COMPONENT_ID + EduStringUtil.fillingParameters(EXPORT_ALL_PDF, jsonStgr);</span><br><span class="line"></span><br><span class="line">       log.info(&quot;pdfUrl is &#123;&#125;&quot;,newUrl);</span><br><span class="line"></span><br><span class="line">       Pdf pdf = new Pdf();</span><br><span class="line">       pdf.addPageFromUrl(newUrl);</span><br><span class="line">       pdf.addParam(new Param(&quot;--enable-local-file-access&quot;));</span><br><span class="line">       pdf.addParam(new Param(&quot;--page-size&quot;, &quot;A4&quot;));</span><br><span class="line">       pdf.addParam(new Param(&quot;--header-spacing&quot;, &quot;3&quot;));</span><br><span class="line">       pdf.addParam(new Param(&quot;--footer-spacing&quot;, &quot;6&quot;));</span><br><span class="line"></span><br><span class="line">       OutputStream os = null;</span><br><span class="line">       byte[] buff = new byte[1024];</span><br><span class="line">       BufferedInputStream bis = null;</span><br><span class="line">       try &#123;</span><br><span class="line">           //先临时存储到本地</span><br><span class="line">           String pdfFileName = &quot;ExportAll&quot; + System.currentTimeMillis() + &quot;.pdf&quot;;</span><br><span class="line">           File pdfFile = new File(ExportCommonManager.getUploadFileTempRootPath() + File.separator + pdfFileName);</span><br><span class="line">           log.info(&quot;filePath is &#123;&#125;&quot;,ExportCommonManager.getUploadFileTempRootPath() + File.separator + pdfFileName);</span><br><span class="line">           if(!pdfFile.exists())&#123;</span><br><span class="line">               pdfFile.createNewFile();</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line">           //把pdf的html内容写入到本地临时文件中</span><br><span class="line">           pdf.saveAs(pdfFile);</span><br><span class="line"></span><br><span class="line">           //导出pdf文件</span><br><span class="line">           exportCommon(response, pdfFileName);</span><br><span class="line"></span><br><span class="line">           os = response.getOutputStream();</span><br><span class="line">           bis = new BufferedInputStream(new FileInputStream(pdfFile));</span><br><span class="line">           int i = 0;</span><br><span class="line">           while ((i = bis.read(buff)) != -1) &#123;</span><br><span class="line">               os.write(buff, 0, i);</span><br><span class="line">           &#125;</span><br><span class="line">           os.flush();</span><br><span class="line"></span><br><span class="line">       &#125; catch (IOException | InterruptedException e) &#123;</span><br><span class="line">           log.error(&quot;export pdf error &#123;&#125;&quot;, e);</span><br><span class="line">       &#125; finally &#123;</span><br><span class="line">           IOUtils.closeQuietly(bis);</span><br><span class="line">           IOUtils.closeQuietly(os);</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="2）ftl模板文件渲染接口"><a href="#2）ftl模板文件渲染接口" class="headerlink" title="2）ftl模板文件渲染接口"></a>2）ftl模板文件渲染接口</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@ApiOperation(&quot;全量导出html地址&quot;)</span><br><span class="line">    @GetMapping(value = &quot;/resource/exportAllHtml/&#123;base64Param&#125;&quot;)</span><br><span class="line">    public ModelAndView exportAllHtml(@PathVariable String base64Param, @ApiIgnore ModelAndView modelAndView) &#123;</span><br><span class="line">        //ModelAndView可以理解成ftl文件对象，这里设置指定ftl文件名称。</span><br><span class="line">        modelAndView.setViewName(&quot;exportAll&quot;);</span><br><span class="line"></span><br><span class="line">        //请求解析Base64编码参数</span><br><span class="line">        byte[] jsonByte = Base64Utils.decodeUrlSafe(base64Param.getBytes(StandardCharsets.UTF_8));</span><br><span class="line">        String decodeBase64Param = new String(jsonByte, StandardCharsets.UTF_8);</span><br><span class="line">        ExportAllQo qo = JsonUtil.fromJson(decodeBase64Param, ExportAllQo.class);</span><br><span class="line"></span><br><span class="line">		//封装model里的数据，填充到页面上</span><br><span class="line">        modelAndView = dataPdfService.exportAllHtml(qo,modelAndView);</span><br><span class="line"></span><br><span class="line">        //最终用户生成一个html页面</span><br><span class="line">        return modelAndView;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="4、测试阶段"><a href="#4、测试阶段" class="headerlink" title="4、测试阶段"></a>4、测试阶段</h4><p>1、ftl模板渲染接口url+base64参数，直接放到浏览器中访问。查看页面是否能够正常访问。</p>
+<p>2、如果页面能够正常访问，再测试下载接口，能否正常下载pdf</p>
+<p>3、注意：导出pdf前后端开发存在一定的耦合性，一些高级js语法或者ftl语法的错误会导致导出报错，需要一定的时间联调。导出pdf后样式也会发生一定的改变，需要前端再一次修改</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/wkhtmltopdf/" rel="tag"><i class="fa fa-tag"></i> wkhtmltopdf</a>
+              <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/6eb4.html" rel="prev" title="Lottery抽奖系统项目">
+      <i class="fa fa-chevron-left"></i> Lottery抽奖系统项目
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/5b03.html" rel="next" title="DDD架构是什么">
+      DDD架构是什么 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81html%E5%AF%BC%E5%87%BApdf%E6%96%B9%E6%A1%88%E4%BC%98%E7%BC%BA%E7%82%B9%E6%AF%94%E8%BE%83"><span class="nav-text">一、html导出pdf方案优缺点比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81html%E8%BD%ACpdf%E5%AF%BC%E5%87%BA"><span class="nav-text">二、html转pdf导出</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E7%9F%A5%E8%AF%86%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、知识介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%EF%BC%89freemarker"><span class="nav-text">1）freemarker</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%EF%BC%89wkhtmltopdf"><span class="nav-text">2）wkhtmltopdf</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E5%BC%80%E5%8F%91%E6%AD%A5%E9%AA%A4"><span class="nav-text">2、开发步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%EF%BC%89windows%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">1）windows服务器</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%EF%BC%89linux%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="nav-text">2）linux服务器</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="nav-text">3、代码示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1%EF%BC%89pdf%E4%B8%8B%E8%BD%BD%E6%8E%A5%E5%8F%A3%E7%A4%BA%E4%BE%8B"><span class="nav-text">1）pdf下载接口示例</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2%EF%BC%89ftl%E6%A8%A1%E6%9D%BF%E6%96%87%E4%BB%B6%E6%B8%B2%E6%9F%93%E6%8E%A5%E5%8F%A3"><span class="nav-text">2）ftl模板文件渲染接口</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%E3%80%81%E6%B5%8B%E8%AF%95%E9%98%B6%E6%AE%B5"><span class="nav-text">4、测试阶段</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Yuumiy"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Yuumiy</p>
+  <div class="site-description" itemprop="description">coding就是生产力</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">24</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/yuumiy" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;yuumiy" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:115274737@qq.com" title="E-Mail → mailto:115274737@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://yuumiy.blog.csdn.net/" title="CSDN → https:&#x2F;&#x2F;yuumiy.blog.csdn.net" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>CSDN</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yuumiy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">376k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">5:42</span>
+</div>
+
+<!-- 网站运行时间的设置 -->
+<span id="timeDate">载入天数...</span>
+<span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("08/10/2021 12:00:00");//此处修改你的建站时间或者网站上线时间
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+    setInterval("createtime()",250);
+</script>
+
+<script async src="/js/busuanzi.pure.mini.js"></script>
+<span><br></span>	
+
+<span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+</span>
+<span>总访客&nbsp<span id="busuanzi_value_site_uv"></span>&nbsp人</span>
+    <span class="post-meta-divider">|</span>
+<span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+</span>
+    <span>总访问量&nbsp<span id="busuanzi_value_site_pv"></span>&nbsp次</span>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/lozad.js/1.14.0/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('/js/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'PuhblTYT44STCX6Edvpd76zF-gzGzoHsz',
+      appKey     : '43DKcrM2QNBca1Ww68fepMOV',
+      placeholder: "填写邮箱作者能够及时反馈，欢迎评论哦(๑•̀ㅂ•́)و✧",
+      avatar     : 'retro',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"react":{"opacity":0.7},"log":false});</script></body>
+</html>

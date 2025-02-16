@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"yuumiy.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="jdk8新特性学习，视频来自2021最新版JDK8新特性详解  ​">
+  <meta name="description" content="jdk8新特性学习，视频来自2021最新版JDK8新特性详解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jdk8新特性">
+<meta property="og:title" content="jdk8新特性学习记录">
 <meta property="og:url" content="https://yuumiy.github.io/posts/f6d8.html">
 <meta property="og:site_name" content="岛田悠米">
-<meta property="og:description" content="jdk8新特性学习，视频来自2021最新版JDK8新特性详解  ​">
+<meta property="og:description" content="jdk8新特性学习，视频来自2021最新版JDK8新特性详解">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/12855610/1645971379624-91528a05-8669-44d0-8b50-f0109cf828e9.png#clientId=u674d1aac-5617-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=261&id=u30bd8d35&margin=%5Bobject%20Object%5D&name=image.png&originHeight=261&originWidth=836&originalType=binary&ratio=1&rotation=0&showTitle=false&size=132597&status=done&style=none&taskId=u3c5875ac-2bb2-480e-8cb0-6b333b1ee8a&title=&width=836">
 <meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/png/12855610/1645971844159-19b8f263-3870-4d46-b7c5-80d920b1251b.png#clientId=u674d1aac-5617-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=112&id=u1ff72433&margin=%5Bobject%20Object%5D&name=image.png&originHeight=112&originWidth=603&originalType=binary&ratio=1&rotation=0&showTitle=false&size=50173&status=done&style=none&taskId=u123a68ed-b89f-4aef-93f5-1ce1e5035fc&title=&width=603">
@@ -103,6 +103,7 @@
 <meta property="article:modified_time" content="2022-03-20T04:22:06.000Z">
 <meta property="article:author" content="Yuumiy">
 <meta property="article:tag" content="jdk新特性">
+<meta property="article:tag" content="jdk8">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2022/png/12855610/1645971379624-91528a05-8669-44d0-8b50-f0109cf828e9.png#clientId=u674d1aac-5617-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=261&id=u30bd8d35&margin=%5Bobject%20Object%5D&name=image.png&originHeight=261&originWidth=836&originalType=binary&ratio=1&rotation=0&showTitle=false&size=132597&status=done&style=none&taskId=u3c5875ac-2bb2-480e-8cb0-6b333b1ee8a&title=&width=836">
 
@@ -119,7 +120,7 @@
   };
 </script>
 
-  <title>jdk8新特性 | 岛田悠米</title>
+  <title>jdk8新特性学习记录 | 岛田悠米</title>
   
 
 
@@ -279,7 +280,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          jdk8新特性
+          jdk8新特性学习记录
         </h1>
 
         <div class="post-meta">
@@ -302,7 +303,7 @@
             </span>
 
           
-            <span id="/posts/f6d8.html" class="post-meta-item leancloud_visitors" data-flag-title="jdk8新特性" title="阅读次数">
+            <span id="/posts/f6d8.html" class="post-meta-item leancloud_visitors" data-flag-title="jdk8新特性学习记录" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -352,7 +353,8 @@
 <blockquote>
 <p>jdk8新特性学习，视频来自<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1HV411W78K">2021最新版JDK8新特性详解</a></p>
 </blockquote>
-<p>​<span id="more"></span></p>
+<span id="more"></span>
+
 <h3 id="一、Lambda表达式"><a href="#一、Lambda表达式" class="headerlink" title="一、Lambda表达式"></a>一、Lambda表达式</h3><p><strong>lambda表达式的优点：</strong><br>1、简化匿名内部类的使用<br>lambda表达式：匿名内部类是传入接口，而且该接口只能有一个抽象方法<br>一个方法传入接口，就是匿名内部类的写法，因为必须实现接口的抽象方法，否则会报错</p>
 <p>2、lambda表达式的省略写法<br><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1645971379624-91528a05-8669-44d0-8b50-f0109cf828e9.png#clientId=u674d1aac-5617-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=261&id=u30bd8d35&margin=%5Bobject%20Object%5D&name=image.png&originHeight=261&originWidth=836&originalType=binary&ratio=1&rotation=0&showTitle=false&size=132597&status=done&style=none&taskId=u3c5875ac-2bb2-480e-8cb0-6b333b1ee8a&title=&width=836" alt="image.png"></p>
 <p>3、lambda表达式的使用前提<br><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1645971844159-19b8f263-3870-4d46-b7c5-80d920b1251b.png#clientId=u674d1aac-5617-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=112&id=u1ff72433&margin=%5Bobject%20Object%5D&name=image.png&originHeight=112&originWidth=603&originalType=binary&ratio=1&rotation=0&showTitle=false&size=50173&status=done&style=none&taskId=u123a68ed-b89f-4aef-93f5-1ce1e5035fc&title=&width=603" alt="image.png"><br>4、lambda表达式和匿名内部类的对比<br><img data-src="https://cdn.nlark.com/yuque/0/2022/png/12855610/1645971974322-471b00a0-f497-486e-970f-f7df0727e1ed.png#clientId=u674d1aac-5617-4&crop=0&crop=0&crop=1&crop=1&from=paste&height=421&id=u8d96d1d8&margin=%5Bobject%20Object%5D&name=image.png&originHeight=421&originWidth=608&originalType=binary&ratio=1&rotation=0&showTitle=false&size=160037&status=done&style=none&taskId=u88c4ae96-0c18-4976-ba33-2a55940580a&title=&width=608" alt="image.png"></p>
@@ -407,6 +409,7 @@
           
           <div class="post-tags">
               <a href="/tags/jdk%E6%96%B0%E7%89%B9%E6%80%A7/" rel="tag"><i class="fa fa-tag"></i> jdk新特性</a>
+              <a href="/tags/jdk8/" rel="tag"><i class="fa fa-tag"></i> jdk8</a>
           </div>
 
         
@@ -415,8 +418,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/251e.html" rel="prev" title="SpringBoot学习笔记">
-      <i class="fa fa-chevron-left"></i> SpringBoot学习笔记
+    <a href="/posts/251e.html" rel="prev" title="SpringBoot概述">
+      <i class="fa fa-chevron-left"></i> SpringBoot概述
     </a></div>
       <div class="post-nav-item">
     <a href="/posts/943f.html" rel="next" title="尚医通学习总结">
@@ -497,20 +500,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -565,13 +568,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">326k</span>
+    <span title="站点总字数">376k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">4:56</span>
+    <span title="站点阅读时长">5:42</span>
 </div>
 
 <!-- 网站运行时间的设置 -->
